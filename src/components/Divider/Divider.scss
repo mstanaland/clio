@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+[data-divider] {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  box-shadow: inset 0 0 0 1px $color-border;
+
+  &.dark {
+    box-shadow: inset 0 0 0 1px $color-border-dark;
+  }
+
+  &.light {
+    box-shadow: inset 0 0 0 1px $color-border-light;
+  }
+}

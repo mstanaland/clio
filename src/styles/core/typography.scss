@@ -1,0 +1,178 @@
+// html {
+//   font-size: 16px;
+// }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+}
+
+@function pow($base, $exponent) {
+  $result: 1;
+  @for $_ from 1 through $exponent {
+    $result: $result * $base;
+  }
+  @return $result;
+}
+
+@function roundToBaseline($value) {
+  @return ceil($value / $baseline-grid) * $baseline-grid;
+}
+
+@function getHeadingSize($ratio, $exponent) {
+  $multiplier: pow($ratio, $exponent);
+  $unrounded: $base-font-size * $multiplier;
+  @return ceil($unrounded / 2) * 2;
+}
+
+@mixin heading-base {
+  font-weight: $font-medium;
+  text-rendering: optimizeLegibility;
+}
+
+.title-1 {
+  $size: getHeadingSize($type-scale-sm, 5);
+  $height: roundToBaseline($size * 1.1);
+
+  @include heading-base;
+  font-size: rem($size);
+  line-height: rem($height);
+  letter-spacing: -0.01em;
+
+  @include media-breakpoint-up(md) {
+    $size: getHeadingSize($type-scale-md, 5);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+
+  @include media-breakpoint-up(lg) {
+    $size: getHeadingSize($type-scale-lg, 5);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+}
+
+.title-2 {
+  $size: getHeadingSize($type-scale-sm, 4);
+  $height: roundToBaseline($size * 1.1);
+
+  @include heading-base;
+  font-size: rem($size);
+  line-height: rem($height);
+  letter-spacing: -0.01em;
+
+  @include media-breakpoint-up(md) {
+    $size: getHeadingSize($type-scale-md, 4);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+
+  @include media-breakpoint-up(lg) {
+    $size: getHeadingSize($type-scale-lg, 4);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+}
+
+.title-3 {
+  $size: getHeadingSize($type-scale-sm, 3);
+  $height: roundToBaseline($size * 1.1);
+
+  @include heading-base;
+  font-size: rem($size);
+  line-height: rem($height);
+  letter-spacing: -0.01em;
+
+  @include media-breakpoint-up(md) {
+    $size: getHeadingSize($type-scale-md, 3);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+
+  @include media-breakpoint-up(lg) {
+    $size: getHeadingSize($type-scale-lg, 3);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+}
+
+.title-4 {
+  $size: getHeadingSize($type-scale-sm, 2);
+  $height: roundToBaseline($size * 1.1);
+
+  @include heading-base;
+  font-size: rem($size);
+  line-height: rem($height);
+  letter-spacing: -0.01em;
+
+  @include media-breakpoint-up(md) {
+    $size: getHeadingSize($type-scale-md, 2);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+
+  @include media-breakpoint-up(lg) {
+    $size: getHeadingSize($type-scale-lg, 2);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+}
+
+.title-5 {
+  $size: getHeadingSize($type-scale-sm, 1);
+  $height: roundToBaseline($size * 1.1);
+
+  @include heading-base;
+  font-size: rem($size);
+  line-height: rem($height);
+  letter-spacing: -0.01em;
+
+  @include media-breakpoint-up(md) {
+    $size: getHeadingSize($type-scale-md, 1);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+
+  @include media-breakpoint-up(lg) {
+    $size: getHeadingSize($type-scale-lg, 1);
+    $height: roundToBaseline($size * 1.1);
+
+    font-size: rem($size);
+    line-height: rem($height);
+  }
+}
+
+.title-6 {
+  $size: $base-font-size;
+  $height: roundToBaseline($size * 1.1);
+
+  @include heading-base;
+  font-size: rem($size);
+  line-height: rem($height);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}

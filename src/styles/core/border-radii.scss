@@ -1,0 +1,71 @@
+.radius-sm {
+  border-radius: $border-radius-sm;
+}
+
+.radius-md {
+  border-radius: $border-radius-md;
+}
+
+.radius-lg {
+  border-radius: $border-radius-lg;
+}
+
+.radius-top-sm {
+  border-top-left-radius: $border-radius-sm;
+  border-top-right-radius: $border-radius-sm;
+}
+
+.radius-top-md {
+  border-top-left-radius: $border-radius-md;
+  border-top-right-radius: $border-radius-md;
+}
+
+.radius-top-lg {
+  border-top-left-radius: $border-radius-lg;
+  border-top-right-radius: $border-radius-lg;
+}
+
+.radius-bottom-sm {
+  border-bottom-left-radius: $border-radius-sm;
+  border-bottom-right-radius: $border-radius-sm;
+}
+
+.radius-bottom-md {
+  border-bottom-left-radius: $border-radius-md;
+  border-bottom-right-radius: $border-radius-md;
+}
+
+.radius-bottom-lg {
+  border-bottom-left-radius: $border-radius-lg;
+  border-bottom-right-radius: $border-radius-lg;
+}
+
+.radius-left-sm {
+  border-top-left-radius: $border-radius-sm;
+  border-bottom-left-radius: $border-radius-sm;
+}
+
+.radius-left-md {
+  border-top-left-radius: $border-radius-md;
+  border-bottom-left-radius: $border-radius-md;
+}
+
+.radius-left-lg {
+  border-top-left-radius: $border-radius-lg;
+  border-bottom-left-radius: $border-radius-lg;
+}
+
+.radius-right-sm {
+  border-top-right-radius: $border-radius-sm;
+  border-bottom-right-radius: $border-radius-sm;
+}
+
+.radius-right-md {
+  border-top-right-radius: $border-radius-md;
+  border-bottom-right-radius: $border-radius-md;
+}
+
+.radius-right-lg {
+  border-top-right-radius: $border-radius-lg;
+  border-bottom-right-radius: $border-radius-lg;
+}
