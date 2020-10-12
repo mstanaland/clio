@@ -4,21 +4,28 @@ import cx from "classnames";
 
 import { htmlElementsType } from "../../types";
 
-export default function Text({
-  tag: Tag = "p",
-  size = "md",
+import "./TextBlock.scss";
+
+export default function TextBlock({
+  tag: Tag = "div",
   children,
+  width = "md",
+  size = "md",
   color,
+  shouldSpaceParagraphs = true,
   fontWeight,
   fontStyle,
-  isTruncated,
   className,
   ...rest
 }) {
   return (
-    <Tag
-      data-text
-      className={cx(className, "text", {
+    <div
+      data-text-block
+      className={cx("text", className, {
+        "with-p-space": shouldSpaceParagraphs,
+        "text-width-sm": width === "sm",
+        "text-width-md": width === "md",
+        "text-width-lg": width === "lg",
         "text-xs": size === "xs",
         "text-sm": size === "sm",
         "text-md": size === "md",
@@ -35,18 +42,17 @@ export default function Text({
         "text-700": fontWeight === "bold",
         "text-800": fontWeight === "heavy",
         "text-900": fontWeight === "black",
-        "text-italic": fontStyle === "italic",
-        "text-normal": fontStyle === "normal",
-        "text-truncate": isTruncated,
       })}
       {...rest}
     >
       {children}
-    </Tag>
+    </div>
   );
 }
 
-Text.propTypes = {
+TextBlock.propTypes = {
+  width: PropTypes.oneOf(["sm", "md", "lg"]),
+  shouldSpaceParagraphs: PropTypes.bool,
   tag: htmlElementsType,
   size: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
   color: PropTypes.oneOf(["black", "darkGray", "gray"]),
@@ -61,5 +67,4 @@ Text.propTypes = {
     "black",
   ]),
   fontStyle: PropTypes.oneOf(["normal", "italic"]),
-  isTruncated: PropTypes.bool,
 };

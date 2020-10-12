@@ -178,7 +178,8 @@ code {
   letter-spacing: 0.02em;
 }
 
-.text {
+.text,
+.text-color-black {
   color: $color-text-dark;
 }
 
@@ -222,12 +223,24 @@ code {
   line-height: rem($height);
 }
 
-.text-dark-gray {
+.text-color-dark-gray {
   color: $color-text-dark-gray;
 }
 
-.text-gray {
+.text-color-gray {
   color: $color-text-gray;
+}
+
+.text-200 {
+  font-weight: $font-light;
+}
+
+.text-300 {
+  font-weight: $font-thin;
+}
+
+.text-400 {
+  font-weight: $font-regular;
 }
 
 .text-500 {
@@ -250,8 +263,28 @@ code {
   font-weight: $font-black;
 }
 
+.text-italic {
+  font-style: italic;
+}
+
+.text-normal {
+  font-style: normal;
+}
+
 .text-truncate {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.text-width-sm {
+  max-width: 80ch;
+}
+
+.text-width-md {
+  max-width: 90ch;
+}
+
+.text-width-lg {
+  max-width: 100ch;
 }

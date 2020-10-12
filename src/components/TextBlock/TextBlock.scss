@@ -1,0 +1,7 @@
+[data-text-block] {
+  &.with-p-space {
+    > p + p {
+      margin-top: 1em;
+    }
+  }
+}
