@@ -32,6 +32,10 @@ $color-border: $color-n50;
 $color-border-light: $color-n30;
 $color-border-dark: $color-n700;
 
+$color-text-dark: $color-n900;
+$color-text-dark-gray: $color-n400;
+$color-text-gray: $color-n200;
+
 // ======== TYPOGRAPHY ============
 $font-light: 200;
 $font-thin: 300;
@@ -44,6 +48,8 @@ $font-black: 900;
 
 $base-font-size: 14; // Unitless because used in calculations
 $baseline-grid: 4; // Unitless because used in calculations
+$heading-line-height: 1.1; // Unitless because used in calculations
+$text-line-height: 1.55; // Unitless because used in calculations
 
 // Different type scales for different breakpoints
 $type-scale-lg: 1.25;

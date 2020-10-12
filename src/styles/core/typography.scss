@@ -25,7 +25,7 @@ code {
   @return ceil($value / $baseline-grid) * $baseline-grid;
 }
 
-@function getHeadingSize($ratio, $exponent) {
+@function getTextSize($ratio, $exponent) {
   $multiplier: pow($ratio, $exponent);
   $unrounded: $base-font-size * $multiplier;
   @return ceil($unrounded / 2) * 2;
@@ -34,11 +34,12 @@ code {
 @mixin heading-base {
   font-weight: $font-medium;
   text-rendering: optimizeLegibility;
+  color: $color-text-dark;
 }
 
 .title-1 {
-  $size: getHeadingSize($type-scale-sm, 5);
-  $height: roundToBaseline($size * 1.1);
+  $size: getTextSize($type-scale-sm, 5);
+  $height: roundToBaseline($size * $heading-line-height);
 
   @include heading-base;
   font-size: rem($size);
@@ -46,16 +47,16 @@ code {
   letter-spacing: -0.01em;
 
   @include media-breakpoint-up(md) {
-    $size: getHeadingSize($type-scale-md, 5);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-md, 5);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
   }
 
   @include media-breakpoint-up(lg) {
-    $size: getHeadingSize($type-scale-lg, 5);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-lg, 5);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
@@ -63,8 +64,8 @@ code {
 }
 
 .title-2 {
-  $size: getHeadingSize($type-scale-sm, 4);
-  $height: roundToBaseline($size * 1.1);
+  $size: getTextSize($type-scale-sm, 4);
+  $height: roundToBaseline($size * $heading-line-height);
 
   @include heading-base;
   font-size: rem($size);
@@ -72,16 +73,16 @@ code {
   letter-spacing: -0.01em;
 
   @include media-breakpoint-up(md) {
-    $size: getHeadingSize($type-scale-md, 4);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-md, 4);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
   }
 
   @include media-breakpoint-up(lg) {
-    $size: getHeadingSize($type-scale-lg, 4);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-lg, 4);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
@@ -89,8 +90,8 @@ code {
 }
 
 .title-3 {
-  $size: getHeadingSize($type-scale-sm, 3);
-  $height: roundToBaseline($size * 1.1);
+  $size: getTextSize($type-scale-sm, 3);
+  $height: roundToBaseline($size * $heading-line-height);
 
   @include heading-base;
   font-size: rem($size);
@@ -98,16 +99,16 @@ code {
   letter-spacing: -0.01em;
 
   @include media-breakpoint-up(md) {
-    $size: getHeadingSize($type-scale-md, 3);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-md, 3);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
   }
 
   @include media-breakpoint-up(lg) {
-    $size: getHeadingSize($type-scale-lg, 3);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-lg, 3);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
@@ -115,8 +116,8 @@ code {
 }
 
 .title-4 {
-  $size: getHeadingSize($type-scale-sm, 2);
-  $height: roundToBaseline($size * 1.1);
+  $size: getTextSize($type-scale-sm, 2);
+  $height: roundToBaseline($size * $heading-line-height);
 
   @include heading-base;
   font-size: rem($size);
@@ -124,16 +125,16 @@ code {
   letter-spacing: -0.01em;
 
   @include media-breakpoint-up(md) {
-    $size: getHeadingSize($type-scale-md, 2);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-md, 2);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
   }
 
   @include media-breakpoint-up(lg) {
-    $size: getHeadingSize($type-scale-lg, 2);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-lg, 2);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
@@ -141,8 +142,8 @@ code {
 }
 
 .title-5 {
-  $size: getHeadingSize($type-scale-sm, 1);
-  $height: roundToBaseline($size * 1.1);
+  $size: getTextSize($type-scale-sm, 1);
+  $height: roundToBaseline($size * $heading-line-height);
 
   @include heading-base;
   font-size: rem($size);
@@ -150,16 +151,16 @@ code {
   letter-spacing: -0.01em;
 
   @include media-breakpoint-up(md) {
-    $size: getHeadingSize($type-scale-md, 1);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-md, 1);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
   }
 
   @include media-breakpoint-up(lg) {
-    $size: getHeadingSize($type-scale-lg, 1);
-    $height: roundToBaseline($size * 1.1);
+    $size: getTextSize($type-scale-lg, 1);
+    $height: roundToBaseline($size * $heading-line-height);
 
     font-size: rem($size);
     line-height: rem($height);
@@ -168,11 +169,89 @@ code {
 
 .title-6 {
   $size: $base-font-size;
-  $height: roundToBaseline($size * 1.1);
+  $height: roundToBaseline($size * $heading-line-height);
 
   @include heading-base;
   font-size: rem($size);
   line-height: rem($height);
   text-transform: uppercase;
   letter-spacing: 0.02em;
+}
+
+.text {
+  color: $color-text-dark;
+}
+
+.text-xs {
+  $size: ceil($base-font-size / ($type-scale-sm * $type-scale-sm));
+  $height: roundToBaseline($size * $text-line-height);
+
+  font-size: rem($size);
+  line-height: rem($height);
+}
+
+.text-sm {
+  $size: ceil($base-font-size / $type-scale-sm);
+  $height: roundToBaseline($size * $text-line-height);
+
+  font-size: rem($size);
+  line-height: rem($height);
+}
+
+.text-md {
+  $size: $base-font-size;
+  $height: roundToBaseline($size * $text-line-height);
+
+  font-size: rem($size);
+  line-height: rem($height);
+}
+
+.text-lg {
+  $size: getTextSize($type-scale-sm, 1);
+  $height: roundToBaseline($size * $text-line-height);
+
+  font-size: rem($size);
+  line-height: rem($height);
+}
+
+.text-xl {
+  $size: getTextSize($type-scale-sm, 2);
+  $height: roundToBaseline($size * $text-line-height);
+
+  font-size: rem($size);
+  line-height: rem($height);
+}
+
+.text-dark-gray {
+  color: $color-text-dark-gray;
+}
+
+.text-gray {
+  color: $color-text-gray;
+}
+
+.text-500 {
+  font-weight: $font-medium;
+}
+
+.text-600 {
+  font-weight: $font-semibold;
+}
+
+.text-700 {
+  font-weight: $font-bold;
+}
+
+.text-800 {
+  font-weight: $font-heavy;
+}
+
+.text-900 {
+  font-weight: $font-black;
+}
+
+.text-truncate {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
