@@ -8,38 +8,41 @@ import Stack from "./components/Stack";
 import Heading, { HeadingSection } from "./components/Heading";
 import Text from "./components/Text";
 import TextBlock from "./components/TextBlock";
+import Hidden from "./components/Hidden";
 
 function App() {
   return (
     <div style={{ maxWidth: "1200px", margin: "20px auto" }}>
-      <TextBlock width="md">
-        <Card>
-          <p>
-            Machine learning (ML) is the study of computer algorithms that
-            improve automatically through experience. It is seen as a subset of
-            artificial intelligence. Machine learning algorithms build a
-            mathematical model based on sample data, known as "training data",
-            in order to make predictions or decisions without being explicitly
-            programmed to do so.
-          </p>
-          <p>
-            Machine learning (ML) is the study of computer algorithms that
-            improve automatically through experience. It is seen as a subset of
-            artificial intelligence. Machine learning algorithms build a
-            mathematical model based on sample data, known as "training data",
-            in order to make predictions or decisions without being explicitly
-            programmed to do so.
-          </p>
-          <p>
-            Machine learning (ML) is the study of computer algorithms that
-            improve automatically through experience. It is seen as a subset of
-            artificial intelligence. Machine learning algorithms build a
-            mathematical model based on sample data, known as "training data",
-            in order to make predictions or decisions without being explicitly
-            programmed to do so.
-          </p>
-        </Card>
-      </TextBlock>
+      <Hidden above="desktop" below="desktop">
+        <TextBlock width="md">
+          <Card>
+            <p>
+              Machine learning (ML) is the study of computer algorithms that
+              improve automatically through experience. It is seen as a subset
+              of artificial intelligence. Machine learning algorithms build a
+              mathematical model based on sample data, known as "training data",
+              in order to make predictions or decisions without being explicitly
+              programmed to do so.
+            </p>
+            <p>
+              Machine learning (ML) is the study of computer algorithms that
+              improve automatically through experience. It is seen as a subset
+              of artificial intelligence. Machine learning algorithms build a
+              mathematical model based on sample data, known as "training data",
+              in order to make predictions or decisions without being explicitly
+              programmed to do so.
+            </p>
+            <p>
+              Machine learning (ML) is the study of computer algorithms that
+              improve automatically through experience. It is seen as a subset
+              of artificial intelligence. Machine learning algorithms build a
+              mathematical model based on sample data, known as "training data",
+              in order to make predictions or decisions without being explicitly
+              programmed to do so.
+            </p>
+          </Card>
+        </TextBlock>
+      </Hidden>
 
       <Stack>
         <Text size="xs">

@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 
-import boxTypes from "../../types";
+import { boxTypes } from "../../types";
 import resolveUnitlessValue from "../../utils/resolveUnitlessValue";
 
 import extractBoxClasses from "./extractBoxClasses";
