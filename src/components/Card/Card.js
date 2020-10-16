@@ -4,6 +4,7 @@ import cx from "classnames";
 import { boxTypes } from "../../types";
 
 import { extractBoxClasses } from "../Box";
+
 export default function Card({
   children,
   background = "n0",

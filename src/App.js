@@ -2,7 +2,7 @@ import React from "react";
 
 // import Divider from "./components/Divider";
 // import Box from "./components/Box";
-// import Card from "./components/Card";
+import Card from "./components/Card";
 import Placeholder from "./components/Placeholder";
 // import Stack from "./components/Stack";
 // import Heading, { HeadingSection } from "./components/Heading";
@@ -10,11 +10,44 @@ import Placeholder from "./components/Placeholder";
 // import TextBlock from "./components/TextBlock";
 // import Hidden from "./components/Hidden";
 import Inline from "./components/Inline";
+import Badge from "./components/Badge";
 
 function App() {
   return (
-    <div>
+    <Card>
       <div style={{ maxWidth: "100%" }}>
+        <Badge tone="neutral">28</Badge>
+        <Badge tone="info">28</Badge>
+        <Badge tone="success">28</Badge>
+        <Badge tone="error">28</Badge>
+        <div>
+          <Badge size="lg" tone="neutral" max={99}>
+            {2238}
+          </Badge>
+          <Badge size="lg" tone="info">
+            New
+          </Badge>
+          <Badge size="lg" tone="success">
+            28
+          </Badge>
+          <Badge size="lg" tone="error">
+            28
+          </Badge>
+        </div>
+        <div>
+          <Badge size="xl" tone="neutral" max={99}>
+            {2238}
+          </Badge>
+          <Badge size="xl" tone="info">
+            New
+          </Badge>
+          <Badge size="xl" tone="success">
+            28
+          </Badge>
+          <Badge size="xl" tone="error">
+            28
+          </Badge>
+        </div>
         <Inline
           space={["xs", "md", "xl"]}
           alignX={["left", "right", "center"]}
@@ -47,7 +80,7 @@ function App() {
           <Placeholder height={40} width={75} />
         </Inline>
       </div>
-    </div>
+    </Card>
   );
   return (
     <div style={{ maxWidth: "1200px", margin: "20px auto" }}>

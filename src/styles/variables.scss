@@ -26,6 +26,33 @@ $color-n20: #f4f5f7;
 $color-n10: #fafbfc;
 $color-n0: #ffffff;
 
+// Reds
+$color-r500: #bf2600;
+$color-r400: #de350b;
+$color-r300: #ff5630;
+$color-r200: #ff7452;
+$color-r100: #ff8f73;
+$color-r75: #ffbdad;
+$color-r50: #ffebe6;
+
+// Greens
+$color-g500: #006644;
+$color-g400: #00875a;
+$color-g300: #36b37e;
+$color-g200: #57d9a3;
+$color-g100: #79f2c0;
+$color-g75: #abf5d1;
+$color-g50: #e3fcef;
+
+// Blues
+$color-b500: #0747a6;
+$color-b400: #0052cc;
+$color-b300: #0065ff;
+$color-b200: #2684ff;
+$color-b100: #4c9aff;
+$color-b75: #b3d4ff;
+$color-b50: #deebff;
+
 // ======== NAMED COLORS ============
 
 $color-border: $color-n50;
@@ -35,6 +62,9 @@ $color-border-dark: $color-n700;
 $color-text-dark: $color-n900;
 $color-text-dark-gray: $color-n400;
 $color-text-gray: $color-n200;
+$color-text-red: $color-r500;
+$color-text-green: $color-g500;
+$color-text-blue: $color-b500;
 
 // ======== TYPOGRAPHY ============
 $font-light: 200;

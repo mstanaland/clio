@@ -4,6 +4,16 @@ import cx from "classnames";
 
 import { htmlElementsType } from "../../types";
 
+// function extractTextClasses(props) {
+//   const { size, ...rest } = props;
+//   const classes = {};
+
+//   // size
+//   if (Boolean(size)) {
+
+//   }
+// }
+
 export default function Text({
   tag: Tag = "p",
   size = "md",
