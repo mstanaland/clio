@@ -98,25 +98,11 @@ $global-spacer: 4px;
 
 $spacers: (
   none: 0,
-  xxs: (
-    $global-spacer,
-  ),
-  xs: (
-    $global-spacer * 2,
-  ),
-  sm: (
-    $global-spacer * 3,
-  ),
-  md: (
-    $global-spacer * 5,
-  ),
-  lg: (
-    $global-spacer * 8,
-  ),
-  xl: (
-    $global-spacer * 12,
-  ),
-  xxl: (
-    $global-spacer * 24,
-  ),
+  xxs: $global-spacer,
+  xs: $global-spacer * 2,
+  sm: $global-spacer * 3,
+  md: $global-spacer * 5,
+  lg: $global-spacer * 8,
+  xl: $global-spacer * 12,
+  xxl: $global-spacer * 24,
 );

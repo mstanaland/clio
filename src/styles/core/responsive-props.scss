@@ -12,7 +12,7 @@ $displays: (
   "block": block,
   "flex": flex,
   "inlineFlex": inline-flex,
-  "inline": inline,
+  "inline": inline-flex,
 );
 
 $positions: (
@@ -34,17 +34,18 @@ $alignItems: (
 );
 
 $justifyContent: (
-  "start": start,
-  "end": start,
+  "start": flex-start,
+  "end": flex-end,
   "center": center,
-  "spaceBetween": space-between,
-  "spaceAround": space-around,
+  "space-between": space-between,
+  "space-around": space-around,
 );
 
 @each $breakpoint in map-keys($flex-grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $flex-grid-breakpoints);
 
+    // Margins and Paddings
     @each $prop, $abbrev in (margin: m, padding: p) {
       @each $size, $length in $spacers {
         .#{$abbrev}#{$infix}-#{$size} {
@@ -73,6 +74,34 @@ $justifyContent: (
       }
     }
 
+    // Negative margins (e.g., where `.mb-nlg` is negative version of `.mb-lg`)
+    @each $size, $length in $spacers {
+      .m#{$infix}-n#{$size} {
+        margin: -$length !important;
+      }
+
+      .mt#{$infix}-n#{$size},
+      .my#{$infix}-n#{$size} {
+        margin-top: -$length !important;
+      }
+
+      .mr#{$infix}-n#{$size},
+      .mx#{$infix}-n#{$size} {
+        margin-right: -$length !important;
+      }
+
+      .mb#{$infix}-n#{$size},
+      .my#{$infix}-n#{$size} {
+        margin-bottom: -$length !important;
+      }
+
+      .ml#{$infix}-n#{$size},
+      .mx#{$infix}-n#{$size} {
+        margin-left: -$length !important;
+      }
+    }
+
+    // Display (e.g. .display-flex or .display-lg-flex)
     @each $key, $value in $displays {
       .display#{$infix}-#{$key} {
         display: $value !important;
@@ -86,19 +115,19 @@ $justifyContent: (
     }
 
     @each $key, $value in $flexDirections {
-      .flexDirection#{$infix}-#{$key} {
+      .flex-direction#{$infix}-#{$key} {
         flex-direction: $value !important;
       }
     }
 
     @each $key, $value in $alignItems {
-      .alignItems#{$infix}-#{$key} {
+      .align-items#{$infix}-#{$key} {
         align-items: $value !important;
       }
     }
 
     @each $key, $value in $justifyContent {
-      .justifyContent#{$infix}-#{$key} {
+      .justify-content#{$infix}-#{$key} {
         justify-content: $value !important;
       }
     }

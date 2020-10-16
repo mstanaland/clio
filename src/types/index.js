@@ -69,14 +69,44 @@ const positionTypes = PropTypes.oneOf(["static", "relative", "absolute"]);
 
 const flexDirectionTypes = PropTypes.oneOf(["row", "column"]);
 
-const alignItemTypes = PropTypes.oneOf(["start", "center", "end", "stretch"]);
+export const alignXType = PropTypes.oneOf([
+  "left",
+  "right",
+  "center",
+  "spaceAround",
+  "spaceBetween",
+]);
+
+export const responsiveAlignXType = PropTypes.oneOfType([
+  alignXType,
+  PropTypes.arrayOf(alignXType),
+]);
+
+export const alignYType = PropTypes.oneOf([
+  "top",
+  "bottom",
+  "center",
+  "stretch",
+]);
+
+export const responsiveAlignYType = PropTypes.oneOfType([
+  alignYType,
+  PropTypes.arrayOf(alignYType),
+]);
+
+const alignItemTypes = PropTypes.oneOf([
+  "flex-start",
+  "center",
+  "flex-end",
+  "stretch",
+]);
 
 const justifyContentTypes = PropTypes.oneOf([
-  "start",
-  "end",
+  "flex-start",
+  "flex-end",
   "center",
-  "spaceBetween",
-  "spaceAround",
+  "space-between",
+  "space-around",
 ]);
 
 export const boxTypes = {
@@ -127,3 +157,10 @@ export const boxTypes = {
   borderRightRadius: PropTypes.oneOf(["sm", "md", "lg"]),
   shadow: PropTypes.oneOf(["none", "xs", "sm", "md", "lg", "xl"]),
 };
+
+export const breakpointsType = PropTypes.oneOf([
+  "mobile",
+  "tablet",
+  "desktop",
+  "wideScreen",
+]);

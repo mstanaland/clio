@@ -1,19 +1,67 @@
 import React from "react";
 
-import Divider from "./components/Divider";
-import Box from "./components/Box";
-import Card from "./components/Card";
+// import Divider from "./components/Divider";
+// import Box from "./components/Box";
+// import Card from "./components/Card";
 import Placeholder from "./components/Placeholder";
-import Stack from "./components/Stack";
-import Heading, { HeadingSection } from "./components/Heading";
-import Text from "./components/Text";
-import TextBlock from "./components/TextBlock";
-import Hidden from "./components/Hidden";
+// import Stack from "./components/Stack";
+// import Heading, { HeadingSection } from "./components/Heading";
+// import Text from "./components/Text";
+// import TextBlock from "./components/TextBlock";
+// import Hidden from "./components/Hidden";
+import Inline from "./components/Inline";
 
 function App() {
   return (
+    <div>
+      <div style={{ maxWidth: "100%" }}>
+        <Inline
+          space={["xs", "md", "xl"]}
+          alignX={["left", "right", "center"]}
+          alignY="top"
+          collapseBelow="mobile"
+        >
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+        </Inline>
+      </div>
+    </div>
+  );
+  return (
     <div style={{ maxWidth: "1200px", margin: "20px auto" }}>
-      <Hidden above="desktop" below="desktop">
+      <div style={{ maxWidth: "400px" }}>
+        <Inline>
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+          <Placeholder height={30} width={100} />
+          <Placeholder height={50} width={30} />
+          <Placeholder height={40} width={75} />
+        </Inline>
+      </div>
+      {/* <Hidden above="desktop" below="desktop">
         <TextBlock width="md">
           <Card>
             <p>
@@ -152,7 +200,7 @@ function App() {
         Hello
       </Box>
 
-      <Divider />
+      <Divider /> */}
     </div>
   );
 }

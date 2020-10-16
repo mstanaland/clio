@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import { breakpoints } from "../../constants";
+import { breakpointsType } from "../../types";
 import { resolveResponsiveRangeProps } from "../../utils/resolveResponsiveRangeProps";
 import { extractBoxClasses } from "../Box";
 
@@ -27,11 +27,15 @@ export default function Hidden({ above, below, isInline = false, children }) {
   const boxProps = { display };
   const [classes] = extractBoxClasses(boxProps);
 
-  return <Tag className={cx(classes)}>{children}</Tag>;
+  return (
+    <Tag data-hidden className={cx(classes)}>
+      {children}
+    </Tag>
+  );
 }
 
 Hidden.propTypes = {
-  above: PropTypes.oneOf(breakpoints),
-  below: PropTypes.oneOf(breakpoints),
+  above: breakpointsType,
+  below: breakpointsType,
   isInline: PropTypes.bool,
 };

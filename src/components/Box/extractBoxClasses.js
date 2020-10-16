@@ -243,11 +243,11 @@ export default function extractBoxClasses(props) {
   // flexDirection
   if (Boolean(flexDirection)) {
     if (typeof flexDirection === "string") {
-      classes[`flexDirection-${flexDirection}`] = true;
+      classes[`flex-direction-${flexDirection}`] = true;
     } else if (Array.isArray(flexDirection)) {
       flexDirection.forEach(
         (item, index) =>
-          (classes[`flexDirection${indexToBreakpoint(index)}-${item}`] = true)
+          (classes[`flex-direction${indexToBreakpoint(index)}-${item}`] = true)
       );
     }
   }
@@ -255,11 +255,11 @@ export default function extractBoxClasses(props) {
   // justifyContent
   if (Boolean(justifyContent)) {
     if (typeof justifyContent === "string") {
-      classes[`justifyContent-${justifyContent}`] = true;
+      classes[`justify-content-${justifyContent}`] = true;
     } else if (Array.isArray(justifyContent)) {
       justifyContent.forEach(
         (item, index) =>
-          (classes[`justifyContent${indexToBreakpoint(index)}-${item}`] = true)
+          (classes[`justify-content${indexToBreakpoint(index)}-${item}`] = true)
       );
     }
   }
@@ -267,11 +267,11 @@ export default function extractBoxClasses(props) {
   // alignItems
   if (Boolean(alignItems)) {
     if (typeof alignItems === "string") {
-      classes[`alignItems-${alignItems}`] = true;
+      classes[`align-items-${alignItems}`] = true;
     } else if (Array.isArray(alignItems)) {
       alignItems.forEach(
         (item, index) =>
-          (classes[`alignItems${indexToBreakpoint(index)}-${item}`] = true)
+          (classes[`align-items${indexToBreakpoint(index)}-${item}`] = true)
       );
     }
   }
