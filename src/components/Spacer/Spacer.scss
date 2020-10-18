@@ -1,0 +1,38 @@
+@import "../../styles/variables.scss";
+
+[data-spacer] {
+  &.xxs {
+    width: $sizer-xxs;
+    height: $sizer-xxs;
+  }
+
+  &.xs {
+    width: $sizer-xs;
+    height: $sizer-xs;
+  }
+
+  &.sm {
+    width: $sizer-sm;
+    height: $sizer-sm;
+  }
+
+  &.md {
+    width: $sizer-md;
+    height: $sizer-md;
+  }
+
+  &.lg {
+    width: $sizer-lg;
+    height: $sizer-lg;
+  }
+
+  &.xl {
+    width: $sizer-xl;
+    height: $sizer-xl;
+  }
+
+  &.xxl {
+    width: $sizer-xxl;
+    height: $sizer-xxl;
+  }
+}

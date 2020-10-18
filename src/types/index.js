@@ -94,19 +94,14 @@ export const responsiveAlignYType = PropTypes.oneOfType([
   PropTypes.arrayOf(alignYType),
 ]);
 
-const alignItemTypes = PropTypes.oneOf([
-  "flex-start",
-  "center",
-  "flex-end",
-  "stretch",
-]);
+const alignItemTypes = PropTypes.oneOf(["start", "center", "end", "stretch"]);
 
 const justifyContentTypes = PropTypes.oneOf([
-  "flex-start",
-  "flex-end",
+  "start",
+  "end",
   "center",
-  "space-between",
-  "space-around",
+  "spaceBetween",
+  "spaceAround",
 ]);
 
 export const boxTypes = {

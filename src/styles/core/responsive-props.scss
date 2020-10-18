@@ -37,8 +37,8 @@ $justifyContent: (
   "start": flex-start,
   "end": flex-end,
   "center": center,
-  "space-between": space-between,
-  "space-around": space-around,
+  "spaceBetween": space-between,
+  "spaceAround": space-around,
 );
 
 @each $breakpoint in map-keys($flex-grid-breakpoints) {

@@ -9,8 +9,8 @@ export default {
 };
 
 const Template = (args) => <Badge {...args} />;
-export const Number = Template.bind({});
-Number.args = {
+export const NumberContent = Template.bind({});
+NumberContent.args = {
   children: 1981,
 };
 
@@ -20,8 +20,8 @@ NumberWithMax.args = {
   children: 1981,
 };
 
-export const Text = Template.bind({});
-Text.args = {
+export const TextContent = Template.bind({});
+TextContent.args = {
   children: "New",
 };
 

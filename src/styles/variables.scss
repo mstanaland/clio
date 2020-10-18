@@ -27,31 +27,40 @@ $color-n10: #fafbfc;
 $color-n0: #ffffff;
 
 // Reds
-$color-r500: #bf2600;
-$color-r400: #de350b;
-$color-r300: #ff5630;
-$color-r200: #ff7452;
-$color-r100: #ff8f73;
-$color-r75: #ffbdad;
-$color-r50: #ffebe6;
+$color-r900: #b71c1c;
+$color-r800: #c62828;
+$color-r700: #d32f2f;
+$color-r600: #e53935;
+$color-r500: #f44336;
+$color-r400: #ef5350;
+$color-r300: #e57373;
+$color-r200: #ef9a9a;
+$color-r100: #ffcdd2;
+$color-r50: #ffebee;
 
 // Greens
-$color-g500: #006644;
-$color-g400: #00875a;
-$color-g300: #36b37e;
-$color-g200: #57d9a3;
-$color-g100: #79f2c0;
-$color-g75: #abf5d1;
-$color-g50: #e3fcef;
+$color-g900: #1b5e20;
+$color-g800: #2e7d32;
+$color-g700: #388e3c;
+$color-g600: #43a047;
+$color-g500: #4caf50;
+$color-g400: #66bb6a;
+$color-g300: #81c784;
+$color-g200: #a5d6a7;
+$color-g100: #c8e6c9;
+$color-g50: #e8f5e9;
 
 // Blues
-$color-b500: #0747a6;
-$color-b400: #0052cc;
-$color-b300: #0065ff;
-$color-b200: #2684ff;
-$color-b100: #4c9aff;
-$color-b75: #b3d4ff;
-$color-b50: #deebff;
+$color-b900: #0d47a1;
+$color-b800: #1565c0;
+$color-b700: #1976d2;
+$color-b600: #1e88e5;
+$color-b500: #2196f3;
+$color-b400: #42a5f5;
+$color-b300: #64b5f6;
+$color-b200: #90caf9;
+$color-b100: #bbdefb;
+$color-b50: #e3f2fd;
 
 // ======== NAMED COLORS ============
 
@@ -60,11 +69,11 @@ $color-border-light: $color-n30;
 $color-border-dark: $color-n700;
 
 $color-text-dark: $color-n900;
-$color-text-dark-gray: $color-n400;
+$color-text-dark-gray: $color-n500;
 $color-text-gray: $color-n200;
-$color-text-red: $color-r500;
-$color-text-green: $color-g500;
-$color-text-blue: $color-b500;
+$color-text-red: $color-r900;
+$color-text-green: $color-g900;
+$color-text-blue: $color-b900;
 
 // ======== TYPOGRAPHY ============
 $font-light: 200;
@@ -125,14 +134,42 @@ $flex-grid-breakpoints: (
 // ======== SPACING ============
 
 $global-spacer: 4px;
+$spacer-xxs: $global-spacer;
+$spacer-xs: $global-spacer * 2;
+$spacer-sm: $global-spacer * 3;
+$spacer-md: $global-spacer * 5;
+$spacer-lg: $global-spacer * 8;
+$spacer-xl: $global-spacer * 12;
+$spacer-xxl: $global-spacer * 24;
 
 $spacers: (
   none: 0,
-  xxs: $global-spacer,
-  xs: $global-spacer * 2,
-  sm: $global-spacer * 3,
-  md: $global-spacer * 5,
-  lg: $global-spacer * 8,
-  xl: $global-spacer * 12,
-  xxl: $global-spacer * 24,
+  xxs: $spacer-xxs,
+  xs: $spacer-xs,
+  sm: $spacer-sm,
+  md: $spacer-md,
+  lg: $spacer-lg,
+  xl: $spacer-xl,
+  xxl: $spacer-xxl,
+);
+
+// ======== SIZES ============
+
+$sizer-xxs: $global-spacer * 3; // 12px
+$sizer-xs: $global-spacer * 4; // 16px
+$sizer-sm: $global-spacer * 6; // 24px
+$sizer-md: $global-spacer * 8; // 32px
+$sizer-lg: $global-spacer * 10; // 40px
+$sizer-xl: $global-spacer * 16; // 64px
+$sizer-xxl: $global-spacer * 20; // 80px
+
+$sizers: (
+  none: 0,
+  xxs: $sizer-xxs,
+  xs: $sizer-xs,
+  sm: $sizer-sm,
+  md: $sizer-md,
+  lg: $sizer-lg,
+  xl: $sizer-xl,
+  xxl: $sizer-xxl,
 );

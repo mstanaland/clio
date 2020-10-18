@@ -74,6 +74,10 @@
   background-color: $color-n0;
 }
 
+.r600 {
+  background-color: $color-r600;
+}
+
 .r500 {
   background-color: $color-r500;
 }
@@ -94,12 +98,12 @@
   background-color: $color-r100;
 }
 
-.r75 {
-  background-color: $color-r75;
-}
-
 .r50 {
   background-color: $color-r50;
+}
+
+.g600 {
+  background-color: $color-g600;
 }
 
 .g500 {
@@ -122,12 +126,12 @@
   background-color: $color-g100;
 }
 
-.g75 {
-  background-color: $color-g75;
-}
-
 .g50 {
   background-color: $color-g50;
+}
+
+.b600 {
+  background-color: $color-b600;
 }
 
 .b500 {
@@ -150,10 +154,6 @@
   background-color: $color-b100;
 }
 
-.b75 {
-  background-color: $color-b75;
-}
-
 .b50 {
-  background-color: $color-g50;
+  background-color: $color-b50;
 }

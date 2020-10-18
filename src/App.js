@@ -11,6 +11,7 @@ import Placeholder from "./components/Placeholder";
 // import Hidden from "./components/Hidden";
 import Inline from "./components/Inline";
 import Badge from "./components/Badge";
+import Spacer from "./components/Spacer";
 
 function App() {
   return (
@@ -20,12 +21,13 @@ function App() {
         <Badge tone="info">28</Badge>
         <Badge tone="success">28</Badge>
         <Badge tone="error">28</Badge>
+        <Spacer />
         <div>
           <Badge size="lg" tone="neutral" max={99}>
             {2238}
           </Badge>
           <Badge size="lg" tone="info">
-            New
+            1
           </Badge>
           <Badge size="lg" tone="success">
             28
@@ -34,6 +36,7 @@ function App() {
             28
           </Badge>
         </div>
+        <Spacer />
         <div>
           <Badge size="xl" tone="neutral" max={99}>
             {2238}

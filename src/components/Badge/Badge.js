@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import "./Badge.scss";
-
 function renderFormattedNumber(children, max) {
   let numberToShow = 0;
   let suffix = "";
@@ -31,6 +29,7 @@ function renderFormattedNumber(children, max) {
 export default function Badge({
   children,
   tone = "neutral",
+  isStrong = false,
   size = "md",
   tag: Tag = "span",
   max,
@@ -48,19 +47,24 @@ export default function Badge({
   return (
     <Tag
       data-badge
-      className={cx(className, {
+      className={cx(className, "display-inlineFlex", "radius-md", "px-xs", {
         "text-xs": size === "md",
         "text-sm": size === "lg",
         "text-md": size === "xl",
         "text-500": true,
-        "text-color-dark-gray": tone === "neutral",
-        "text-color-blue": tone === "info",
-        "text-color-green": tone === "success",
-        "text-color-red": tone === "error",
-        n20: tone === "neutral",
-        b50: tone === "info",
-        g50: tone === "success",
-        r50: tone === "error",
+        "text-color-dark-gray": tone === "neutral" && !isStrong,
+        "text-color-blue": tone === "info" && !isStrong,
+        "text-color-green": tone === "success" && !isStrong,
+        "text-color-red": tone === "error" && !isStrong,
+        "text-color-white": isStrong,
+        n30: tone === "neutral" && !isStrong,
+        b50: tone === "info" && !isStrong,
+        g50: tone === "success" && !isStrong,
+        r50: tone === "error" && !isStrong,
+        n400: tone === "neutral" && isStrong,
+        b600: tone === "info" && isStrong,
+        g600: tone === "success" && isStrong,
+        r600: tone === "error" && isStrong,
       })}
     >
       {contents}
@@ -76,7 +80,7 @@ Badge.propTypes = {
   max: PropTypes.number,
 
   /** Sets text and overall pill size */
-  size: PropTypes.oneOf(["md", "lg"]),
+  size: PropTypes.oneOf(["md", "lg", "xl"]),
 
   tone: PropTypes.oneOf(["neutral", "success", "error", "info"]),
 
