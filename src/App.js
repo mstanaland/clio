@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // import Divider from "./components/Divider";
 // import Box from "./components/Box";
@@ -12,10 +13,53 @@ import Placeholder from "./components/Placeholder";
 import Inline from "./components/Inline";
 import Badge from "./components/Badge";
 import Spacer from "./components/Spacer";
+import Spinner from "./components/Spinner";
+import Button from "./components/Button";
 
 function App() {
+  const [isSpinning, setSpinning] = useState(false);
   return (
     <Card>
+      <div>
+        <Spinner
+          size="xxs"
+          isSpinning={isSpinning}
+          onExit={() => console.log("done!")}
+        />
+        <Spinner
+          size="xs"
+          isSpinning={isSpinning}
+          onExit={() => console.log("done!")}
+        />
+        <Spinner
+          size="sm"
+          isSpinning={isSpinning}
+          onExit={() => console.log("done!")}
+        />
+        <Spinner
+          size="md"
+          isSpinning={isSpinning}
+          onExit={() => console.log("done!")}
+        />
+        <Spinner
+          size="lg"
+          isSpinning={isSpinning}
+          onExit={() => console.log("done!")}
+        />
+        <Spinner
+          size="xl"
+          isSpinning={isSpinning}
+          onExit={() => console.log("done!")}
+        />
+        <Spinner
+          size="xxl"
+          isSpinning={isSpinning}
+          onExit={() => console.log("done!")}
+        />
+      </div>
+      <Router>
+        <Button to="/">Change spinning</Button>
+      </Router>
       <div style={{ maxWidth: "100%" }}>
         <Badge tone="neutral">28</Badge>
         <Badge tone="info">28</Badge>

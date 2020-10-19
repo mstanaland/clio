@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+@keyframes rotateKeyframes {
+  to {
+    transform: rotate(0);
+  }
+  from {
+    transform: rotate(-360deg);
+  }
+}
+
+[data-spinner] {
+  pointer-events: none;
+
+  circle {
+    stroke-linecap: round;
+    stroke: $color-n50;
+    fill: transparent;
+    transform-origin: center;
+    animation: rotateKeyframes 800ms linear infinite;
+
+    &.white {
+      stroke: $color-n0;
+    }
+
+    &.brand {
+      stroke: $color-b600;
+    }
+  }
+}
