@@ -8,6 +8,6 @@
 
   line {
     stroke-width: rem(1);
-    stroke: rgba($color-n900, 0.15);
+    stroke: var(--color-button-icon-disabled);
   }
 }

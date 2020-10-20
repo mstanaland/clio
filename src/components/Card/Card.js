@@ -7,7 +7,7 @@ import { extractBoxClasses } from "../Box";
 
 export default function Card({
   children,
-  background = "n0",
+  background = "2",
   padding = "md",
   shadow = "md",
   borderRadius = "sm",

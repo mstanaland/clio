@@ -42,10 +42,3 @@ export const CollapseBelow = Template.bind({});
 CollapseBelow.args = {
   collapseBelow: "tablet",
 };
-
-export const Experiment = (args) => (
-  <Inline {...args} collapseBelow="desktop">
-    <div style={{ width: "100%" }}>Testing</div>
-    <div style={{ width: "100%" }}>Testing</div>
-  </Inline>
-);

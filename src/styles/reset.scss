@@ -87,9 +87,9 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 *,
 *:before,
@@ -110,8 +110,13 @@ nav,
 section {
   display: block;
 }
+html,
 body {
+  font-size: 14px;
   line-height: 1;
+  color: $color-text-dark;
+  font-family: $font-family-sans;
+  background-color: var(--color-background-1);
 }
 
 ol,
@@ -132,4 +137,9 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }

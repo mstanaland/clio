@@ -1,159 +1,184 @@
-.n900 {
-  background-color: $color-n900;
+.bg-1 {
+  background-color: var(--color-background-1);
+}
+.bg-2 {
+  background-color: var(--color-background-2);
+}
+.bg-3 {
+  background-color: var(--color-background-3);
+}
+.bg-4 {
+  background-color: var(--color-background-4);
+}
+.bg-5 {
+  background-color: var(--color-background-5);
+}
+.bg-danger {
+  background-color: var(--color-background-danger);
+}
+.bg-success {
+  background-color: var(--color-background-success);
+}
+.bg-info {
+  background-color: var(--color-background-info);
 }
 
-.n800 {
-  background-color: $color-n800;
-}
+// .n900 {
+//   background-color: $color-n900;
+// }
 
-.n700 {
-  background-color: $color-n700;
-}
+// .n800 {
+//   background-color: $color-n800;
+// }
 
-.n600 {
-  background-color: $color-n600;
-}
+// .n700 {
+//   background-color: $color-n700;
+// }
 
-.n500 {
-  background-color: $color-n500;
-}
+// .n600 {
+//   background-color: $color-n600;
+// }
 
-.n400 {
-  background-color: $color-n400;
-}
+// .n500 {
+//   background-color: $color-n500;
+// }
 
-.n300 {
-  background-color: $color-n300;
-}
+// .n400 {
+//   background-color: $color-n400;
+// }
 
-.n200 {
-  background-color: $color-n200;
-}
+// .n300 {
+//   background-color: $color-n300;
+// }
 
-.n100 {
-  background-color: $color-n100;
-}
+// .n200 {
+//   background-color: $color-n200;
+// }
 
-.n90 {
-  background-color: $color-n90;
-}
+// .n100 {
+//   background-color: $color-n100;
+// }
 
-.n80 {
-  background-color: $color-n80;
-}
+// .n90 {
+//   background-color: $color-n90;
+// }
 
-.n70 {
-  background-color: $color-n70;
-}
+// .n80 {
+//   background-color: $color-n80;
+// }
 
-.n60 {
-  background-color: $color-n60;
-}
+// .n70 {
+//   background-color: $color-n70;
+// }
 
-.n50 {
-  background-color: $color-n50;
-}
+// .n60 {
+//   background-color: $color-n60;
+// }
 
-.n40 {
-  background-color: $color-n40;
-}
+// .n50 {
+//   background-color: $color-n50;
+// }
 
-.n30 {
-  background-color: $color-n30;
-}
+// .n40 {
+//   background-color: $color-n40;
+// }
 
-.n20 {
-  background-color: $color-n20;
-}
+// .n30 {
+//   background-color: $color-n30;
+// }
 
-.n10 {
-  background-color: $color-n10;
-}
+// .n20 {
+//   background-color: $color-n20;
+// }
 
-.n0 {
-  background-color: $color-n0;
-}
+// .n10 {
+//   background-color: $color-n10;
+// }
 
-.r600 {
-  background-color: $color-r600;
-}
+// .n0 {
+//   background-color: $color-n0;
+// }
 
-.r500 {
-  background-color: $color-r500;
-}
+// .r600 {
+//   background-color: $color-r600;
+// }
 
-.r400 {
-  background-color: $color-r400;
-}
+// .r500 {
+//   background-color: $color-r500;
+// }
 
-.r300 {
-  background-color: $color-r300;
-}
+// .r400 {
+//   background-color: $color-r400;
+// }
 
-.r200 {
-  background-color: $color-r200;
-}
+// .r300 {
+//   background-color: $color-r300;
+// }
 
-.r100 {
-  background-color: $color-r100;
-}
+// .r200 {
+//   background-color: $color-r200;
+// }
 
-.r50 {
-  background-color: $color-r50;
-}
+// .r100 {
+//   background-color: $color-r100;
+// }
 
-.g600 {
-  background-color: $color-g600;
-}
+// .r50 {
+//   background-color: $color-r50;
+// }
 
-.g500 {
-  background-color: $color-g500;
-}
+// .g600 {
+//   background-color: $color-g600;
+// }
 
-.g400 {
-  background-color: $color-g400;
-}
+// .g500 {
+//   background-color: $color-g500;
+// }
 
-.g300 {
-  background-color: $color-g300;
-}
+// .g400 {
+//   background-color: $color-g400;
+// }
 
-.g200 {
-  background-color: $color-g200;
-}
+// .g300 {
+//   background-color: $color-g300;
+// }
 
-.g100 {
-  background-color: $color-g100;
-}
+// .g200 {
+//   background-color: $color-g200;
+// }
 
-.g50 {
-  background-color: $color-g50;
-}
+// .g100 {
+//   background-color: $color-g100;
+// }
 
-.b600 {
-  background-color: $color-b600;
-}
+// .g50 {
+//   background-color: $color-g50;
+// }
 
-.b500 {
-  background-color: $color-b500;
-}
+// .b600 {
+//   background-color: $color-b600;
+// }
 
-.b400 {
-  background-color: $color-b400;
-}
+// .b500 {
+//   background-color: $color-b500;
+// }
 
-.b300 {
-  background-color: $color-b300;
-}
+// .b400 {
+//   background-color: $color-b400;
+// }
 
-.b200 {
-  background-color: $color-b200;
-}
+// .b300 {
+//   background-color: $color-b300;
+// }
 
-.b100 {
-  background-color: $color-b100;
-}
+// .b200 {
+//   background-color: $color-b200;
+// }
 
-.b50 {
-  background-color: $color-b50;
-}
+// .b100 {
+//   background-color: $color-b100;
+// }
+
+// .b50 {
+//   background-color: $color-b50;
+// }

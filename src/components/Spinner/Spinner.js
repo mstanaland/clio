@@ -35,12 +35,12 @@ export default function Spinner({
   });
 
   const sizeInPixels = sizeInPxMap[size];
-  const strokeWidth = Math.min(Math.max(sizeInPixels * 0.06, 1.5), 2.5);
+  const strokeWidth = Math.min(Math.max(sizeInPixels * 0.0625, 1.5), 3);
 
   const r = sizeInPixels / 2 - strokeWidth;
   const circumference = Math.PI * 2 * (r - strokeWidth);
-  const dashLength = circumference * 0.92;
-  const gapLength = circumference * 0.08;
+  const dashLength = circumference * 0.9;
+  const gapLength = circumference * 0.1;
 
   return (
     <div
@@ -64,6 +64,7 @@ export default function Spinner({
                 className={cx({
                   white: color === "white",
                   brand: color === "brand",
+                  "dark-gray": color === "darkGray",
                 })}
                 strokeWidth={toRem(strokeWidth)}
                 r={r}
@@ -89,4 +90,6 @@ Spinner.propTypes = {
 
   /** Callback fired after spinner has completed the exit animation. */
   onExit: PropTypes.func,
+
+  color: PropTypes.oneOf(["white", "brand", "gray", "darkGray"]),
 };

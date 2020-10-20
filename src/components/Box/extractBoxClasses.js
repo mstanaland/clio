@@ -278,7 +278,7 @@ export default function extractBoxClasses(props) {
 
   // background
   if (Boolean(background)) {
-    classes[background] = true;
+    classes[`bg-${background}`] = true;
   }
 
   // borderColor

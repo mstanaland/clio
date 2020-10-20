@@ -1,0 +1,198 @@
+@import "../../styles/variables.scss";
+
+[data-button] {
+  outline: none; // handled by useFocusRing
+  appearance: none;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  width: auto;
+  text-decoration: none;
+  font-family: $font-family-sans;
+  border: 0;
+  cursor: pointer;
+  overflow: hidden;
+  background: transparent;
+  padding: 0;
+
+  &:focus {
+    z-index: 1;
+  }
+
+  .fit-container {
+    width: 100%;
+  }
+
+  // ========= Appearances ==============
+
+  &.base {
+    transform: scale(1);
+    transition: background-color 150ms ease-in-out, transform 75ms ease-in-out;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &.size-sm {
+      height: $sizer-sm;
+
+      .button-icon > svg {
+        width: rem(16);
+        height: rem(16);
+      }
+    }
+
+    &.size-md {
+      height: $sizer-md;
+
+      .button-icon > svg {
+        width: rem(16);
+        height: rem(16);
+      }
+    }
+
+    &.size-lg {
+      height: $sizer-lg;
+
+      .button-icon > svg {
+        width: rem(20);
+        height: rem(20);
+      }
+    }
+  }
+
+  &.default {
+    background-color: var(--color-button-background);
+    color: var(--color-button-text);
+
+    &:hover {
+      background-color: var(--color-button-background-hover);
+    }
+  }
+
+  &.primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+
+    &:active {
+      background-color: var(--color-primary-active);
+    }
+
+    .button-icon {
+      color: var(--color-text-white);
+      opacity: 0.8;
+    }
+  }
+
+  &.danger {
+    background-color: var(--color-danger);
+    color: $color-n0;
+
+    &:hover {
+      background-color: var(--color-danger-hover);
+    }
+
+    &:active {
+      background-color: var(--color-danger-active);
+    }
+
+    .button-icon {
+      color: var(--color-text-white);
+      opacity: 0.8;
+    }
+  }
+
+  &.subtle {
+    background-color: transparent;
+    color: var(--color-button-text);
+
+    &:hover {
+      background-color: var(--color-button-background);
+    }
+
+    &[disabled] {
+      background-color: transparent;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &.link {
+    color: var(--color-link);
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    .button-icon {
+      color: var(--color-link);
+      opacity: 0.75;
+    }
+
+    &[disabled] {
+      background: transparent;
+
+      &:hover {
+        background: transparent;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Keep disabled rule at the bottom because it overrides any other colors
+  // for buttons like primary and danger
+  &[disabled],
+  &[disabled]:hover {
+    background-color: var(--color-button-background-disabled);
+    color: var(--color-text-disabled) !important;
+    cursor: not-allowed !important;
+
+    .button-icon {
+      color: var(--color-button-icon-disabled);
+    }
+  }
+
+  // ========= Button inner components ==============
+
+  .spin-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .inner-wrap {
+    flex: 1 1 auto;
+    pointer-events: none;
+    align-self: center;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+
+    &.is-loading {
+      opacity: 0;
+    }
+  }
+
+  .button-icon {
+    color: var(--color-button-icon);
+
+    &.icon-left {
+      margin-right: rem(3);
+    }
+
+    &.icon-right {
+      margin-left: rem(3);
+    }
+  }
+}

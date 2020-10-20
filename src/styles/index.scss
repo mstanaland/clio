@@ -1,9 +1,10 @@
-@import "reset";
-
+@import "css-vars";
 @import "variables";
 
-@import "core/breakpoint-utils";
+@import "reset";
 
+@import "core/breakpoint-utils";
+@import "core/focus";
 @import "core/typography.scss";
 @import "core/responsive-props";
 @import "core/flex-wrap";

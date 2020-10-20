@@ -20,7 +20,7 @@ export default function Inline({
   children,
   space = "md",
   alignX = "left",
-  alignY = "top",
+  alignY = "center",
   collapseBelow: below,
 }) {
   const negativeSpace = mapSpaceToNegativeSpace(space);
@@ -48,7 +48,7 @@ export default function Inline({
   const [innerContainerClasses] = extractBoxClasses(innerContainerProps);
 
   return (
-    <div data-inline style={{ overflow: "hidden" }}>
+    <div data-inline>
       <div className={cx("flex-wrap", innerContainerClasses)}>
         {Children.map(children, (child) => {
           const itemProps = {
