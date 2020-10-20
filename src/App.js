@@ -94,7 +94,7 @@ function App() {
                     that improve automatically through experience. It is seen as
                     a subset of artificial intelligence.
                   </Text>
-                  <Stack space="md">
+                  <Stack space="sm">
                     <Inline>
                       <Button
                         appearance="primary"
