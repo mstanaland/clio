@@ -41,9 +41,9 @@ $justifyContent: (
   "spaceAround": space-around,
 );
 
-@each $breakpoint in map-keys($flex-grid-breakpoints) {
+@each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $flex-grid-breakpoints);
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     // Margins and Paddings
     @each $prop, $abbrev in (margin: m, padding: p) {

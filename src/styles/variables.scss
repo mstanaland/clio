@@ -1,5 +1,6 @@
 @import "utils/rem";
 @import "utils/px";
+@import "utils/grid-utils";
 
 // ======== COLORS ============
 
@@ -121,13 +122,13 @@ $shadow-xl: 0 25px 50px -12px var(--color-shadow-3),
 
 // Flex-Grid Breakpoints
 $breakpoint-xs: 0;
-$breakpoint-sm: 425px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
-$breakpoint-xl: 1600px;
+$breakpoint-sm: rem(425);
+$breakpoint-md: rem(768);
+$breakpoint-lg: rem(1024);
+$breakpoint-xl: rem(1600);
 
 // Minimum dimensions at which your layout will change
-$flex-grid-breakpoints: (
+$grid-breakpoints: (
   xs: $breakpoint-xs,
   sm: $breakpoint-sm,
   md: $breakpoint-md,
@@ -135,9 +136,9 @@ $flex-grid-breakpoints: (
   xl: $breakpoint-xl,
 ) !default;
 
-// ======== SPACING ============
+// ======== SPACING & GUTTERS ============
 
-$global-spacer: 4px;
+$global-spacer: rem(4);
 $spacer-xxs: $global-spacer;
 $spacer-xs: $global-spacer * 2;
 $spacer-sm: $global-spacer * 3;
@@ -156,6 +157,13 @@ $spacers: (
   xl: $spacer-xl,
   xxl: $spacer-xxl,
 );
+
+$gutters: $spacers !default;
+
+// =========== GRID ==========
+$grid-columns: 12 !default;
+$grid-gutter-width: $spacer-md !default;
+$grid-row-columns: 6 !default;
 
 // ======== SIZES ============
 

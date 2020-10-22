@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 export const tShirtType = PropTypes.oneOf([
+  "none",
   "xxs",
   "xs",
   "sm",

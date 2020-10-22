@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { MdStar, MdDelete } from "react-icons/md";
+import { MdStar } from "react-icons/md";
 
 import { ThemeProvider, DarkToggle } from "./theme";
 
@@ -18,6 +18,7 @@ import Badge from "./components/Badge";
 import Spacer from "./components/Spacer";
 import Spinner from "./components/Spinner";
 import Button from "./components/Button";
+import { Row, Column } from "./components/Grid";
 
 function App() {
   const [isSpinning, setSpinning] = useState(false);
@@ -272,6 +273,20 @@ function App() {
               <Spinner size="xxl" isSpinning={isSpinning} />
             </div>
             <Divider />
+            <Row gutter="md">
+              <Column width="2">
+                <Placeholder height={30} />
+              </Column>
+              <Column width="2">
+                <Placeholder width={"100%"} height={50} />
+              </Column>
+              <Column width="2">
+                <Placeholder height={100} />
+              </Column>
+              <Column width="2">
+                <Placeholder height={30} />
+              </Column>
+            </Row>
 
             <div style={{ maxWidth: "100%" }}>
               <Badge tone="neutral">28</Badge>
@@ -294,6 +309,7 @@ function App() {
                 </Badge>
               </div>
               <Spacer />
+
               <div>
                 <Badge size="xl" tone="neutral" max={99}>
                   {2238}

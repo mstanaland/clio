@@ -1,9 +1,10 @@
-// @import "css-vars";
+@import "css-vars";
 @import "variables";
 
 @import "reset";
 
 @import "core/breakpoint-utils";
+@import "core/grid";
 @import "core/focus";
 @import "core/typography.scss";
 @import "core/responsive-props";

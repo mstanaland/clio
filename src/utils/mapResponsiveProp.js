@@ -32,7 +32,7 @@ export const normalizeResponsiveProp = (value) => {
 };
 
 export default function mapResponsiveProp(value, valueMap) {
-  if (value === undefined) {
+  if (!Boolean(value)) {
     return value;
   }
 
@@ -41,7 +41,17 @@ export default function mapResponsiveProp(value, valueMap) {
     return valueMap[value];
   }
 
-  const [sm, md, lg, xl] = normalizeResponsiveProp(value);
+  if (Array.isArray(value)) {
+    const [sm, md, lg, xl] = value;
 
-  return [valueMap[sm], valueMap[md], valueMap[lg], valueMap[xl]];
+    const arrayValues = [];
+
+    arrayValues.push(valueMap[sm]);
+
+    Boolean(md) && arrayValues.push(valueMap[md]);
+    Boolean(lg) && arrayValues.push(valueMap[lg]);
+    Boolean(xl) && arrayValues.push(valueMap[xl]);
+
+    return arrayValues;
+  }
 }
