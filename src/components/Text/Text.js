@@ -28,7 +28,7 @@ export default function Text({
   return (
     <Tag
       data-text
-      className={cx(className, "text", {
+      className={cx(className, {
         "text-xs": size === "xs",
         "text-sm": size === "sm",
         "text-md": size === "md",

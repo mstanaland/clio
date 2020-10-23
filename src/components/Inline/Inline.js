@@ -48,7 +48,7 @@ export default function Inline({
   const [innerContainerClasses] = extractBoxClasses(innerContainerProps);
 
   return (
-    <div data-inline style={{ overflowX: "hidden" }}>
+    <div data-inline>
       <div className={cx("flex-wrap", innerContainerClasses)}>
         {Children.map(children, (child) => {
           const itemProps = {

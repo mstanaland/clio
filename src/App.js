@@ -5,30 +5,35 @@ import { MdStar } from "react-icons/md";
 import { ThemeProvider, DarkToggle } from "./theme";
 
 import Divider from "./components/Divider";
-import Box from "./components/Box";
+// import Box from "./components/Box";
 import Card from "./components/Card";
 import Placeholder from "./components/Placeholder";
 import Stack from "./components/Stack";
-import Heading, { HeadingSection } from "./components/Heading";
+import Heading from "./components/Heading";
+// import Heading, { HeadingSection } from "./components/Heading";
 import Text from "./components/Text";
 import TextBlock from "./components/TextBlock";
-import Hidden from "./components/Hidden";
+// import Hidden from "./components/Hidden";
 import Inline from "./components/Inline";
 import Badge from "./components/Badge";
 import Spacer from "./components/Spacer";
 import Spinner from "./components/Spinner";
 import Button from "./components/Button";
 import { Row, Column } from "./components/Grid";
+import ContentBlock from "./components/ContentBlock";
+import Checkbox from "./components/Checkbox";
 
 function App() {
   const [isSpinning, setSpinning] = useState(false);
+
   return (
     <Router>
       <ThemeProvider>
-        <div className="p-xl">
+        <ContentBlock>
           <Stack>
             <DarkToggle />
             <Divider />
+
             <Stack space="xs">
               <Heading size="xxl">Heading xxl</Heading>
               <Heading size="xl">Heading xl</Heading>
@@ -273,39 +278,53 @@ function App() {
               <Spinner size="xxl" isSpinning={isSpinning} />
             </div>
             <Divider />
-            <Row gutter="md">
-              <Column width="2">
+
+            <Row gutter="md" alignY={["top", "bottom", "center"]}>
+              <Column>
+                <Placeholder height={50} />
+              </Column>
+              <Column>
                 <Placeholder height={30} />
               </Column>
-              <Column width="2">
-                <Placeholder width={"100%"} height={50} />
-              </Column>
-              <Column width="2">
+              <Column>
                 <Placeholder height={100} />
               </Column>
-              <Column width="2">
+              <Column>
                 <Placeholder height={30} />
               </Column>
             </Row>
 
+            <Stack space="xxs">
+              <Checkbox label="Apples" />
+              <Checkbox label="Oranges" />
+              <Checkbox label="Bananas" />
+              <Checkbox isLabelVisible={false} label="Hidden label" />
+              <Checkbox label="Strawberries (indeterminate)" isIndeterminate />
+              <Checkbox
+                label="Plums (indeterminate + Disabled)"
+                isDisabled
+                isIndeterminate
+              />
+              <Checkbox label="Peaches (Disabled)" isDisabled />
+              <Checkbox
+                id="watching-tv"
+                label="Kiwis (Disabled + Checked)"
+                value="watching-tv"
+                isDisabled
+                isChecked
+              />
+            </Stack>
+
             <div style={{ maxWidth: "100%" }}>
               <Badge tone="neutral">28</Badge>
-              <Badge tone="info">28</Badge>
-              <Badge tone="success">28</Badge>
-              <Badge tone="error">28</Badge>
+              <Badge tone="danger">28</Badge>
               <Spacer />
               <div>
                 <Badge size="lg" tone="neutral" max={99}>
                   {2238}
                 </Badge>
-                <Badge size="lg" tone="info">
-                  1
-                </Badge>
-                <Badge size="lg" tone="success">
-                  28
-                </Badge>
-                <Badge size="lg" tone="error">
-                  28
+                <Badge size="lg" tone="danger">
+                  {2238}
                 </Badge>
               </div>
               <Spacer />
@@ -314,19 +333,13 @@ function App() {
                 <Badge size="xl" tone="neutral" max={99}>
                   {2238}
                 </Badge>
-                <Badge size="xl" tone="info">
-                  New
-                </Badge>
-                <Badge size="xl" tone="success">
-                  28
-                </Badge>
-                <Badge size="xl" tone="error">
+                <Badge size="xl" tone="danger">
                   28
                 </Badge>
               </div>
             </div>
           </Stack>
-        </div>
+        </ContentBlock>
       </ThemeProvider>
     </Router>
   );

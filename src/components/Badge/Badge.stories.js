@@ -30,14 +30,9 @@ export const Tones = (args) => (
     <Badge {...args} tone="neutral">
       Neutral
     </Badge>
-    <Badge {...args} tone="info">
-      Info
-    </Badge>
-    <Badge {...args} tone="error">
-      Error
-    </Badge>
-    <Badge {...args} tone="success">
-      Success
+
+    <Badge {...args} tone="danger">
+      Danger
     </Badge>
   </Inline>
 );

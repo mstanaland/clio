@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { useButton } from "@react-aria/button";
 import { useFocusRing } from "@react-aria/focus";
@@ -9,7 +9,7 @@ import Spinner from "../Spinner";
 
 import "./Button.scss";
 
-export default function Button(props) {
+export const Button = forwardRef(function Button(props, forwardedRef) {
   const {
     children,
     type = "button",
@@ -42,7 +42,8 @@ export default function Button(props) {
   }
 
   const isNativeButton = !Boolean(to) || !Boolean(href);
-  const buttonRef = useRef();
+  const internalRef = useRef();
+  const buttonRef = forwardedRef || internalRef;
 
   const ButtonElement = getTag();
 
@@ -107,7 +108,9 @@ export default function Button(props) {
         />
       </span>
       <span
-        className={cx("inner-wrap flex-centered", { "is-loading": isLoading })}
+        className={cx("inner-wrap flex-centered", {
+          "is-loading": isLoading,
+        })}
       >
         {iconBeforeElement && (
           <span
@@ -131,4 +134,4 @@ export default function Button(props) {
       </span>
     </ButtonElement>
   );
-}
+});

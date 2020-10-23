@@ -1,6 +1,7 @@
 @import "utils/rem";
 @import "utils/px";
 @import "utils/grid-utils";
+@import "utils/hide-input";
 
 // ======== COLORS ============
 
@@ -124,7 +125,7 @@ $shadow-xl: 0 25px 50px -12px var(--color-shadow-3),
 $breakpoint-xs: 0;
 $breakpoint-sm: rem(425);
 $breakpoint-md: rem(768);
-$breakpoint-lg: rem(1024);
+$breakpoint-lg: rem(1025);
 $breakpoint-xl: rem(1600);
 
 // Minimum dimensions at which your layout will change

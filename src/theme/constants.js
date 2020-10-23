@@ -19,6 +19,10 @@ export const COLORS = {
     light: "#dfe1e6",
     dark: "#3d4853",
   },
+  "background-neutral": {
+    light: "#E4E7EB",
+    dark: "#405370",
+  },
   "text-1": {
     light: "#091e42",
     dark: "#FAFBFC",

@@ -1,7 +1,7 @@
 import React from "react";
 import { MdStar } from "react-icons/md";
 
-import Button from "./Button";
+import Button from "./index";
 import Inline from "../Inline";
 import Stack from "../Stack";
 

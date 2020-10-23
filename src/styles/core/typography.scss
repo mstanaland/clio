@@ -178,17 +178,13 @@ code {
   letter-spacing: 0.02em;
 }
 
-.text,
-.text-color-black {
-  color: var(--color-text-1);
-}
-
 .text-xs {
   $size: ceil($base-font-size / ($type-scale-sm * $type-scale-sm));
   $height: roundToBaseline($size * $text-line-height);
 
   font-size: rem($size);
   line-height: rem($height);
+  color: var(--color-text-1);
 }
 
 .text-sm {
@@ -197,6 +193,7 @@ code {
 
   font-size: rem($size);
   line-height: rem($height);
+  color: var(--color-text-1);
 }
 
 .text-md {
@@ -205,6 +202,7 @@ code {
 
   font-size: rem($size);
   line-height: rem($height);
+  color: var(--color-text-1);
 }
 
 .text-lg {
@@ -213,6 +211,7 @@ code {
 
   font-size: rem($size);
   line-height: rem($height);
+  color: var(--color-text-1);
 }
 
 .text-xl {
@@ -221,6 +220,12 @@ code {
 
   font-size: rem($size);
   line-height: rem($height);
+  color: var(--color-text-1);
+}
+
+.text,
+.text-color-black {
+  color: var(--color-text-1);
 }
 
 .text-color-dark-gray {

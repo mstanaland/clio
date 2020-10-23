@@ -50,6 +50,15 @@ export default function Row({
   );
 }
 
+const alignYType = PropTypes.oneOf(["top", "center", "bottom"]);
+const alignXType = PropTypes.oneOf([
+  "left",
+  "center",
+  "right",
+  "spaceBetween",
+  "spaceAround",
+]);
+
 Row.propTypes = {
   /** Expected to be one or more <Column>'s */
   children: PropTypes.node,
@@ -64,16 +73,10 @@ Row.propTypes = {
   gutterY: tShirtType,
 
   /** Horizontal alignment of columns *IF* columns do not fill the entire horizontal space */
-  alignX: PropTypes.oneOf([
-    "left",
-    "center",
-    "right",
-    "spaceBetween",
-    "spaceAround",
-  ]),
+  alignX: PropTypes.oneOfType([alignXType, PropTypes.arrayOf(alignXType)]),
 
   /** Vertical alignment of columns *IF* the columns are different heights */
-  alignY: PropTypes.oneOf(["top", "center", "bottom"]),
+  alignY: PropTypes.oneOfType([alignYType, PropTypes.arrayOf(alignYType)]),
 
   /** Additional class added to the div */
   className: PropTypes.string,

@@ -1,3 +1,7 @@
 .focus {
   box-shadow: 0 0 0 rem(2) var(--color-focus) !important;
 }
+
+.focus-outline {
+  outline: solid rem(2) var(--color-focus) !important;
+}

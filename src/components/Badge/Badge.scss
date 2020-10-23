@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+[data-badge] {
+  line-height: 1.333333;
+  border-radius: 2em;
+  padding-left: rem(6);
+  padding-right: rem(6);
+  min-width: $sizer-xs;
+}

@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 
+import Checkbox from "../components/Checkbox";
+
 import { ThemeContext } from "./ThemeProvider";
 
 export default function DarkToggle() {
@@ -11,18 +13,13 @@ export default function DarkToggle() {
 
   return (
     <div>
-      <input
-        id="dark-toggle-input"
-        type="checkbox"
-        checked={colorMode === "dark"}
+      <Checkbox
+        isChecked={colorMode === "dark"}
+        label="Dark"
         onChange={(event) => {
           setColorMode(event.target.checked ? "dark" : "light");
         }}
       />
-      <label htmlFor="dark-toggle-input" className="text text-md">
-        {" "}
-        Dark
-      </label>
     </div>
   );
 }
