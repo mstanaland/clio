@@ -1,9 +1,9 @@
 import React, { forwardRef, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import { FocusRing } from "@react-aria/focus";
+import { useFocusRing } from "@react-aria/focus";
 
-import { Check, Dash } from "./Mark";
+import { check, dash } from "./marks";
 import { useId } from "../../hooks";
 
 import "./Checkbox.scss";
@@ -29,12 +29,13 @@ export const Checkbox = forwardRef(function Checkbox(props, forwardedRef) {
   const id = useId(userId);
   const internalRef = useRef();
   const inputRef = forwardedRef || internalRef;
+  const { isFocusVisible, focusProps } = useFocusRing();
 
   useEffect(() => {
     inputRef.current.indeterminate = isIndeterminate;
   }, [inputRef, isIndeterminate]);
 
-  const mark = isIndeterminate ? <Dash /> : <Check />;
+  const mark = isIndeterminate ? dash : check;
 
   return (
     <label
@@ -44,25 +45,27 @@ export const Checkbox = forwardRef(function Checkbox(props, forwardedRef) {
         disabled: isDisabled,
       })}
     >
-      <FocusRing autoFocus={autoFocus} focusRingClass="has-focus">
-        <input
-          className={cx({
-            indeterminate: isIndeterminate,
-          })}
-          ref={inputRef}
-          type="checkbox"
-          id={id}
-          name={name}
-          disabled={isDisabled}
-          required={isRequired}
-          checked={isChecked && !isIndeterminate}
-          defaultChecked={isDefaultChecked}
-          onChange={onChange}
-          value={value}
-          {...rest}
-        />
-      </FocusRing>
-      <span data-checkbox-box>{mark}</span>
+      <input
+        className={cx({
+          indeterminate: isIndeterminate,
+          "has-focus": isFocusVisible,
+        })}
+        {...focusProps}
+        ref={inputRef}
+        type="checkbox"
+        id={id}
+        name={name}
+        disabled={isDisabled}
+        required={isRequired}
+        checked={isChecked && !isIndeterminate}
+        defaultChecked={isDefaultChecked}
+        onChange={onChange}
+        value={value}
+        {...rest}
+      />
+      <span aria-hidden data-checkbox-box>
+        {mark}
+      </span>
       {isLabelVisible ? (
         <span data-checkbox-label>{label}</span>
       ) : (
