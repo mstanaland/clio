@@ -1,7 +1,7 @@
 import React, { forwardRef, useCallback, useEffect } from "react";
 // import PropTypes from "prop-types";
 import cx from "classnames";
-import { MdCheckCircle, MdClose } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 
 import { Row, Column } from "../Grid";
 import { IconButton } from "../Button";
@@ -38,7 +38,7 @@ export const Toast = forwardRef(function Toast(props, forwardedRef) {
     id,
     message,
     description,
-    type = "success",
+    type,
     onClear = () => {},
     // action,
     dedupeKey,
@@ -75,21 +75,30 @@ export const Toast = forwardRef(function Toast(props, forwardedRef) {
         <IconButton size="xs" iconElement={<MdClose />} onPress={remove} />
       </div>
       <Row alignY="center">
-        <Column width="content">
-          <div data-toast-icon-wrap className={cx(type)}>
-            {type === "success" && checkIcon}
-            {type === "error" && exclamationIcon}
-          </div>
-        </Column>
-        <Column width="fluid">
-          <div data-toast-message className="text-md text-600">
-            {message}
-          </div>
-          {Boolean(description) && (
-            <div data-toast-description className="text-md">
-              {description}
+        {type && (
+          <Column width="content">
+            <div data-toast-icon-wrap className={cx(type)}>
+              {type === "success" && checkIcon}
+              {type === "error" && exclamationIcon}
             </div>
-          )}
+          </Column>
+        )}
+
+        <Column width="fluid">
+          <div
+            className={cx({
+              "pl-xs": !type,
+            })}
+          >
+            <div data-toast-message className="text-md text-600">
+              {message}
+            </div>
+            {Boolean(description) && (
+              <div data-toast-description className="text-md">
+                {description}
+              </div>
+            )}
+          </div>
         </Column>
       </Row>
     </div>

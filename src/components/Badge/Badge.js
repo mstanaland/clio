@@ -52,9 +52,9 @@ export default function Badge({
         "text-xs": size === "md",
         "text-sm": size === "lg",
         "text-md": size === "xl",
-        "text-color-white": tone === "danger",
+        "text-color-white": tone === "critical",
         "bg-neutral": tone === "neutral",
-        "bg-danger": tone === "danger",
+        "bg-critical": tone === "critical",
       })}
     >
       {contents}
@@ -72,7 +72,7 @@ Badge.propTypes = {
   /** Sets text and overall pill size */
   size: PropTypes.oneOf(["md", "lg", "xl"]),
 
-  tone: PropTypes.oneOf(["neutral", "danger"]),
+  tone: PropTypes.oneOf(["neutral", "critical"]),
 
   /** Additional class */
   className: PropTypes.string,

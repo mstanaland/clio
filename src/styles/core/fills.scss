@@ -13,17 +13,14 @@
 .bg-5 {
   background-color: var(--color-background-5);
 }
-.bg-danger {
-  background-color: var(--color-danger);
+.bg-critical {
+  background-color: var(--color-r700);
 }
 .bg-success {
-  background-color: var(--color-background-success);
-}
-.bg-info {
-  background-color: var(--color-background-info);
+  background-color: var(--color-g200);
 }
 .bg-neutral {
-  background-color: var(--color-background-neutral);
+  background-color: var(--color-n200);
 }
 
 // .n900 {

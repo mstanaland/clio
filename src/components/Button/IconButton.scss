@@ -106,16 +106,16 @@
     }
   }
 
-  &.danger {
-    background-color: var(--color-danger);
+  &.critical {
+    background-color: var(--color-critical);
     color: $color-n0;
 
     @include hover {
-      background-color: var(--color-danger-hover);
+      background-color: var(--color-critical-hover);
     }
 
     &:active {
-      background-color: var(--color-danger-active);
+      background-color: var(--color-critical-active);
     }
 
     .button-icon {
@@ -151,7 +151,7 @@
   }
 
   // Keep disabled rule at the bottom because it overrides any other colors
-  // for buttons like primary and danger
+  // for buttons like primary and critical
   &[disabled] {
     background-color: var(--color-button-background-disabled);
     color: var(--color-text-disabled) !important;

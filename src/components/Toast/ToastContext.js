@@ -1,3 +1,8 @@
+/**
+ * Adapted from Braid Design System. MIT License
+ * https://github.com/seek-oss/braid-design-system
+ */
+
 import React, {
   useContext,
   createContext,

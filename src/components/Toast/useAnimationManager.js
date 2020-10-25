@@ -1,11 +1,24 @@
 // cSpell:ignore transitionend
 
+/**
+ * Adapted from Braid Design System. MIT License
+ * https://github.com/seek-oss/braid-design-system
+ */
+
 import { useMemo, useCallback, useLayoutEffect } from "react";
 
 const entranceTransition = "transform 150ms ease-in, opacity 250ms ease-in";
 const exitTransition = "opacity 200ms ease-out";
 const animationTimeout = 3000;
 
+/**
+ * Takes an object containing the element, desired transitions, and call backs
+ * and applies those transition properties and styles to the element directly.
+ *
+ * Generally, when a toast is added or removed, every toast in the toaster has its
+ * translateY value change and we transition to that new value so it appears that the
+ * vertical stack slides up and down
+ */
 function animate({ element, transforms, transition, isRemove, callback }) {
   const fallbackTimeout = setTimeout(() => {
     if (callback) {
@@ -51,18 +64,27 @@ function animate({ element, transforms, transition, isRemove, callback }) {
   });
 }
 
-export const useFlipList = () => {
+/**
+ * Hook used in Toaster to key track of the individual toast refs and their positions
+ * so they can be animated in and out
+ */
+export const useAnimationManager = () => {
+  // Map to track ref for each toast
   const refs = useMemo(() => new Map(), []);
+  // Map to track boundingClientRect.top for each toast
   const positions = useMemo(() => new Map(), []);
 
   useLayoutEffect(() => {
     const animations = [];
 
+    // Convert ref map to array and iterate over each ref
     Array.from(refs.entries()).forEach(([id, element]) => {
       if (element) {
+        // Get the previous top position from map, and then get the new top position
         const prevTop = positions.get(id);
         const { top, height } = element.getBoundingClientRect();
 
+        // Construct the animation description object for the animate func
         if (typeof prevTop === "number" && prevTop !== top) {
           // Move animation
           animations.push({
@@ -93,18 +115,19 @@ export const useFlipList = () => {
           });
         }
 
-        // ****** Do we really need to get the rect again here ???????? **************
-        positions.set(id, element.getBoundingClientRect().top);
+        positions.set(id, top);
       } else {
         refs.delete(id);
       }
     });
 
+    // call the animate func for each toast item
     animations.forEach((item) => {
       animate(item);
     });
   });
 
+  // remove handler
   const remove = useCallback(
     (id, callback) => {
       const element = refs.get(id);

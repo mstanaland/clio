@@ -2,11 +2,11 @@ import React, { useCallback } from "react";
 import { animated } from "react-spring";
 
 import { Toast } from "./Toast";
-import { useFlipList } from "./useFlipList";
+import { useAnimationManager } from "./useAnimationManager";
 import "./Toaster.scss";
 
 export default function Toaster({ toasts, removeToast }) {
-  const { itemRef, remove } = useFlipList();
+  const { itemRef, remove } = useAnimationManager();
 
   const onClear = useCallback(
     (dedupeKey, id) => {

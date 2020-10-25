@@ -23,7 +23,7 @@
   background-color: var(--color-n800);
   max-width: rem(400);
   padding: $spacer-xs;
-  padding-right: rem(24);
+  padding-right: $spacer-lg;
   pointer-events: auto;
   animation: toast-in 300ms;
 
@@ -48,11 +48,11 @@
     }
 
     &.success {
-      background-color: $color-g400;
+      background-color: $color-g-accent;
     }
 
     &.error {
-      background-color: $color-r400;
+      background-color: $color-r-accent;
     }
   }
 

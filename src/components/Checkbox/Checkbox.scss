@@ -62,10 +62,10 @@
 
   input:checked + [data-checkbox-box],
   input.indeterminate + [data-checkbox-box] {
-    border-color: var(--color-primary);
+    border-color: var(--color-g700);
 
     &:before {
-      background-color: var(--color-primary);
+      background-color: var(--color-g700);
       transform: scale(1);
     }
 

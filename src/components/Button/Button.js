@@ -57,7 +57,7 @@ export const Button = forwardRef(function Button(props, forwardedRef) {
 
   switch (appearance) {
     case "primary":
-    case "danger": {
+    case "critical": {
       spinnerColor = "white";
       break;
     }
@@ -92,20 +92,24 @@ export const Button = forwardRef(function Button(props, forwardedRef) {
         active: isPressed,
         default: appearance === "default",
         primary: appearance === "primary",
+        secondary: appearance === "secondary",
         subtle: appearance === "subtle",
-        danger: appearance === "danger",
+        critical: appearance === "critical",
         link: appearance === "link",
         "fit-container": shouldFitContainer,
       })}
       {...rest}
     >
-      <span className="spin-wrap flex-centered">
-        <Spinner
-          isSpinning={isLoading}
-          size={spinnerSize}
-          color={isDisabled ? "gray" : spinnerColor}
-        />
-      </span>
+      {isLoading && (
+        <span className="spin-wrap flex-centered">
+          <Spinner
+            isSpinning={isLoading}
+            size={spinnerSize}
+            color={isDisabled ? "gray" : spinnerColor}
+          />
+        </span>
+      )}
+
       <span
         className={cx("inner-wrap flex-centered", {
           "is-loading": isLoading,
@@ -141,7 +145,8 @@ Button.propTypes = {
   appearance: PropTypes.oneOf([
     "default",
     "primary",
-    "danger",
+    "secondary",
+    "critical",
     "subtle",
     "link",
   ]),

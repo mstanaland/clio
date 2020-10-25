@@ -66,7 +66,7 @@ export const IconButton = forwardRef(function IconButton(props, forwardedRef) {
         default: appearance === "default",
         primary: appearance === "primary",
         subtle: appearance === "subtle",
-        danger: appearance === "danger",
+        critical: appearance === "critical",
         link: appearance === "link",
       })}
       {...rest}
@@ -84,7 +84,7 @@ IconButton.propTypes = {
   appearance: PropTypes.oneOf([
     "default",
     "primary",
-    "danger",
+    "critical",
     "subtle",
     "link",
   ]),

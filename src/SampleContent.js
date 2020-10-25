@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { MdStar } from "react-icons/md";
 
 import Divider from "./components/Divider";
@@ -14,7 +14,7 @@ import TextBlock from "./components/TextBlock";
 import Inline from "./components/Inline";
 import Badge from "./components/Badge";
 import Spacer from "./components/Spacer";
-import Spinner from "./components/Spinner";
+import Spinner, { SpinnerWithStatus } from "./components/Spinner";
 import Button, { IconButton } from "./components/Button";
 import { Row, Column } from "./components/Grid";
 import Checkbox from "./components/Checkbox";
@@ -22,7 +22,9 @@ import Toast, { useToast } from "./components/Toast";
 
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
+  const [spinningStatus, setSpinningStatus] = useState("idle");
   const showToast = useToast();
+  const timer = useRef();
 
   function onSuccessToastClick() {
     showToast({
@@ -38,6 +40,46 @@ export default function SampleContent() {
       message: "Ummm ... that didn‘t work",
     });
   }
+
+  const simulateLoadingSuccess = () => {
+    if (spinningStatus !== "spinning") {
+      clearTimeout(timer.current);
+      setSpinningStatus("spinning");
+
+      timer.current = setTimeout(() => {
+        setSpinningStatus("success");
+        showToast({
+          type: "success",
+          message: "Loading spinner with status is done",
+        });
+      }, 2000);
+    }
+    if (spinningStatus === "spinning") {
+      console.log("clearTimeout");
+      clearTimeout(timer.current);
+      setSpinningStatus("idle");
+    }
+  };
+
+  const simulateLoadingError = () => {
+    if (spinningStatus !== "spinning") {
+      clearTimeout(timer.current);
+      setSpinningStatus("spinning");
+
+      timer.current = setTimeout(() => {
+        setSpinningStatus("error");
+        showToast({
+          type: "error",
+          message: "Loading spinner with status is done",
+        });
+      }, 2000);
+    }
+    if (spinningStatus === "spinning") {
+      console.log("clearTimeout");
+      clearTimeout(timer.current);
+      setSpinningStatus("idle");
+    }
+  };
 
   return (
     <Stack>
@@ -187,14 +229,14 @@ export default function SampleContent() {
                 <Button
                   appearance="primary"
                   size="sm"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Primary Button
                 </Button>
                 <Button
                   appearance="primary"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Primary Button
@@ -202,7 +244,7 @@ export default function SampleContent() {
                 <Button
                   appearance="primary"
                   size="lg"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Primary Button
@@ -210,10 +252,38 @@ export default function SampleContent() {
               </Inline>
               <Inline>
                 <Button
+                  appearance="secondary"
+                  size="sm"
+                  iconBeforeElement={<MdStar />}
+                  // isLoading={isSpinning}
+                  onPress={() => setSpinning((prev) => !prev)}
+                >
+                  Secondary Button
+                </Button>
+                <Button
+                  appearance="secondary"
+                  iconBeforeElement={<MdStar />}
+                  // isLoading={isSpinning}
+                  onPress={() => setSpinning((prev) => !prev)}
+                >
+                  Secondary Button
+                </Button>
+                <Button
+                  appearance="secondary"
+                  size="lg"
+                  iconBeforeElement={<MdStar />}
+                  // isLoading={isSpinning}
+                  onPress={() => setSpinning((prev) => !prev)}
+                >
+                  Secondary Button
+                </Button>
+              </Inline>
+              <Inline>
+                <Button
                   iconBeforeElement={<MdStar />}
                   appearance="primary"
                   size="sm"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   With Icon
@@ -221,7 +291,7 @@ export default function SampleContent() {
                 <Button
                   iconBeforeElement={<MdStar />}
                   appearance="primary"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   With Icon
@@ -230,7 +300,7 @@ export default function SampleContent() {
                   iconBeforeElement={<MdStar />}
                   appearance="primary"
                   size="lg"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   With Icon
@@ -239,20 +309,20 @@ export default function SampleContent() {
               <Inline>
                 <Button
                   size="sm"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Default Button
                 </Button>
                 <Button
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Default Button
                 </Button>
                 <Button
                   size="lg"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Default Button
@@ -263,14 +333,14 @@ export default function SampleContent() {
                 <Button
                   appearance="subtle"
                   size="sm"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Subtle Button
                 </Button>
                 <Button
                   appearance="subtle"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Subtle Button
@@ -278,7 +348,7 @@ export default function SampleContent() {
                 <Button
                   appearance="subtle"
                   size="lg"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Subtle Button
@@ -286,41 +356,41 @@ export default function SampleContent() {
               </Inline>
               <Inline>
                 <Button
-                  appearance="danger"
+                  appearance="critical"
                   size="sm"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
-                  Danger Button
+                  Critical Button
                 </Button>
                 <Button
-                  appearance="danger"
-                  isLoading={isSpinning}
+                  appearance="critical"
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
-                  Danger Button
+                  Critical Button
                 </Button>
                 <Button
-                  appearance="danger"
+                  appearance="critical"
                   size="lg"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
-                  Danger Button
+                  Critical Button
                 </Button>
               </Inline>
               <Inline>
                 <Button
                   appearance="link"
                   size="sm"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Link Button
                 </Button>
                 <Button
                   appearance="link"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Link Button
@@ -328,7 +398,7 @@ export default function SampleContent() {
                 <Button
                   appearance="link"
                   size="lg"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Link Button
@@ -339,7 +409,7 @@ export default function SampleContent() {
                   appearance="link"
                   iconBeforeElement={<MdStar />}
                   size="sm"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Link Button
@@ -356,7 +426,7 @@ export default function SampleContent() {
                   appearance="link"
                   iconBeforeElement={<MdStar />}
                   size="lg"
-                  isLoading={isSpinning}
+                  // isLoading={isSpinning}
                   onPress={() => setSpinning((prev) => !prev)}
                 >
                   Link Button
@@ -379,13 +449,22 @@ export default function SampleContent() {
       <Divider />
       <div>
         <Heading size="sm">Spinner sizes (click buttons above)</Heading>
-        <Spinner size="xxs" isSpinning={isSpinning} />
+        {/* <Spinner size="xxs" isSpinning={isSpinning} />
         <Spinner size="xs" isSpinning={isSpinning} />
         <Spinner size="sm" isSpinning={isSpinning} />
         <Spinner size="md" isSpinning={isSpinning} />
         <Spinner size="lg" isSpinning={isSpinning} />
-        <Spinner size="xl" isSpinning={isSpinning} />
-        <Spinner size="xxl" isSpinning={isSpinning} />
+        <Spinner size="xl" isSpinning={isSpinning} /> */}
+      </div>
+
+      <div>
+        <Inline>
+          <Button onPress={simulateLoadingSuccess}>Spinner then success</Button>
+          <Button onPress={simulateLoadingError}>Spinner then error</Button>
+        </Inline>
+        <div>
+          <SpinnerWithStatus size="md" status={spinningStatus} />
+        </div>
       </div>
       <Divider />
 
@@ -427,13 +506,13 @@ export default function SampleContent() {
 
       <div style={{ maxWidth: "100%" }}>
         <Badge tone="neutral">28</Badge>
-        <Badge tone="danger">28</Badge>
+        <Badge tone="critical">28</Badge>
         <Spacer />
         <div>
           <Badge size="lg" tone="neutral" max={99}>
             {2238}
           </Badge>
-          <Badge size="lg" tone="danger">
+          <Badge size="lg" tone="critical">
             {2238}
           </Badge>
         </div>
@@ -443,7 +522,7 @@ export default function SampleContent() {
           <Badge size="xl" tone="neutral" max={99}>
             {2238}
           </Badge>
-          <Badge size="xl" tone="danger">
+          <Badge size="xl" tone="critical">
             28
           </Badge>
         </div>
