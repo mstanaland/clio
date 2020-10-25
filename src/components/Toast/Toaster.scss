@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+
+[data-toaster] {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0 $spacer-md;
+  z-index: $z-index-toast;
+  pointer-events: none;
+}

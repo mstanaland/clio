@@ -1,9 +1,8 @@
-@import "css-vars";
 @import "variables";
+@import "css-vars";
 
 @import "reset";
 
-@import "core/breakpoint-utils";
 @import "core/grid";
 @import "core/focus";
 @import "core/typography.scss";

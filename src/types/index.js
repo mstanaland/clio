@@ -151,7 +151,7 @@ export const boxTypes = {
   borderBottomRadius: PropTypes.oneOf(["sm", "md", "lg"]),
   borderLeftRadius: PropTypes.oneOf(["sm", "md", "lg"]),
   borderRightRadius: PropTypes.oneOf(["sm", "md", "lg"]),
-  shadow: PropTypes.oneOf(["none", "xs", "sm", "md", "lg", "xl"]),
+  shadow: PropTypes.oneOf(["none", "xs", "sm", "md", "lg", "xl", "xxl"]),
 };
 
 export const breakpointsType = PropTypes.oneOf([

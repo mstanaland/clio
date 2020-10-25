@@ -1,29 +1,25 @@
 import React, { useRef, forwardRef } from "react";
 import PropTypes from "prop-types";
+import cx from "classnames";
 import { Link } from "react-router-dom";
 import { useButton } from "@react-aria/button";
 import { useFocusRing } from "@react-aria/focus";
-import cx from "classnames";
 
-import Spinner from "../Spinner";
+import "./IconButton.scss";
 
-import "./Button.scss";
-
-export const Button = forwardRef(function Button(props, forwardedRef) {
+export const IconButton = forwardRef(function IconButton(props, forwardedRef) {
   const {
-    children,
-    type = "button",
+    ariaLabel,
+    iconElement,
     appearance = "default",
+    type,
     size = "md",
-    isDisabled = false,
+    isDisabled,
     href,
     to,
-    iconBeforeElement,
-    iconAfterElement,
-    isLoading,
     shouldFocusOnMount,
-    shouldFitContainer,
     className,
+    onClick,
     onPress,
     ...rest
   } = props;
@@ -52,42 +48,19 @@ export const Button = forwardRef(function Button(props, forwardedRef) {
     buttonRef
   );
 
-  const spinnerSize = size === "sm" ? "xs" : "sm";
-  let spinnerColor = "darkGray";
-
-  switch (appearance) {
-    case "primary":
-    case "danger": {
-      spinnerColor = "white";
-      break;
-    }
-    case "subtle": {
-      spinnerColor = "gray";
-      break;
-    }
-    default: {
-      spinnerColor = "darkGray";
-    }
-  }
-
   return (
     <ButtonElement
+      data-icon-button
       {...buttonProps}
       {...focusProps}
-      data-button
       ref={buttonRef}
       type={isNativeButton ? type : null}
       disabled={isDisabled}
       className={cx(className, "text-500", "radius-md", {
+        "size-xs": size === "xs",
         "size-sm": size === "sm",
-        "text-sm": size === "sm",
-        "px-xs": size === "sm" && appearance !== "link",
         "size-md": size === "md",
-        "text-md": size === "md",
-        "px-sm": size === "md" && appearance !== "link",
         "size-lg": size === "lg",
-        "px-md": size === "lg" && appearance !== "link",
-        "text-lg": size === "lg",
         focus: isFocusVisible,
         active: isPressed,
         default: appearance === "default",
@@ -95,47 +68,17 @@ export const Button = forwardRef(function Button(props, forwardedRef) {
         subtle: appearance === "subtle",
         danger: appearance === "danger",
         link: appearance === "link",
-        "fit-container": shouldFitContainer,
       })}
       {...rest}
     >
-      <span className="spin-wrap flex-centered">
-        <Spinner
-          isSpinning={isLoading}
-          size={spinnerSize}
-          color={isDisabled ? "gray" : spinnerColor}
-        />
-      </span>
-      <span
-        className={cx("inner-wrap flex-centered", {
-          "is-loading": isLoading,
-        })}
-      >
-        {iconBeforeElement && (
-          <span
-            aria-hidden="true"
-            className={cx("flex-centered", "button-icon", "icon-left")}
-          >
-            {iconBeforeElement}
-          </span>
-        )}
-
-        {children}
-
-        {iconAfterElement && (
-          <span
-            aria-hidden="true"
-            className={cx("flex-centered", "button-icon", "icon-right")}
-          >
-            {iconAfterElement}
-          </span>
-        )}
+      <span aria-hidden="true" className={cx("flex-centered", "button-icon")}>
+        {iconElement}
       </span>
     </ButtonElement>
   );
 });
 
-Button.propTypes = {
+IconButton.propTypes = {
   children: PropTypes.node,
   type: PropTypes.oneOf(["button", "submit", "reset"]),
   appearance: PropTypes.oneOf([
@@ -145,11 +88,10 @@ Button.propTypes = {
     "subtle",
     "link",
   ]),
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
+  size: PropTypes.oneOf(["xs", "sm", "md", "lg"]),
   isDisabled: PropTypes.bool,
   isLoading: PropTypes.bool,
   shouldFocusOnMount: PropTypes.bool,
-  shouldFitContainer: PropTypes.bool,
   href: PropTypes.string,
   to: PropTypes.string,
   className: PropTypes.string,

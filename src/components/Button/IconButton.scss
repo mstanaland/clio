@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 
-[data-button] {
+[data-icon-button] {
   outline: none; // handled by useFocusRing
   appearance: none;
   box-shadow: none;
@@ -20,49 +20,60 @@
   transform: scale(1);
   transition: background-color 150ms ease-in-out, transform 75ms ease-in-out;
 
-  &:focus {
+  &.focus {
     z-index: 1;
   }
 
-  .fit-container {
-    width: 100%;
-  }
-
   &.active:not(.link) {
-    transform: scale(0.98);
+    transform: scale(0.95);
   }
 
   // ========= Sizes ==============
+  &.size-xs {
+    &:not(.link) {
+      width: $sizer-xs;
+      height: $sizer-xs;
+    }
+
+    .button-icon > svg {
+      width: rem(24/1.75);
+      height: rem(24/1.75);
+    }
+  }
+
   &.size-sm {
     &:not(.link) {
+      width: $sizer-sm;
       height: $sizer-sm;
     }
 
     .button-icon > svg {
-      width: rem(16);
-      height: rem(16);
+      width: rem(24/1.5);
+      height: rem(24/1.5);
     }
   }
 
   &.size-md {
     &:not(.link) {
+      width: $sizer-md;
       height: $sizer-md;
     }
 
     .button-icon > svg {
-      width: rem(16);
-      height: rem(16);
+      width: rem(24/1.25);
+      height: rem(24/1.25);
     }
   }
 
   &.size-lg {
     &:not(.link) {
+      width: $sizer-lg;
       height: $sizer-lg;
     }
 
     .button-icon > svg {
-      width: rem(20);
-      height: rem(20);
+      width: rem(24);
+      height: rem(24);
     }
   }
 
@@ -79,7 +90,7 @@
 
   &.primary {
     background-color: var(--color-primary);
-    color: var(--color-text-white);
+    color: $color-n0;
 
     @include hover {
       background-color: var(--color-primary-hover);
@@ -90,7 +101,7 @@
     }
 
     .button-icon {
-      color: var(--color-text-white);
+      color: $color-n0;
       opacity: 0.8;
     }
   }
@@ -131,12 +142,7 @@
     color: var(--color-link);
 
     @include hover {
-      text-decoration: underline;
-    }
-
-    .button-icon {
-      color: var(--color-link);
-      opacity: 0.75;
+      background-color: rgba(var(--color-n900-rgb), 0.05);
     }
 
     &[disabled] {
@@ -153,41 +159,6 @@
 
     .button-icon {
       color: var(--color-button-icon-disabled);
-    }
-  }
-
-  // ========= Button inner components ==============
-
-  .spin-wrap {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .inner-wrap {
-    flex: 1 1 auto;
-    pointer-events: none;
-    align-self: center;
-    flex-wrap: nowrap;
-    max-width: 100%;
-    opacity: 1;
-    transition: opacity 200ms ease-in-out;
-
-    &.is-loading {
-      opacity: 0;
-    }
-  }
-
-  .button-icon {
-    color: var(--color-button-icon);
-
-    &.icon-left {
-      margin-right: rem(3);
-    }
-
-    &.icon-right {
-      margin-left: rem(3);
     }
   }
 }

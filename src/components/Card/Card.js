@@ -10,7 +10,7 @@ export default function Card({
   background = "2",
   padding = "md",
   shadow = "md",
-  borderRadius = "sm",
+  borderRadius = "lg",
   ...props
 }) {
   const [classes, rest] = extractBoxClasses({

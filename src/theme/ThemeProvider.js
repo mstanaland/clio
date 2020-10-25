@@ -1,7 +1,7 @@
 import React, { createContext, useState, useMemo, useEffect } from "react";
 
 import getInitialColorMode from "./getInitialColorMode";
-import setColorsByTheme from "./setColorsByTheme";
+// import setColorsByTheme from "./setColorsByTheme";
 import { COLOR_MODE_KEY } from "./constants";
 
 export const ThemeContext = createContext();
@@ -10,7 +10,8 @@ export function ThemeProvider({ children }) {
   const [colorMode, rawSetColorMode] = useState(getInitialColorMode);
 
   useEffect(() => {
-    setColorsByTheme(colorMode);
+    // setColorsByTheme(colorMode);
+    document.documentElement.setAttribute("data-theme", colorMode);
   }, [colorMode]);
 
   const contextValue = useMemo(() => {

@@ -76,6 +76,13 @@
 
   input:disabled + [data-checkbox-box] {
     opacity: 0.5;
+
+    background-color: var(--color-n100);
+  }
+
+  input:disabled:not(:checked) + [data-checkbox-box] {
+    opacity: 0.5;
+    background-color: var(--color-n300);
   }
 
   input.has-focus + [data-checkbox-box] {
