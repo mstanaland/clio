@@ -8,7 +8,6 @@ import { extractBoxClasses } from "../Box";
 
 export default function Placeholder({ width = "100%", height = 100, ...rest }) {
   const boxProps = {
-    background: "5",
     position: "relative",
     display: "flex",
     alignItems: "center",

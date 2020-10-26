@@ -20,10 +20,10 @@ NumberWithMax.args = {
   children: 1981,
 };
 
-export const TextContent = Template.bind({});
-TextContent.args = {
-  children: "New",
-};
+// export const TextContent = Template.bind({});
+// TextContent.args = {
+//   children: "New",
+// };
 
 export const Tones = (args) => (
   <Inline>
@@ -31,7 +31,7 @@ export const Tones = (args) => (
       Neutral
     </Badge>
 
-    <Badge {...args} tone="danger">
+    <Badge {...args} tone="critical">
       Danger
     </Badge>
   </Inline>

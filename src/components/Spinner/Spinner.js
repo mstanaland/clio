@@ -63,7 +63,7 @@ export default function Spinner({
               <circle
                 className={cx({
                   white: color === "white",
-                  brand: color === "brand",
+                  primary: color === "primary",
                   "dark-gray": color === "darkGray",
                 })}
                 strokeWidth={toRem(strokeWidth)}
@@ -91,5 +91,5 @@ Spinner.propTypes = {
   /** Callback fired after spinner has completed the exit animation. */
   onExit: PropTypes.func,
 
-  color: PropTypes.oneOf(["white", "brand", "gray", "darkGray"]),
+  color: PropTypes.oneOf(["white", "primary", "gray", "darkGray"]),
 };

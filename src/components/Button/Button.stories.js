@@ -40,6 +40,9 @@ export const Appearances = (args) => {
         <Button size="sm" appearance="primary" {...args}>
           Primary
         </Button>
+        <Button size="sm" appearance="secondary" {...args}>
+          Default
+        </Button>
         <Button size="sm" appearance="default" {...args}>
           Default
         </Button>
@@ -57,6 +60,9 @@ export const Appearances = (args) => {
         <Button appearance="primary" {...args}>
           Primary
         </Button>
+        <Button appearance="secondary" {...args}>
+          Default
+        </Button>
         <Button appearance="default" {...args}>
           Default
         </Button>
@@ -73,6 +79,9 @@ export const Appearances = (args) => {
       <Inline>
         <Button size="lg" appearance="primary" {...args}>
           Primary
+        </Button>
+        <Button size="lg" appearance="secondary" {...args}>
+          Default
         </Button>
         <Button size="lg" appearance="default" {...args}>
           Default
@@ -97,6 +106,9 @@ export const IsLoading = (args) => {
       <Button isLoading appearance="primary" {...args}>
         Primary
       </Button>
+      <Button isLoading appearance="secondary" {...args}>
+        Primary
+      </Button>
       <Button isLoading appearance="default" {...args}>
         Default
       </Button>
@@ -118,6 +130,9 @@ export const IsDisabled = (args) => {
     <Inline>
       <Button isDisabled appearance="primary" {...args}>
         Primary
+      </Button>
+      <Button isDisabled appearance="secondary" {...args}>
+        Secondary
       </Button>
       <Button isDisabled appearance="default" {...args}>
         Default
@@ -141,6 +156,9 @@ export const IconBefore = (args) => {
       <Button iconBeforeElement={<MdStar />} appearance="primary" {...args}>
         Primary
       </Button>
+      <Button iconBeforeElement={<MdStar />} appearance="secondary" {...args}>
+        Secondary
+      </Button>
       <Button iconBeforeElement={<MdStar />} appearance="default" {...args}>
         Default
       </Button>
@@ -162,6 +180,9 @@ export const IconAfter = (args) => {
     <Inline>
       <Button iconAfterElement={<MdStar />} appearance="primary" {...args}>
         Primary
+      </Button>
+      <Button iconAfterElement={<MdStar />} appearance="secondary" {...args}>
+        Secondary
       </Button>
       <Button iconAfterElement={<MdStar />} appearance="default" {...args}>
         Default

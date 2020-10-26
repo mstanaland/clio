@@ -61,6 +61,10 @@ export const Button = forwardRef(function Button(props, forwardedRef) {
       spinnerColor = "white";
       break;
     }
+    case "secondary": {
+      spinnerColor = "primary";
+      break;
+    }
     case "subtle": {
       spinnerColor = "gray";
       break;
