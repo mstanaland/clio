@@ -19,6 +19,7 @@ import Button, { IconButton } from "./components/Button";
 import { Row, Column } from "./components/Grid";
 import Checkbox from "./components/Checkbox";
 import Toast, { useToast } from "./components/Toast";
+import Label from "./components/Label";
 
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
@@ -83,6 +84,9 @@ export default function SampleContent() {
 
   return (
     <Stack>
+      <Label isRequired htmlFor="foo">
+        This is a label
+      </Label>
       <Inline>
         <Box height={50} width={50} shadow="xs" />
         <Box height={50} width={50} shadow="sm" />

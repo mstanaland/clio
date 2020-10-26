@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+[data-label] {
+  [data-label-required-dot] {
+    display: inline-flex;
+    width: rem(5);
+    height: 1em;
+    position: relative;
+
+    &:after {
+      content: "";
+      width: rem(5);
+      height: rem(5);
+      background-color: var(--color-r600);
+      margin-left: rem(4);
+      border-radius: rem(5);
+      position: absolute;
+      top: rem(3);
+    }
+  }
+}
