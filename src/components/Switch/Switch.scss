@@ -1,0 +1,64 @@
+@import "../../styles/variables.scss";
+
+[data-switch] {
+  $easing: cubic-bezier(0, 0, 0.13, 1.18);
+
+  @include button-reset;
+  position: relative;
+  background-color: var(--color-n300);
+  transition: background-color 150ms $easing;
+
+  [data-switch-handle] {
+    background-color: $color-n0;
+    position: absolute;
+    top: rem(2);
+    left: rem(2);
+    transition: left 150ms $easing, box-shadow 150ms $easing;
+    pointer-events: none;
+  }
+
+  &.checked {
+    background-color: var(--color-g600);
+  }
+
+  &.size-md {
+    $handle-size: $sizer-sm - rem(4);
+
+    min-width: $sizer-lg;
+    height: $sizer-sm;
+    border-radius: $sizer-lg;
+
+    [data-switch-handle] {
+      width: $handle-size;
+      height: $handle-size;
+      border-radius: $sizer-sm;
+    }
+
+    &.checked [data-switch-handle] {
+      left: calc(100% - #{$handle-size + rem(2)});
+    }
+  }
+
+  &.size-sm {
+    $handle-size: $sizer-xs - rem(4);
+
+    min-width: $sizer-md;
+    height: $sizer-xs;
+    border-radius: $sizer-md;
+
+    [data-switch-handle] {
+      width: $handle-size;
+      height: $handle-size;
+      border-radius: $sizer-sm;
+    }
+
+    &.checked [data-switch-handle] {
+      left: calc(100% - #{$handle-size + rem(2)});
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

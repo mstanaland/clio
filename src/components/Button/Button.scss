@@ -1,22 +1,11 @@
 @import "../../styles/variables.scss";
 
 [data-button] {
-  outline: none; // handled by useFocusRing
-  appearance: none;
-  box-shadow: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  @include button-reset;
   position: relative;
   vertical-align: middle;
-  width: auto;
-  text-decoration: none;
-  font-family: $font-family-sans;
-  border: 0;
-  cursor: pointer;
   overflow: hidden;
   background: transparent;
-  padding: 0;
   transform: scale(1);
   transition: background-color 150ms ease-in-out, transform 75ms ease-in-out;
 

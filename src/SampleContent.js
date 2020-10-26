@@ -19,7 +19,8 @@ import Button, { IconButton } from "./components/Button";
 import { Row, Column } from "./components/Grid";
 import Checkbox from "./components/Checkbox";
 import Toast, { useToast } from "./components/Toast";
-import Label from "./components/Label";
+import Label, { VisualOnlyLabel } from "./components/Label";
+import Switch from "./components/Switch";
 
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
@@ -43,59 +44,33 @@ export default function SampleContent() {
   }
 
   const simulateLoadingSuccess = () => {
-    if (spinningStatus !== "spinning") {
-      clearTimeout(timer.current);
-      setSpinningStatus("spinning");
+    clearTimeout(timer.current);
+    setSpinningStatus("spinning");
 
-      timer.current = setTimeout(() => {
-        setSpinningStatus("success");
-        showToast({
-          type: "success",
-          message: "Loading spinner with status is done",
-        });
-      }, 2000);
-    }
-    if (spinningStatus === "spinning") {
-      console.log("clearTimeout");
-      clearTimeout(timer.current);
-      setSpinningStatus("idle");
-    }
+    timer.current = setTimeout(() => {
+      setSpinningStatus("success");
+      showToast({
+        type: "success",
+        message: "Loading spinner with status is done",
+      });
+    }, 2000);
   };
 
   const simulateLoadingError = () => {
-    if (spinningStatus !== "spinning") {
-      clearTimeout(timer.current);
-      setSpinningStatus("spinning");
+    clearTimeout(timer.current);
+    setSpinningStatus("spinning");
 
-      timer.current = setTimeout(() => {
-        setSpinningStatus("error");
-        showToast({
-          type: "error",
-          message: "Loading spinner with status is done",
-        });
-      }, 2000);
-    }
-    if (spinningStatus === "spinning") {
-      console.log("clearTimeout");
-      clearTimeout(timer.current);
-      setSpinningStatus("idle");
-    }
+    timer.current = setTimeout(() => {
+      setSpinningStatus("error");
+      showToast({
+        type: "error",
+        message: "Loading spinner with status is done",
+      });
+    }, 2000);
   };
 
   return (
     <Stack>
-      <Label isRequired htmlFor="foo">
-        This is a label
-      </Label>
-      <Inline>
-        <Box height={50} width={50} shadow="xs" />
-        <Box height={50} width={50} shadow="sm" />
-        <Box height={50} width={50} shadow="md" />
-        <Box height={50} width={50} shadow="lg" />
-        <Box height={50} width={50} shadow="xl" />
-        <Box height={50} width={50} shadow="xxl" />
-      </Inline>
-
       <Stack space="xs">
         <Heading size="xxl">Heading xxl</Heading>
         <Heading size="xl">Heading xl</Heading>
@@ -104,33 +79,45 @@ export default function SampleContent() {
         <Heading size="sm">Heading sm</Heading>
         <Heading size="xs">Heading xs</Heading>
       </Stack>
-      <TextBlock>
-        <Stack>
+      <Row>
+        <Column>
           <Text size="xs">
             Text xs: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
             subset of artificial intelligence.
           </Text>
+        </Column>
+        <Column>
           <Text size="sm">
             Text sm: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
             subset of artificial intelligence.
           </Text>
+        </Column>
+        <Column>
           <Text>
             Text md: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
             subset of artificial intelligence.
           </Text>
+        </Column>
+        <Column>
           <Text size="lg">
             Text lg: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
             subset of artificial intelligence.
           </Text>
+        </Column>
+        <Column>
           <Text size="xl">
             Text xl: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
             subset of artificial intelligence.
           </Text>
+        </Column>
+      </Row>
+      <TextBlock>
+        <Stack>
           <Inline>
             <Text fontWeight="light">FontWeight: light</Text>
             <Text fontWeight="thin">FontWeight: thin</Text>
@@ -453,23 +440,23 @@ export default function SampleContent() {
       <Divider />
       <div>
         <Heading size="sm">Spinner sizes (click buttons above)</Heading>
-        {/* <Spinner size="xxs" isSpinning={isSpinning} />
+        <Spinner size="xxs" isSpinning={isSpinning} />
         <Spinner size="xs" isSpinning={isSpinning} />
         <Spinner size="sm" isSpinning={isSpinning} />
         <Spinner size="md" isSpinning={isSpinning} />
         <Spinner size="lg" isSpinning={isSpinning} />
-        <Spinner size="xl" isSpinning={isSpinning} /> */}
+        <Spinner size="xl" isSpinning={isSpinning} />
       </div>
 
-      <div>
+      <Divider />
+
+      <Stack>
         <Inline>
           <Button onPress={simulateLoadingSuccess}>Spinner then success</Button>
           <Button onPress={simulateLoadingError}>Spinner then error</Button>
         </Inline>
-        <div>
-          <SpinnerWithStatus size="md" status={spinningStatus} />
-        </div>
-      </div>
+        <SpinnerWithStatus size="md" status={spinningStatus} />
+      </Stack>
       <Divider />
 
       <Row gutter="md" alignY={["top", "bottom", "center"]}>
@@ -508,6 +495,29 @@ export default function SampleContent() {
         />
       </Stack>
 
+      <Label isRequired htmlFor="foo">
+        This is a label
+      </Label>
+      <Inline space="sm">
+        <Switch aria-labelledby="testing-label-id" />
+        <VisualOnlyLabel id="testing-label-id">
+          Example visual-only label
+        </VisualOnlyLabel>
+      </Inline>
+      <Inline space="sm">
+        <Switch isDisabled aria-labelledby="testing-label-id" />
+        <VisualOnlyLabel id="testing-label-id">Disabled</VisualOnlyLabel>
+      </Inline>
+      <Switch size="sm" />
+      <Inline>
+        <Box height={50} width={50} shadow="xs" />
+        <Box height={50} width={50} shadow="sm" />
+        <Box height={50} width={50} shadow="md" />
+        <Box height={50} width={50} shadow="lg" />
+        <Box height={50} width={50} shadow="xl" />
+        <Box height={50} width={50} shadow="xxl" />
+      </Inline>
+
       <div style={{ maxWidth: "100%" }}>
         <Badge tone="neutral">28</Badge>
         <Badge tone="critical">28</Badge>
@@ -532,10 +542,11 @@ export default function SampleContent() {
         </div>
       </div>
 
-      <Toast message="I did the thing" />
+      <Toast type="success" message="I did the thing" />
       <Toast
-        message="I really did it, I swear"
-        description="If you don’t believe me, just go look for yourself"
+        type="error"
+        message="I really thought did it, I swear"
+        description="OK fine, it failed"
       />
     </Stack>
   );

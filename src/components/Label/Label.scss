@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 
-[data-label] {
+[data-label],
+[data-visual-only-label] {
   [data-label-required-dot] {
     display: inline-flex;
     width: rem(5);

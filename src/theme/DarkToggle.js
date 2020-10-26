@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 
-import Checkbox from "../components/Checkbox";
+import Switch from "../components/Switch";
+import Inline from "../components/Inline";
+import { VisualOnlyLabel } from "../components/Label";
 
 import { ThemeContext } from "./ThemeProvider";
 
@@ -12,14 +14,16 @@ export default function DarkToggle() {
   }
 
   return (
-    <div>
-      <Checkbox
+    <Inline>
+      <VisualOnlyLabel id="dark-mode-label-id">Dark Mode</VisualOnlyLabel>
+      <Switch
         isChecked={colorMode === "dark"}
         label="Dark"
-        onChange={(event) => {
-          setColorMode(event.target.checked ? "dark" : "light");
+        aria-labelledby="dark-mode-label-id"
+        onClick={() => {
+          setColorMode(colorMode === "dark" ? "light" : "dark");
         }}
       />
-    </div>
+    </Inline>
   );
 }

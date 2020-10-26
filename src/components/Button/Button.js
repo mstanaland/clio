@@ -78,26 +78,32 @@ export const Button = forwardRef(function Button(props, forwardedRef) {
       ref={buttonRef}
       type={isNativeButton ? type : null}
       disabled={isDisabled}
-      className={cx(className, "text-500", "radius-md", {
-        "size-sm": size === "sm",
-        "text-sm": size === "sm",
-        "px-xs": size === "sm" && appearance !== "link",
-        "size-md": size === "md",
-        "text-md": size === "md",
-        "px-sm": size === "md" && appearance !== "link",
-        "size-lg": size === "lg",
-        "px-md": size === "lg" && appearance !== "link",
-        "text-lg": size === "lg",
-        focus: isFocusVisible,
-        active: isPressed,
-        default: appearance === "default",
-        primary: appearance === "primary",
-        secondary: appearance === "secondary",
-        subtle: appearance === "subtle",
-        critical: appearance === "critical",
-        link: appearance === "link",
-        "fit-container": shouldFitContainer,
-      })}
+      className={cx(
+        className,
+        "text-500",
+        "radius-md",
+        "inline-flex-centered",
+        {
+          "size-sm": size === "sm",
+          "text-sm": size === "sm",
+          "px-xs": size === "sm" && appearance !== "link",
+          "size-md": size === "md",
+          "text-md": size === "md",
+          "px-sm": size === "md" && appearance !== "link",
+          "size-lg": size === "lg",
+          "px-md": size === "lg" && appearance !== "link",
+          "text-lg": size === "lg",
+          focus: isFocusVisible,
+          active: isPressed,
+          default: appearance === "default",
+          primary: appearance === "primary",
+          secondary: appearance === "secondary",
+          subtle: appearance === "subtle",
+          critical: appearance === "critical",
+          link: appearance === "link",
+          "fit-container": shouldFitContainer,
+        }
+      )}
       {...rest}
     >
       {isLoading && (

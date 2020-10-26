@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider, DarkToggle } from "./theme";
 import SampleContent from "./SampleContent";
 
+import Box from "./components/Box";
 import Divider from "./components/Divider";
 import Stack from "./components/Stack";
 import Spacer from "./components/Spacer";
@@ -18,7 +19,9 @@ function App() {
           <ContentBlock>
             <Spacer size="xs" />
             <Stack>
-              <DarkToggle />
+              <Box display="flex" justifyContent="end">
+                <DarkToggle />
+              </Box>
               <Divider />
             </Stack>
             <Spacer size="md" />

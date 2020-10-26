@@ -1,0 +1,11 @@
+@mixin button-reset {
+  outline: none; // handled by useFocusRing
+  appearance: none;
+  box-shadow: none;
+  width: auto;
+  text-decoration: none;
+  font-family: $font-family-sans;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}

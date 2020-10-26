@@ -14,31 +14,27 @@ const SPINNING = "spinning";
 const SUCCESS = "success";
 const ERROR = "error";
 
-const SuccessIcon = (props) => (
-  <animated.svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-    {...props}
-  >
-    <path
-      fillRule="evenodd"
-      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-      clipRule="evenodd"
-    />
-  </animated.svg>
-);
-
-const ErrorIcon = (props) => (
-  <animated.svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-    {...props}
-  >
-    <path d="M10 14.5c.647 0 1.18.492 1.244 1.122l.006.128v.5a1.25 1.25 0 01-2.494.128l-.006-.128v-.5c0-.69.56-1.25 1.25-1.25zm0-12c.647 0 1.18.492 1.244 1.122l.006.128v8a1.25 1.25 0 01-2.494.128l-.006-.128v-8c0-.69.56-1.25 1.25-1.25z" />
-  </animated.svg>
-);
+function ToastIcon({ status, ...props }) {
+  return (
+    <animated.svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      {...props}
+    >
+      {status === "success" && (
+        <path
+          fillRule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clipRule="evenodd"
+        />
+      )}
+      {status === "error" && (
+        <path d="M10 14.5c.647 0 1.18.492 1.244 1.122l.006.128v.5a1.25 1.25 0 01-2.494.128l-.006-.128v-.5c0-.69.56-1.25 1.25-1.25zm0-12c.647 0 1.18.492 1.244 1.122l.006.128v8a1.25 1.25 0 01-2.494.128l-.006-.128v-8c0-.69.56-1.25 1.25-1.25z" />
+      )}
+    </animated.svg>
+  );
+}
 
 export default function SpinnerWithStatus({
   status = IDLE,
@@ -66,6 +62,9 @@ export default function SpinnerWithStatus({
           setAnimateOut(false);
         }
       }, endingTimeout);
+    } else {
+      setDone(false);
+      setAnimateOut(false);
     }
 
     return () => {
@@ -169,32 +168,22 @@ export default function SpinnerWithStatus({
           height: toRem(sizeInPixels),
         }}
       >
-        {status === "success" &&
-          iconTransition.map(
-            ({ item, key, props }) =>
-              item && (
-                <SuccessIcon
-                  key={key}
-                  width={toRem(sizeInPixels * 0.75)}
-                  height={toRem(sizeInPixels * 0.75)}
-                  className="success-icon"
-                  style={props}
-                />
-              )
-          )}
-        {status === "error" &&
-          iconTransition.map(
-            ({ item, key, props }) =>
-              item && (
-                <ErrorIcon
-                  key={key}
-                  width={toRem(sizeInPixels * 0.75)}
-                  height={toRem(sizeInPixels * 0.75)}
-                  className="error-icon"
-                  style={props}
-                />
-              )
-          )}
+        {iconTransition.map(
+          ({ item, key, props }) =>
+            item && (
+              <ToastIcon
+                status={status}
+                key={key}
+                width={toRem(sizeInPixels * 0.75)}
+                height={toRem(sizeInPixels * 0.75)}
+                className={cx({
+                  "success-icon": status === SUCCESS,
+                  "error-icon": status === ERROR,
+                })}
+                style={props}
+              />
+            )
+        )}
       </div>
     </div>
   );
