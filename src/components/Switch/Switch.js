@@ -1,5 +1,5 @@
 import React, { forwardRef, useRef, useState } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { useButton } from "@react-aria/button";
 import { useFocusRing } from "@react-aria/focus";
 import cx from "classnames";

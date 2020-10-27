@@ -21,6 +21,7 @@ import Checkbox from "./components/Checkbox";
 import Toast, { useToast } from "./components/Toast";
 import Label, { VisualOnlyLabel } from "./components/Label";
 import Switch from "./components/Switch";
+import Pagination from "./components/Pagination";
 
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
@@ -79,6 +80,7 @@ export default function SampleContent() {
         <Heading size="sm">Heading sm</Heading>
         <Heading size="xs">Heading xs</Heading>
       </Stack>
+      <Pagination pages={50} activePage={23} onChange={() => {}} />
       <Row>
         <Column>
           <Text size="xs">
