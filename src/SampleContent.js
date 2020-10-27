@@ -26,6 +26,7 @@ import Pagination from "./components/Pagination";
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
   const [spinningStatus, setSpinningStatus] = useState("idle");
+  const [pageNumber, setPageNumber] = useState(0);
   const showToast = useToast();
   const timer = useRef();
 
@@ -72,6 +73,11 @@ export default function SampleContent() {
 
   return (
     <Stack>
+      <Pagination
+        pages={102}
+        activePage={pageNumber}
+        onChange={(index) => setPageNumber(index)}
+      />
       <Stack space="xs">
         <Heading size="xxl">Heading xxl</Heading>
         <Heading size="xl">Heading xl</Heading>
@@ -80,7 +86,7 @@ export default function SampleContent() {
         <Heading size="sm">Heading sm</Heading>
         <Heading size="xs">Heading xs</Heading>
       </Stack>
-      <Pagination pages={50} activePage={23} onChange={() => {}} />
+
       <Row>
         <Column>
           <Text size="xs">
@@ -550,6 +556,8 @@ export default function SampleContent() {
         message="I really thought did it, I swear"
         description="OK fine, it failed"
       />
+
+      <Spacer size="lg" />
     </Stack>
   );
 }

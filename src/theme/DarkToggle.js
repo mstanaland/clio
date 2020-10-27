@@ -20,7 +20,7 @@ export default function DarkToggle() {
         isChecked={colorMode === "dark"}
         label="Dark"
         aria-labelledby="dark-mode-label-id"
-        onClick={() => {
+        onPress={() => {
           setColorMode(colorMode === "dark" ? "light" : "dark");
         }}
       />

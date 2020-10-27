@@ -169,7 +169,8 @@
     cursor: not-allowed !important;
 
     .button-icon {
-      color: var(--color-button-icon-disabled);
+      color: var(--color-n500);
+      opacity: 0.5;
     }
   }
 

@@ -1,5 +1,5 @@
 import React, { forwardRef, useRef, useState } from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { useButton } from "@react-aria/button";
 import { useFocusRing } from "@react-aria/focus";
 import cx from "classnames";
@@ -7,44 +7,53 @@ import isNil from "lodash/isNil";
 
 import "./Switch.scss";
 
+const propTypes = {
+  isChecked: PropTypes.bool,
+  isDisabled: PropTypes.bool,
+  onPress: PropTypes.func,
+  size: PropTypes.oneOf(["sm", "md"]),
+  autoFocus: PropTypes.bool,
+  className: PropTypes.string,
+};
+
 export const Switch = forwardRef(function Switch(props, forwardedRef) {
   const {
     autoFocus,
     isChecked: userChecked,
     isDisabled,
     className,
-    onPress,
+    onPress: userOnPress,
     size = "md",
     ...rest
   } = props;
-
   const [internalChecked, setInternalChecked] = useState(false);
   const internalRef = useRef();
   const buttonRef = forwardedRef || internalRef;
 
-  const { isFocusVisible, focusProps } = useFocusRing();
-  const { buttonProps, isPressed } = useButton(props, buttonRef);
-
   const isControlled = !isNil(userChecked);
   const isChecked = isControlled ? userChecked : internalChecked;
 
-  const handleClick = (event) => {
+  const onPress = () => {
+    if (userOnPress) {
+      userOnPress();
+    }
     if (!isControlled) {
       setInternalChecked((prev) => !prev);
     }
-    if (buttonProps.onPress) {
-      buttonProps.onPress(event);
-    }
-    if (buttonProps.onClick) {
-      buttonProps.onClick(event);
-    }
   };
+
+  const propsForUseButton = {
+    onPress,
+    ...props,
+  };
+
+  const { buttonProps, isPressed } = useButton(propsForUseButton, buttonRef);
+  const { isFocusVisible, focusProps } = useFocusRing(autoFocus);
 
   return (
     <button
       {...buttonProps}
       {...focusProps}
-      onClick={handleClick}
       data-switch
       ref={buttonRef}
       role="switch"
@@ -62,3 +71,5 @@ export const Switch = forwardRef(function Switch(props, forwardedRef) {
     </button>
   );
 });
+
+Switch.propTypes = propTypes;

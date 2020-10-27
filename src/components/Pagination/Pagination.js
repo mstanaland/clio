@@ -3,46 +3,48 @@ import PropTypes from "prop-types";
 
 import Button, { IconButton } from "../Button";
 
-// import EllipseButton from "./EllipseButton";
-import NumberButton from "./NumberButton";
-import { ChevronRight, ChevronLeft, HorizontalDots } from "./Icons";
+import { ChevronRightIcon, ChevronLeftIcon } from "../Icons";
 
 const propTypes = {
   pages: PropTypes.number,
   activePage: PropTypes.number,
   margin: PropTypes.number,
   wings: PropTypes.number,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   ariaLabel: PropTypes.string,
 };
 
-const defaultProps = {
-  pages: 1,
-  activePage: 0,
-  margin: 1,
-  wings: 1,
-  ariaLabel: "Page navigation",
-};
-
 export default function Pagination({
-  margin,
-  activePage,
-  wings,
-  pages,
+  margin = 1,
+  activePage = 0,
+  wings = 1,
+  pages = 1,
   onChange,
-  ariaLabel,
+  ariaLabel = "Page navigation",
 }) {
   function buttonRange(high, low) {
     return [...Array(high - low).keys()]
       .map((v) => v + low)
-      .map((i) => (
-        <NumberButton
-          key={i}
-          index={i}
-          active={i === activePage}
-          onClick={onChange}
-        />
-      ));
+      .map((pageIndex) => {
+        const pageNumber = pageIndex + 1;
+        const isActive = pageIndex === activePage;
+
+        return (
+          <li key={pageNumber}>
+            <Button
+              appearance={isActive ? "primary" : "subtle"}
+              aria-label={
+                isActive
+                  ? `Current Page, Page ${pageNumber}`
+                  : `Page ${pageNumber}`
+              }
+              onPress={isActive ? null : () => onChange(pageIndex)}
+            >
+              {pageNumber}
+            </Button>
+          </li>
+        );
+      });
   }
 
   function generateButtons() {
@@ -68,20 +70,32 @@ export default function Pagination({
     };
 
     const buttons = [];
-    if (midRange.low > lowRange.low) {
+
+    if (pages < 8) {
+      buttons.push(buttonRange(pages, 0));
+      return buttons;
+    }
+
+    if (activePage >= 4 && midRange.low > lowRange.low) {
       buttons.push(buttonRange(lowRange.high, lowRange.low));
       buttons.push(
-        <li key="dots1" className="text-lg">
+        <li key="dots1" className="text-lg px-xs">
           ...
         </li>
       );
     }
 
-    buttons.push(buttonRange(midRange.high, midRange.low));
+    if (activePage < 4) {
+      buttons.push(buttonRange(5, 0));
+    } else if (activePage < pages - 3) {
+      buttons.push(buttonRange(midRange.high, midRange.low));
+    }
 
-    if (midRange.high < highRange.high) {
+    if (activePage >= pages - 3) {
+      buttons.push(buttonRange(pages, pages - 5));
+    } else if (midRange.high < highRange.high) {
       buttons.push(
-        <li key="dots2" className="text-lg">
+        <li key="dots2" className="text-lg px-xs">
           ...
         </li>
       );
@@ -103,21 +117,21 @@ export default function Pagination({
       <ul className="inline-flex-centered">
         <li>
           <IconButton
-            iconElement={<ChevronLeft />}
+            iconElement={<ChevronLeftIcon />}
             appearance="subtle"
             isDisabled={activePage === 0}
             aria-label="Previous Page"
-            onClick={() => onChange(previousPage)}
+            onPress={() => onChange && onChange(previousPage)}
           />
         </li>
         {generateButtons()}
         <li>
           <IconButton
-            iconElement={<ChevronRight />}
+            iconElement={<ChevronRightIcon />}
             appearance="subtle"
             isDisabled={activePage === pages - 1}
             aria-label="Next Page"
-            onClick={() => onChange(nextPage)}
+            onPress={() => onChange && onChange(nextPage)}
           />
         </li>
       </ul>
@@ -126,4 +140,3 @@ export default function Pagination({
 }
 
 Pagination.propTypes = propTypes;
-Pagination.defaultProps = defaultProps;

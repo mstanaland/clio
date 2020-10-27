@@ -25,6 +25,7 @@ export const Button = forwardRef(function Button(props, forwardedRef) {
     shouldFitContainer,
     className,
     onPress,
+    autoFocus,
     ...rest
   } = props;
 
@@ -46,7 +47,7 @@ export const Button = forwardRef(function Button(props, forwardedRef) {
 
   const ButtonElement = getTag();
 
-  const { isFocusVisible, focusProps } = useFocusRing();
+  const { isFocusVisible, focusProps } = useFocusRing(autoFocus);
   const { buttonProps, isPressed } = useButton(
     { ...props, elementType: ButtonElement },
     buttonRef
