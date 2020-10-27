@@ -48,6 +48,13 @@ export default function Pagination({
   }
 
   function generateButtons() {
+    const buttons = [];
+
+    if (pages < 8) {
+      buttons.push(buttonRange(pages, 0));
+      return buttons;
+    }
+
     const lowRange = {
       low: 0,
       high: 0 + margin,
@@ -68,13 +75,6 @@ export default function Pagination({
       high:
         activeRange.high < highRange.low ? activeRange.high : highRange.high,
     };
-
-    const buttons = [];
-
-    if (pages < 8) {
-      buttons.push(buttonRange(pages, 0));
-      return buttons;
-    }
 
     if (activePage >= 4 && midRange.low > lowRange.low) {
       buttons.push(buttonRange(lowRange.high, lowRange.low));
