@@ -1,6 +1,6 @@
 import React from "react";
 
-import Placeholder from "../Placeholder";
+import LayoutPlaceholder from "../LayoutPlaceholder";
 import Inline from "./Inline";
 
 export default {
@@ -11,12 +11,12 @@ export default {
 const Template = (args) => (
   <div style={{ maxWidth: "240px" }}>
     <Inline {...args}>
-      <Placeholder height={20} width={40} />
-      <Placeholder height={60} width={40} />
-      <Placeholder height={40} width={40} />
-      <Placeholder height={20} width={40} />
-      <Placeholder height={60} width={40} />
-      <Placeholder height={40} width={40} />
+      <LayoutPlaceholder height={20} width={40} />
+      <LayoutPlaceholder height={60} width={40} />
+      <LayoutPlaceholder height={40} width={40} />
+      <LayoutPlaceholder height={20} width={40} />
+      <LayoutPlaceholder height={60} width={40} />
+      <LayoutPlaceholder height={40} width={40} />
     </Inline>
   </div>
 );

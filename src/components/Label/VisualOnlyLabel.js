@@ -13,6 +13,11 @@ const propTypes = {
 
   /** Accepts a custom className that will be merged in with other classes */
   className: PropTypes.string,
+
+  /** Probably don't use this because it doesn't make sense, other than to have the same
+   * api as <Label>
+   */
+  isVisible: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -25,13 +30,15 @@ export default function VisualOnlyLabel({
   htmlFor,
   className,
   isRequired,
+  isVisible = true,
   ...rest
 }) {
   return (
     <div
       data-visual-only-label
       id={`${htmlFor}-label`}
-      className={cx(className, "text-md", {
+      className={cx(className, "text-md", "text-500", {
+        "sr-only": !isVisible,
         "label-required": isRequired,
       })}
       htmlFor={htmlFor}

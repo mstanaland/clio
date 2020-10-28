@@ -4,7 +4,7 @@ import { MdStar } from "react-icons/md";
 import Divider from "./components/Divider";
 import Box from "./components/Box";
 import Card from "./components/Card";
-import Placeholder from "./components/Placeholder";
+import LayoutPlaceholder from "./components/LayoutPlaceholder";
 import Stack from "./components/Stack";
 import Heading from "./components/Heading";
 // import Heading, { HeadingSection } from "./components/Heading";
@@ -22,6 +22,9 @@ import Toast, { useToast } from "./components/Toast";
 import Label, { VisualOnlyLabel } from "./components/Label";
 import Switch from "./components/Switch";
 import Pagination from "./components/Pagination";
+import Placeholder, { PlaceholderText } from "./components/Placeholder";
+import InputError from "./components/InputError";
+import Select from "./components/Select";
 
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
@@ -73,11 +76,25 @@ export default function SampleContent() {
 
   return (
     <Stack>
-      <Pagination
-        pages={102}
-        activePage={pageNumber}
-        onChange={(index) => setPageNumber(index)}
-      />
+      <Inline>
+        <Pagination
+          pages={102}
+          activePage={pageNumber}
+          onChange={(index) => setPageNumber(index)}
+        />
+        <Select
+          label="Rows per page"
+          isLabelVisible={false}
+          options={[
+            { label: "10 per page", value: "10" },
+            { label: "25 per page", value: "25" },
+            { label: "50 per page", value: "50" },
+          ]}
+        />
+      </Inline>
+
+      <Placeholder height={100} />
+
       <Stack space="xs">
         <Heading size="xxl">Heading xxl</Heading>
         <Heading size="xl">Heading xl</Heading>
@@ -108,6 +125,9 @@ export default function SampleContent() {
             that improve automatically through experience. It is seen as a
             subset of artificial intelligence.
           </Text>
+        </Column>
+        <Column>
+          <PlaceholderText lines={6} />
         </Column>
         <Column>
           <Text size="lg">
@@ -469,16 +489,16 @@ export default function SampleContent() {
 
       <Row gutter="md" alignY={["top", "bottom", "center"]}>
         <Column>
-          <Placeholder height={50} />
+          <LayoutPlaceholder height={50} />
         </Column>
         <Column>
-          <Placeholder height={30} />
+          <LayoutPlaceholder height={30} />
         </Column>
         <Column>
-          <Placeholder height={100} />
+          <LayoutPlaceholder height={100} />
         </Column>
         <Column>
-          <Placeholder height={30} />
+          <LayoutPlaceholder height={30} />
         </Column>
       </Row>
 
@@ -503,9 +523,37 @@ export default function SampleContent() {
         />
       </Stack>
 
+      <Row>
+        <Column width="4">
+          <Select
+            placeholder="Choose an option..."
+            isInline
+            label="This is a select"
+            options={[
+              { label: "Option 1", value: "1" },
+              { label: "Option 2", value: "2" },
+              { label: "Option 3", value: "3" },
+            ]}
+          />
+        </Column>
+        <Column width="4">
+          <Select
+            label="This is a select"
+            placeholder="Choose an option..."
+            isRequired
+            options={[
+              { label: "Option 1", value: "1" },
+              { label: "Option 2", value: "2" },
+              { label: "Option 3", value: "3" },
+            ]}
+          />
+        </Column>
+      </Row>
+
       <Label isRequired htmlFor="foo">
         This is a label
       </Label>
+      <InputError>This is an error</InputError>
       <Inline space="sm">
         <Switch aria-labelledby="testing-label-id" />
         <VisualOnlyLabel id="testing-label-id">

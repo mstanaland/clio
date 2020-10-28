@@ -1,6 +1,6 @@
 import React from "react";
 
-import Placeholder from "../Placeholder";
+import LayoutPlaceholder from "../LayoutPlaceholder";
 
 import { Row, Column } from "./index";
 
@@ -12,13 +12,13 @@ export default {
 const Template = (args) => (
   <Row>
     <Column {...args}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column {...args}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column {...args}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
   </Row>
 );
@@ -33,13 +33,13 @@ ResponsiveWidth.args = {
 export const Offset = (args) => (
   <Row>
     <Column width={2} {...args}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column width={2}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column width={2}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
   </Row>
 );

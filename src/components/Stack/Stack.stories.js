@@ -1,6 +1,6 @@
 import React from "react";
 
-import Placeholder from "../Placeholder";
+import LayoutPlaceholder from "../LayoutPlaceholder";
 import Stack from "./Stack";
 
 export default {
@@ -10,9 +10,9 @@ export default {
 
 const Template = (args) => (
   <Stack {...args}>
-    <Placeholder height={50} width={100} />
-    <Placeholder height={50} width={100} />
-    <Placeholder height={50} width={100} />
+    <LayoutPlaceholder height={50} width={100} />
+    <LayoutPlaceholder height={50} width={100} />
+    <LayoutPlaceholder height={50} width={100} />
   </Stack>
 );
 

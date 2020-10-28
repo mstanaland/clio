@@ -1,7 +1,7 @@
 import React from "react";
 
 import Box from "./Box";
-import Placeholder from "../Placeholder";
+import LayoutPlaceholder from "../LayoutPlaceholder";
 
 export default {
   component: Box,
@@ -34,9 +34,9 @@ export const ResponsiveDisplay = (args) => {
   return (
     <Box borderColor="n40" padding="md">
       <Box borderColor="n900" {...args}>
-        <Placeholder width={75} height={75} />
-        <Placeholder width={75} height={75} />
-        <Placeholder width={75} height={75} />
+        <LayoutPlaceholder width={75} height={75} />
+        <LayoutPlaceholder width={75} height={75} />
+        <LayoutPlaceholder width={75} height={75} />
       </Box>
     </Box>
   );
@@ -49,9 +49,9 @@ export const ResponsiveFlexOptions = (args) => {
   return (
     <Box borderColor="n40" padding="md">
       <Box height={300} borderColor="n900" {...args}>
-        <Placeholder width={75} height={75} />
-        <Placeholder width={75} height={75} />
-        <Placeholder width={75} height={75} />
+        <LayoutPlaceholder width={75} height={75} />
+        <LayoutPlaceholder width={75} height={75} />
+        <LayoutPlaceholder width={75} height={75} />
       </Box>
     </Box>
   );

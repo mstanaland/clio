@@ -1,0 +1,51 @@
+@import "../../styles/variables.scss";
+
+[data-select] {
+  .field-input-wrapper {
+    position: relative;
+  }
+
+  select {
+    outline: none;
+    width: 100%;
+    appearance: none;
+    border: solid rem(1) var(--color-border);
+    height: $sizer-md;
+    background-color: var(--color-n0);
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &.invalid {
+      border-color: var(--color-r600);
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      background-color: var(--color-n200);
+      color: var(--color-n600);
+      cursor: not-allowed;
+    }
+
+    // make placeholder gray
+    &:invalid {
+      color: var(--color-n600);
+    }
+  }
+
+  [data-select-icon] {
+    pointer-events: none;
+    position: absolute;
+    right: $spacer-xs;
+    top: 0;
+    width: rem(20);
+    height: $sizer-md;
+    color: var(--color-n600);
+
+    &.disabled {
+      opacity: 0.5;
+      color: var(--color-n500);
+    }
+  }
+}

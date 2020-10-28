@@ -6,10 +6,10 @@ import "./Label.scss";
 
 const propTypes = {
   /** Label's contents, usually text */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 
   /** The id of the input being labeled */
-  htmlFor: PropTypes.string.isRequired,
+  htmlFor: PropTypes.string,
 
   /** Adds the required asterisk */
   isRequired: PropTypes.bool,
@@ -39,7 +39,7 @@ export default function Label({
     <label
       data-label
       id={`${htmlFor}-label`}
-      className={cx(className, "text-md", {
+      className={cx(className, "text-md", "text-500", {
         "sr-only": !isVisible,
         "label-required": isRequired,
       })}

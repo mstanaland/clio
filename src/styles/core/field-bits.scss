@@ -1,0 +1,17 @@
+.field-outer-container {
+  position: relative;
+}
+
+.field-outer-container-inline {
+  display: inline-flex;
+  align-items: top;
+
+  .field-label-wrapper {
+    height: $sizer-md;
+    margin-right: $spacer-xs;
+
+    [data-label] {
+      width: auto;
+    }
+  }
+}

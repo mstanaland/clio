@@ -149,11 +149,8 @@
   --color-link-hover: var(--color-g400);
   --color-link-active: var(--color-g600);
 
-  --color-background-1: #0a1328;
-  --color-background-2: #182633;
-  --color-background-3: #24313d;
-  --color-background-4: #303d48;
-  --color-background-5: #3d4853;
+  --color-background-1: var(--color-n0);
+  --color-background-2: var(--color-n100);
   --color-text-1: rgb(250, 251, 252);
   --color-text-2: rgb(193, 199, 208);
   --color-text-3: rgb(165, 173, 186);

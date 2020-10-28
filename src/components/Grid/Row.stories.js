@@ -1,6 +1,6 @@
 import React from "react";
 
-import Placeholder from "../Placeholder";
+import LayoutPlaceholder from "../LayoutPlaceholder";
 
 import { Row, Column } from "./index";
 
@@ -12,28 +12,28 @@ export default {
 const Template = (args) => (
   <Row {...args}>
     <Column width={3}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column width={3}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column width={3}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column width={3}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column width={3}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column width={3}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column width={3}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
     <Column width={3}>
-      <Placeholder />
+      <LayoutPlaceholder />
     </Column>
   </Row>
 );
@@ -41,13 +41,13 @@ const Template = (args) => (
 const Template2 = (args) => (
   <Row {...args}>
     <Column width="3">
-      <Placeholder height={30} />
+      <LayoutPlaceholder height={30} />
     </Column>
     <Column width="3">
-      <Placeholder height={50} />
+      <LayoutPlaceholder height={50} />
     </Column>
     <Column width="3">
-      <Placeholder height={100} />
+      <LayoutPlaceholder height={100} />
     </Column>
   </Row>
 );

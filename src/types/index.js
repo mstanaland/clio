@@ -160,3 +160,22 @@ export const breakpointsType = PropTypes.oneOf([
   "desktop",
   "wideScreen",
 ]);
+
+export const selectValueType = (props, propName, componentName) => {
+  if (props[propName] != null) {
+    const type = typeof props[propName];
+    const shouldBeArray = !!props.multiple;
+
+    if (shouldBeArray && !Array.isArray(props[propName])) {
+      return new Error(
+        `Invalid prop \`${propName}\` of type \`${type}\` supplied to \`${componentName}\`, expected \`array\``
+      );
+    }
+    if (!shouldBeArray && type !== "string") {
+      return new Error(
+        `Invalid prop \`${propName}\` of type \`${type}\` supplied to \`${componentName}\`, expected \`string\``
+      );
+    }
+  }
+  return null;
+};

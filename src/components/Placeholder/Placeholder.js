@@ -2,37 +2,43 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
+import { resolveUnitlessValue } from "../../utils";
+
 import "./Placeholder.scss";
 
-import { extractBoxClasses } from "../Box";
-
-export default function Placeholder({ width = "100%", height = 100, ...rest }) {
-  const boxProps = {
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    ...rest,
-  };
-
-  const [classes, otherProps] = extractBoxClasses(boxProps);
-
+export default function Placeholder({
+  height = 100,
+  width = "100%",
+  borderRadius = "sm",
+  style,
+  ...rest
+}) {
   return (
     <div
       data-placeholder
-      style={{ width, height }}
-      className={cx(classes)}
-      {...otherProps}
-    >
-      <svg className="position-relative" xmlns="http://www.w3.org/2000/svg">
-        <line x1={0} y1={0} x2="100%" y2="100%" />
-        <line x1="100%" y1={0} x2={0} y2="100%" />
-      </svg>
-    </div>
+      className={cx({
+        [`radius-${borderRadius}`]: borderRadius,
+      })}
+      style={{
+        ...style,
+        width: resolveUnitlessValue(width),
+        height: resolveUnitlessValue(height),
+      }}
+      {...rest}
+    />
   );
 }
 
 Placeholder.propTypes = {
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Value for the height
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+  /** Value for the width */
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+  /** css value for the border radius, i.e. '3px' */
+  borderRadius: PropTypes.oneOf(["none", "sm", "md", "lg", "xl"]),
+
+  /** Normal React style object */
+  style: PropTypes.object,
 };
