@@ -1,0 +1,103 @@
+@import "../../styles/variables.scss";
+
+[data-text-field] {
+  input {
+    appearance: none;
+    outline: none;
+    border: solid rem(1) rgba(var(--color-n300-rgb), 0.25);
+    height: $sizer-md;
+    background-color: var(--color-n200);
+    width: 100%;
+    transition-property: border, box-shadow, background;
+    transition-duration: $ui-transition-speed;
+    transition-timing-function: ease-in-out;
+    padding-left: $spacer-xs;
+
+    &::placeholder {
+      font-family: $font-family-sans;
+      color: var(--color-n600);
+      opacity: 0.8;
+    }
+
+    @include hover-not-focus {
+      border: solid rem(1) rgba(var(--color-n400-rgb), 0.5);
+      background-color: var(--color-n150);
+    }
+
+    &:focus {
+      border: solid rem(1) var(--color-focus);
+      box-shadow: 0 0 0 rem(1) var(--color-focus);
+      background: var(--color-n0) !important;
+    }
+
+    &.with-icon {
+      padding-left: $spacer-lg;
+    }
+
+    &.with-unit-before {
+      padding-left: $spacer-lg + rem(2);
+    }
+
+    &.with-unit-after {
+      padding-right: $spacer-lg + rem(2);
+    }
+
+    &.with-clear-button {
+      padding-right: $spacer-md;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      background-color: var(--color-n200);
+      color: var(--color-n600);
+      cursor: not-allowed;
+    }
+
+    &.invalid {
+      border-color: var(--color-r600);
+      // background-color: var(--color-r200);
+      box-shadow: 0 0 0 rem(1) var(--color-r600);
+
+      @include hover-not-focus {
+        border-color: var(--color-r600);
+        // background-color: var(--color-r100);
+      }
+
+      &:focus {
+        border-color: var(--color-focus);
+        box-shadow: 0 0 0 rem(1) var(--color-focus);
+      }
+    }
+  }
+
+  .text-field-button-wrapper {
+    position: absolute;
+    top: 0;
+    right: $spacer-xs;
+    height: $sizer-md;
+  }
+
+  .text-field-unit-before,
+  .text-field-unit-after {
+    color: var(--color-text-03);
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    overflow: hidden;
+    width: $sizer-sm;
+    height: $sizer-sm;
+    top: $spacer-xxs;
+
+    background: var(--color-n200);
+    border-radius: rem(3);
+    color: var(--color-n600);
+  }
+
+  .text-field-unit-before {
+    left: $spacer-xxs;
+  }
+
+  .text-field-unit-after {
+    right: $spacer-xxs;
+  }
+}

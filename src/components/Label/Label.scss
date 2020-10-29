@@ -2,6 +2,11 @@
 
 [data-label],
 [data-visual-only-label] {
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   [data-label-required-dot] {
     display: inline-flex;
     width: rem(5);

@@ -12,6 +12,10 @@
     border: solid rem(1) var(--color-border);
     height: $sizer-md;
     background-color: var(--color-n0);
+    // transition-property: border, box-shadow;
+    // transition-duration: $ui-transition-speed;
+    // transition-timing-function: ease-in-out;
+    cursor: pointer;
 
     &::-ms-expand {
       display: none;
@@ -37,7 +41,7 @@
   [data-select-icon] {
     pointer-events: none;
     position: absolute;
-    right: $spacer-xs;
+    right: $spacer-xxs;
     top: 0;
     width: rem(20);
     height: $sizer-md;

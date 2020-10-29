@@ -10,14 +10,18 @@
 // ======== COLORS ============
 
 $color-n900: #031c42;
+$color-n850: #1a3153;
 $color-n800: #293e5e;
+$color-n750: #364a68;
 $color-n700: #405370;
 $color-n650: #69778c;
 $color-n600: #728095;
 $color-n500: #a3acba;
 $color-n400: #d1d5dc;
 $color-n300: #e4e7eb;
+$color-n250: #ebedf0;
 $color-n200: #f0f1f4;
+$color-n150: #f3f4f6;
 $color-n100: #f7f8f9;
 $color-n0: #fff;
 
@@ -109,7 +113,11 @@ $color-text-blue: $color-b800;
 
 $color-link: $color-b800;
 
-$color-focus: rgb(76, 154, 255);
+// $color-focus: rgb(76, 154, 255);
+$color-focus: #59b3b3;
+
+// ======== TRANSITIONS ============
+$ui-transition-speed: 125ms;
 
 // ======== TYPOGRAPHY ============
 $font-light: 200;
@@ -204,6 +212,9 @@ $grid-gutter-width: $spacer-md !default;
 $grid-row-columns: 6 !default;
 
 // ======== SIZES ============
+
+$sizer-small-icon: rem(20);
+$sizer-large-icon: rem(24);
 
 $sizer-xxs: $global-spacer * 3; // 12px
 $sizer-xs: $global-spacer * 4; // 16px

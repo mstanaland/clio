@@ -14,6 +14,9 @@ const propTypes = {
   /** Adds the required asterisk */
   isRequired: PropTypes.bool,
 
+  /** Dims the label for disabled inputs */
+  isDisabled: PropTypes.bool,
+
   /** Makes the label screen-reader only */
   isVisible: PropTypes.bool,
 
@@ -24,6 +27,7 @@ const propTypes = {
 const defaultProps = {
   className: null,
   isRequired: false,
+  isDisabled: false,
   isVisible: true,
 };
 
@@ -33,6 +37,7 @@ export default function Label({
   className,
   isRequired,
   isVisible,
+  isDisabled,
   ...rest
 }) {
   return (
@@ -42,6 +47,7 @@ export default function Label({
       className={cx(className, "text-md", "text-500", {
         "sr-only": !isVisible,
         "label-required": isRequired,
+        disabled: isDisabled,
       })}
       htmlFor={htmlFor}
       {...rest}

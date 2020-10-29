@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import { useFocusRing } from "@react-aria/focus";
@@ -116,14 +116,30 @@ export const Select = forwardRef(function Select(props, forwardedRef) {
     isLoading,
     className,
     autoFocus,
+    ariaDescribedby,
     ...rest
   } = props;
 
   const id = useId(userId);
-  const { isFocusVisible, focusProps } = useFocusRing(autoFocus);
+  const internalRef = useRef();
+  const timer = useRef();
+  const ref = forwardedRef || internalRef;
+  const { isFocusVisible, focusProps } = useFocusRing();
   const isControlled = typeof value === "string";
   const hasOptions = Array.isArray(options) && options.length > 0;
   const isInvalid = userIsInvalid || Boolean(errorText);
+
+  useEffect(() => {
+    clearTimeout(timer.current);
+
+    if (autoFocus) {
+      timer.current = setTimeout(() => {
+        ref.current.focus();
+      }, 0);
+    }
+
+    return () => clearTimeout(timer.current);
+  }, [autoFocus, ref]);
 
   if (isLoading && !isInline) {
     return (
@@ -156,7 +172,12 @@ export const Select = forwardRef(function Select(props, forwardedRef) {
           "flex-centered": isInline,
         })}
       >
-        <Label htmlFor={id} isVisible={isLabelVisible} isRequired={isRequired}>
+        <Label
+          htmlFor={id}
+          isVisible={isLabelVisible}
+          isRequired={isRequired}
+          isDisabled={isDisabled}
+        >
           {label}
         </Label>
       </div>
@@ -174,11 +195,11 @@ export const Select = forwardRef(function Select(props, forwardedRef) {
               "text-md",
               "text-500",
               "radius-md",
-              "pl-sm",
+              "pl-xs",
               "pr-lg",
               {
                 invalid: isInvalid,
-                focus: isFocusVisible,
+                "focus-input": isFocusVisible,
               }
             )}
             id={id}
@@ -190,8 +211,11 @@ export const Select = forwardRef(function Select(props, forwardedRef) {
             name={name}
             required={isRequired || !!placeholder}
             aria-invalid={isInvalid}
-            aria-describedby={isInvalid && errorText ? `${id}-error` : null}
-            ref={forwardedRef}
+            aria-describedby={cx({
+              [`${id}-error`]: Boolean(errorText),
+              [ariaDescribedby]: Boolean(ariaDescribedby),
+            })}
+            ref={ref}
             {...rest}
           >
             {!isMultiple && placeholder && (
@@ -224,7 +248,7 @@ export const Select = forwardRef(function Select(props, forwardedRef) {
           </div>
         </div>
       </div>
-      {errorText && <InputError>{errorText}</InputError>}
+      <InputError inputId={id}>{errorText}</InputError>
     </div>
   );
 });

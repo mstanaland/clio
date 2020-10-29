@@ -49,8 +49,8 @@ export const Appearances = (args) => {
         <Button size="sm" appearance="subtle" {...args}>
           Subtle
         </Button>
-        <Button size="sm" appearance="danger" {...args}>
-          Danger
+        <Button size="sm" appearance="critical" {...args}>
+          Critical
         </Button>
         <Button size="sm" appearance="link" {...args}>
           Link
@@ -69,8 +69,8 @@ export const Appearances = (args) => {
         <Button appearance="subtle" {...args}>
           Subtle
         </Button>
-        <Button appearance="danger" {...args}>
-          Danger
+        <Button appearance="critical" {...args}>
+          Critical
         </Button>
         <Button appearance="link" {...args}>
           Link
@@ -89,8 +89,8 @@ export const Appearances = (args) => {
         <Button size="lg" appearance="subtle" {...args}>
           Subtle
         </Button>
-        <Button size="lg" appearance="danger" {...args}>
-          Danger
+        <Button size="lg" appearance="critical" {...args}>
+          Critical
         </Button>
         <Button size="lg" appearance="link" {...args}>
           Link
@@ -115,8 +115,8 @@ export const IsLoading = (args) => {
       <Button isLoading appearance="subtle" {...args}>
         Subtle
       </Button>
-      <Button isLoading appearance="danger" {...args}>
-        Danger
+      <Button isLoading appearance="critical" {...args}>
+        Critical
       </Button>
       <Button isLoading appearance="link" {...args}>
         Link
@@ -140,8 +140,8 @@ export const IsDisabled = (args) => {
       <Button isDisabled appearance="subtle" {...args}>
         Subtle
       </Button>
-      <Button isDisabled appearance="danger" {...args}>
-        Danger
+      <Button isDisabled appearance="critical" {...args}>
+        Critical
       </Button>
       <Button isDisabled appearance="link" {...args}>
         Link
@@ -165,8 +165,8 @@ export const IconBefore = (args) => {
       <Button iconBeforeElement={<MdStar />} appearance="subtle" {...args}>
         Subtle
       </Button>
-      <Button iconBeforeElement={<MdStar />} appearance="danger" {...args}>
-        Danger
+      <Button iconBeforeElement={<MdStar />} appearance="critical" {...args}>
+        Critical
       </Button>
       <Button iconBeforeElement={<MdStar />} appearance="link" {...args}>
         Link
@@ -190,8 +190,8 @@ export const IconAfter = (args) => {
       <Button iconAfterElement={<MdStar />} appearance="subtle" {...args}>
         Subtle
       </Button>
-      <Button iconAfterElement={<MdStar />} appearance="danger" {...args}>
-        Danger
+      <Button iconAfterElement={<MdStar />} appearance="critical" {...args}>
+        Critical
       </Button>
       <Button iconAfterElement={<MdStar />} appearance="link" {...args}>
         Link

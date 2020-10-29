@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Button, { IconButton } from "../Button";
 
-import { ChevronRightIcon, ChevronLeftIcon } from "../Icons";
+import { IconChevronRight, IconChevronLeft } from "../Icons";
 
 const propTypes = {
   pages: PropTypes.number,
@@ -117,7 +117,7 @@ export default function Pagination({
       <ul className="inline-flex-centered">
         <li>
           <IconButton
-            iconElement={<ChevronLeftIcon />}
+            iconElement={<IconChevronLeft />}
             appearance="subtle"
             isDisabled={activePage === 0}
             aria-label="Previous Page"
@@ -127,7 +127,7 @@ export default function Pagination({
         {generateButtons()}
         <li>
           <IconButton
-            iconElement={<ChevronRightIcon />}
+            iconElement={<IconChevronRight />}
             appearance="subtle"
             isDisabled={activePage === pages - 1}
             aria-label="Next Page"

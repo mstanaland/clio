@@ -116,6 +116,7 @@ body {
   color: $color-text-dark;
   font-family: $font-family-sans;
   background-color: var(--color-n0);
+  transition: background-color $ui-transition-speed ease-in-out;
 }
 
 ol,

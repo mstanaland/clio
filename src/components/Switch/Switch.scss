@@ -6,14 +6,15 @@
   @include button-reset;
   position: relative;
   background-color: var(--color-n300);
-  transition: background-color 150ms $easing;
+  transition: background-color $ui-transition-speed $easing;
 
   [data-switch-handle] {
     background-color: $color-n0;
     position: absolute;
     top: rem(2);
     left: rem(2);
-    transition: left 150ms $easing, box-shadow 150ms $easing;
+    transition: left $ui-transition-speed $easing,
+      box-shadow $ui-transition-speed $easing;
     pointer-events: none;
   }
 

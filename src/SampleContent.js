@@ -22,13 +22,16 @@ import Toast, { useToast } from "./components/Toast";
 import Label, { VisualOnlyLabel } from "./components/Label";
 import Switch from "./components/Switch";
 import Pagination from "./components/Pagination";
-import Placeholder, { PlaceholderText } from "./components/Placeholder";
+import { PlaceholderText } from "./components/Placeholder";
 import InputError from "./components/InputError";
 import Select from "./components/Select";
+import TextField from "./components/TextField";
+import { IconSearchSmall } from "./components/Icons";
 
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
   const [spinningStatus, setSpinningStatus] = useState("idle");
+  const [textFieldValue, setTextFieldValue] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const showToast = useToast();
   const timer = useRef();
@@ -92,8 +95,6 @@ export default function SampleContent() {
           ]}
         />
       </Inline>
-
-      <Placeholder height={100} />
 
       <Stack space="xs">
         <Heading size="xxl">Heading xxl</Heading>
@@ -547,6 +548,25 @@ export default function SampleContent() {
               { label: "Option 3", value: "3" },
             ]}
           />
+        </Column>
+      </Row>
+
+      <Row>
+        <Column width="4">
+          <TextField label="This is a text field" />
+        </Column>
+        <Column width="4">
+          <TextField
+            value={textFieldValue}
+            onChange={(event) => setTextFieldValue(event.target.value)}
+            hasClearButton
+            onClearButtonClick={() => setTextFieldValue("")}
+            label="This is a text field"
+            iconElement={<IconSearchSmall />}
+          />
+        </Column>
+        <Column width="4">
+          <TextField label="This is a text field" unitAfter="$" />
         </Column>
       </Row>
 

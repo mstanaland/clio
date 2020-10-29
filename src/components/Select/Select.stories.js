@@ -69,6 +69,11 @@ WithDefaultValue.args = {
   defaultValue: "c",
 };
 
+export const AutoFocus = Template.bind({});
+AutoFocus.args = {
+  autoFocus: true,
+};
+
 export const Controlled = () => {
   const [value, setValue] = useState("");
 

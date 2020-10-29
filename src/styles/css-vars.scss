@@ -1,8 +1,10 @@
 :root {
   --color-n900: #{$color-n900};
   --color-n900-rgb: #{hexToRgb($color-n900)};
+  --color-n850: #{$color-n850};
   --color-n800: #{$color-n800};
   --color-n800-rgb: #{hexToRgb($color-n800)};
+  --color-n750: #{$color-n750};
   --color-n700: #{$color-n700};
   --color-n700-rgb: #{hexToRgb($color-n700)};
   --color-n650: #{$color-n650};
@@ -15,8 +17,10 @@
   --color-n400-rgb: #{hexToRgb($color-n400)};
   --color-n300: #{$color-n300};
   --color-n300-rgb: #{hexToRgb($color-n300)};
+  --color-n250: #{$color-n250};
   --color-n200: #{$color-n200};
   --color-n200-rgb: #{hexToRgb($color-n200)};
+  --color-n150: #{$color-n150};
   --color-n100: #{$color-n100};
   --color-n100-rgb: #{hexToRgb($color-n100)};
   --color-n0: #{$color-n0};
@@ -78,7 +82,7 @@
   --color-border-strong: var(--color-n600);
   --color-border-subtle: var(--color-n300);
 
-  --color-focus: rgb(76, 154, 255);
+  --color-focus: #{$color-focus};
 
   // --color-danger: #c62828;
   // --color-danger-hover: #d32f2f;
@@ -99,8 +103,10 @@
 [data-theme="dark"] {
   --color-n900: #{$color-n0};
   --color-n900-rgb: #{hexToRgb($color-n0)};
+  --color-n850: #{$color-n150};
   --color-n800: #{$color-n100};
   --color-n800-rgb: #{hexToRgb($color-n100)};
+  --color-n750: #{$color-n250};
   --color-n700: #{$color-n200};
   --color-n700-rgb: #{hexToRgb($color-n200)};
   --color-n650: #{$color-n300};
@@ -113,8 +119,10 @@
   --color-n400-rgb: #{hexToRgb($color-n500)};
   --color-n300: #{$color-n600};
   --color-n300-rgb: #{hexToRgb($color-n600)};
+  --color-n250: #{$color-n700};
   --color-n200: #{$color-n700};
   --color-n200-rgb: #{hexToRgb($color-n700)};
+  --color-n150: #{$color-n800};
   --color-n100: #{$color-n800};
   --color-n100-rgb: #{hexToRgb($color-n800)};
   --color-n0: #{$color-n900};

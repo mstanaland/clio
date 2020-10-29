@@ -17,7 +17,7 @@ export const IconButton = forwardRef(function IconButton(props, forwardedRef) {
     isDisabled,
     href,
     to,
-    shouldFocusOnMount,
+    autoFocus,
     className,
     onClick,
     onPress,
@@ -42,7 +42,7 @@ export const IconButton = forwardRef(function IconButton(props, forwardedRef) {
 
   const ButtonElement = getTag();
 
-  const { isFocusVisible, focusProps } = useFocusRing();
+  const { isFocusVisible, focusProps } = useFocusRing(autoFocus);
   const { buttonProps, isPressed } = useButton(
     { ...props, elementType: ButtonElement },
     buttonRef
@@ -91,7 +91,7 @@ IconButton.propTypes = {
   size: PropTypes.oneOf(["xs", "sm", "md", "lg"]),
   isDisabled: PropTypes.bool,
   isLoading: PropTypes.bool,
-  shouldFocusOnMount: PropTypes.bool,
+  autoFocus: PropTypes.bool,
   href: PropTypes.string,
   to: PropTypes.string,
   className: PropTypes.string,
