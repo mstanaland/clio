@@ -1,36 +1,37 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { ThemeProvider, DarkToggle } from "./theme";
-import SampleContent from "./SampleContent";
-
+import AppBase from "./components/AppBase";
 import Box from "./components/Box";
 import Divider from "./components/Divider";
 import Stack from "./components/Stack";
 import Spacer from "./components/Spacer";
 import ContentBlock from "./components/ContentBlock";
 import { ToastProvider } from "./components/Toast";
+import { ThemeProvider, DarkModeToggle } from "./theme";
+
+// import SampleContent from "./SampleContent";
+import SampleLayout from "./SampleLayout";
 
 function App() {
   return (
-    <Router>
-      <ThemeProvider>
-        <ToastProvider>
-          <ContentBlock>
-            <Spacer size="xs" />
-            <Stack>
+    <AppBase>
+      <Router>
+        <ThemeProvider>
+          <ToastProvider>
+            <div>
+              <Spacer size="xs" />
               <Box display="flex" justifyContent="end">
-                <DarkToggle />
+                <DarkModeToggle />
               </Box>
               <Divider />
-            </Stack>
-            <Spacer size="md" />
+            </div>
 
-            <SampleContent />
-          </ContentBlock>
-        </ToastProvider>
-      </ThemeProvider>
-    </Router>
+            <SampleLayout />
+          </ToastProvider>
+        </ThemeProvider>
+      </Router>
+    </AppBase>
   );
 }
 

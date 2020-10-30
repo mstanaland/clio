@@ -1,4 +1,4 @@
 import { ThemeContext, ThemeProvider } from "./ThemeProvider";
-import DarkToggle from "./DarkToggle";
+import DarkModeToggle from "./DarkModeToggle";
 
-export { ThemeContext, ThemeProvider, DarkToggle };
+export { ThemeContext, ThemeProvider, DarkModeToggle };

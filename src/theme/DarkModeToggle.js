@@ -6,8 +6,14 @@ import { VisualOnlyLabel } from "../components/Label";
 
 import { ThemeContext } from "./ThemeProvider";
 
-export default function DarkToggle() {
-  const { colorMode, setColorMode } = useContext(ThemeContext);
+export default function DarkModeToggle() {
+  const contextValue = useContext(ThemeContext);
+
+  if (!contextValue) {
+    throw new Error('No "ThemeProvider" configured');
+  }
+
+  const { colorMode, setColorMode } = contextValue;
 
   if (!colorMode) {
     return null;

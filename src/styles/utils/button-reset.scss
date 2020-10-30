@@ -1,5 +1,6 @@
 @mixin button-reset {
   outline: none; // handled by useFocusRing
+  background: transparent;
   appearance: none;
   box-shadow: none;
   width: auto;

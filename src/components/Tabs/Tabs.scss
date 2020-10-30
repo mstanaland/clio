@@ -1,0 +1,72 @@
+@import "../../styles/variables.scss";
+
+[data-tab-list] {
+  position: relative;
+  padding-bottom: $spacer-xs;
+
+  [data-tab-list-underline] {
+    position: absolute;
+    height: rem(2);
+    background: var(--color-g600);
+    width: rem(50);
+    bottom: rem(-1);
+    transition-property: width, left;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
+
+[data-tab-button] + [data-tab-button] {
+  margin-left: $spacer-xl;
+}
+
+[data-tab-button] {
+  @include button-reset;
+  color: var(--color-n650);
+  height: $sizer-md;
+  transition: color $ui-transition-speed ease;
+
+  @include hover {
+    color: var(--color-n700);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  &[aria-selected="true"] {
+    color: var(--color-n900);
+    font-weight: $font-medium;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  [data-tab-button-inner] {
+    position: relative;
+  }
+
+  [data-tab-button-sizer] {
+    font-weight: $font-medium;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  [data-tab-button-content] {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+[data-tab-panels] {
+  border-top: solid rem(1) var(--color-border);
+}
+
+[data-tab-panel] {
+  padding-top: $spacer-md;
+}

@@ -27,6 +27,7 @@ import InputError from "./components/InputError";
 import Select from "./components/Select";
 import TextField from "./components/TextField";
 import { IconSearchSmall } from "./components/Icons";
+import { Tabs, TabPanel } from "./components/Tabs";
 
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
@@ -77,8 +78,24 @@ export default function SampleContent() {
     }, 1500);
   };
 
+  const PendingTabLabel = (
+    <Inline space="xs">
+      <span>Pending System Account Keys</span>
+      <Badge tone="critical">{23}</Badge>
+    </Inline>
+  );
+
   return (
     <Stack>
+      <Tabs>
+        <TabPanel label="User Keys">User Keys tab</TabPanel>
+        <TabPanel label="System Account Keys">System Account Keys tab</TabPanel>
+        <TabPanel label={PendingTabLabel}>
+          Pending System Account Keys tab panel contents
+        </TabPanel>
+        <TabPanel label="User Keys">User Keys tab</TabPanel>
+      </Tabs>
+
       <Inline>
         <Pagination
           pages={102}

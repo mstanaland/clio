@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+
+[data-layout-with-sidebar] {
+  $sidebar-width: rem(216);
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 100%;
+
+  .sidebar-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: #1a3d3c;
+    width: $sidebar-width;
+    color: var(--color-n0);
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 100%;
+    min-width: 0;
+
+    .main-container-inner {
+      position: relative;
+      flex: 1 0 100%;
+      max-width: rem(2000);
+      padding: $spacer-md $spacer-xl;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      @include media-breakpoint-down(sm) {
+        padding-left: $global-spacer * 3;
+      }
+    }
+  }
+}
