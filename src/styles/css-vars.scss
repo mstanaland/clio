@@ -1,88 +1,123 @@
 :root {
-  --color-n900: #{$color-n900};
-  --color-n900-rgb: #{hexToRgb($color-n900)};
-  --color-n850: #{$color-n850};
-  --color-n800: #{$color-n800};
-  --color-n800-rgb: #{hexToRgb($color-n800)};
-  --color-n750: #{$color-n750};
-  --color-n700: #{$color-n700};
-  --color-n700-rgb: #{hexToRgb($color-n700)};
-  --color-n650: #{$color-n650};
-  --color-n650-rgb: #{hexToRgb($color-n650)};
-  --color-n600: #{$color-n600};
-  --color-n600-rgb: #{hexToRgb($color-n600)};
-  --color-n500: #{$color-n500};
-  --color-n500-rgb: #{hexToRgb($color-n500)};
-  --color-n400: #{$color-n400};
-  --color-n400-rgb: #{hexToRgb($color-n400)};
-  --color-n300: #{$color-n300};
-  --color-n300-rgb: #{hexToRgb($color-n300)};
-  --color-n250: #{$color-n250};
-  --color-n200: #{$color-n200};
-  --color-n200-rgb: #{hexToRgb($color-n200)};
-  --color-n150: #{$color-n150};
-  --color-n100: #{$color-n100};
-  --color-n100-rgb: #{hexToRgb($color-n100)};
-  --color-n0: #{$color-n0};
-  --color-n0-rgb: #{hexToRgb($color-n0)};
+  --color-text-1: #{$color-n1000};
+  --color-text-2: #{$color-n900};
+  --color-text-3: #{$color-n800};
+  --color-text-4: #{$color-n600};
+  --color-text-placeholder: #{rgba($color-n500, 0.8)};
+  --color-text-disabled: #{$color-n400};
+  --color-text-white: #{$color-n0};
 
-  --color-g900: #{$color-g900};
-  --color-g900-rgb: #{hexToRgb($color-g900)};
-  --color-g800: #{$color-g800};
-  --color-g800-rgb: #{hexToRgb($color-g800)};
-  --color-g700: #{$color-g700};
-  --color-g700-rgb: #{hexToRgb($color-g700)};
-  --color-g600: #{$color-g600};
-  --color-g600-rgb: #{hexToRgb($color-g600)};
-  --color-g500: #{$color-g500};
-  --color-g500-rgb: #{hexToRgb($color-g500)};
-  --color-g400: #{$color-g400};
-  --color-g400-rgb: #{hexToRgb($color-g400)};
-  --color-g300: #{$color-g300};
-  --color-g300-rgb: #{hexToRgb($color-g300)};
-  --color-g200: #{$color-g200};
-  --color-g200-rgb: #{hexToRgb($color-g200)};
-  --color-g100: #{$color-g100};
-  --color-g100-rgb: #{hexToRgb($color-g100)};
+  --color-active-1: #{$color-p600};
+  --color-active-2: #{$color-p700};
 
-  --color-r900: #{$color-r900};
-  --color-r800: #{$color-r800};
-  --color-r700: #{$color-r700};
-  --color-r600: #{$color-r600};
-  --color-r500: #{$color-r500};
-  --color-r400: #{$color-r400};
-  --color-r300: #{$color-r300};
-  --color-r200: #{$color-r200};
-  --color-r100: #{$color-r100};
+  --color-primary: #{$color-p700};
+  --color-primary-hover: #{$color-p800};
+  --color-primary-active: #{$color-p900};
+  --color-primary-foreground: #{$color-n0};
 
-  --color-text-1: var(--color-n900);
-  --color-text-2: var(--color-n800);
-  --color-text-3: var(--color-n700);
-  --color-text-4: var(--color-n650);
-  --color-text-placeholder: var(--color-n500);
-  --color-text-disabled: var(--color-n400);
+  --color-secondary: #{rgba($color-p700, 0.12)};
+  --color-secondary-hover: #{rgba($color-p700, 0.17)};
+  --color-secondary-active: #{rgba($color-p700, 0.25)};
+  --color-secondary-foreground: #{$color-p900};
+
+  --color-default: #{rgba($color-n900, 0.07)};
+  --color-default-hover: #{rgba($color-n900, 0.11)};
+  --color-default-active: #{rgba($color-n900, 0.25)};
+  --color-default-foreground: #{$color-n800};
+
+  --color-neutral-darken: #{rgba($color-n900, 0.07)};
+  --color-neutral-lighten: #{rgba($color-n0, 0.25)};
+
+  --color-critical-light: #{$color-c400};
+  --color-critical: #{$color-c500};
+  --color-critical-hover: #{$color-c600};
+  --color-critical-active: #{$color-c700};
+  --color-critical-foreground: #{$color-n0};
+
+  --color-toast: #{$color-n1000};
+
+  --color-disabled: #{rgba($color-n900, 0.1)};
+
+  --color-border: #{$color-n200};
+  --color-border-strong: #{$color-n500};
+  --color-border-subtle: #{$color-n100};
+
+  --color-success: #{$color-g500};
+
+  --color-placeholder-1: #{$color-n50};
+  --color-placeholder-2: #{$color-n100};
+
+  --color-input: #{$color-n0};
+  --color-input-hover: #{rgba($color-n900, 0.07)};
+  --color-input-active: #{$color-n0};
+
+  --color-sidebar: #{$color-p900};
+
+  --color-focus: #{$color-focus};
+
+  // DEPRECATED BELOW HERE
+
+  // --color-n900: #{$color-n900};
+  // --color-n900-rgb: #{hexToRgb($color-n900)};
+  // --color-n800: #{$color-n800};
+  // --color-n800-rgb: #{hexToRgb($color-n800)};
+  // --color-n700: #{$color-n700};
+  // --color-n700-rgb: #{hexToRgb($color-n700)};
+  // --color-n600: #{$color-n600};
+  // --color-n600-rgb: #{hexToRgb($color-n600)};
+  // --color-n500: #{$color-n500};
+  // --color-n500-rgb: #{hexToRgb($color-n500)};
+  // --color-n400: #{$color-n400};
+  // --color-n400-rgb: #{hexToRgb($color-n400)};
+  // --color-n300: #{$color-n300};
+  // --color-n300-rgb: #{hexToRgb($color-n300)};
+  // --color-n200: #{$color-n200};
+  // --color-n200-rgb: #{hexToRgb($color-n200)};
+  // --color-n100: #{$color-n100};
+  // --color-n100-rgb: #{hexToRgb($color-n100)};
+  // --color-n0: #{$color-n0};
+  // --color-n0-rgb: #{hexToRgb($color-n0)};
+
+  // --color-g900: #{$color-g900};
+  // --color-g900-rgb: #{hexToRgb($color-g900)};
+  // --color-g800: #{$color-g800};
+  // --color-g800-rgb: #{hexToRgb($color-g800)};
+  // --color-g700: #{$color-g700};
+  // --color-g700-rgb: #{hexToRgb($color-g700)};
+  // --color-g600: #{$color-g600};
+  // --color-g600-rgb: #{hexToRgb($color-g600)};
+  // --color-g500: #{$color-g500};
+  // --color-g500-rgb: #{hexToRgb($color-g500)};
+  // --color-g400: #{$color-g400};
+  // --color-g400-rgb: #{hexToRgb($color-g400)};
+  // --color-g300: #{$color-g300};
+  // --color-g300-rgb: #{hexToRgb($color-g300)};
+  // --color-g200: #{$color-g200};
+  // --color-g200-rgb: #{hexToRgb($color-g200)};
+  // --color-g100: #{$color-g100};
+  // --color-g100-rgb: #{hexToRgb($color-g100)};
+
+  // --color-r900: #{$color-r900};
+  // --color-r800: #{$color-r800};
+  // --color-r700: #{$color-r700};
+  // --color-r600: #{$color-r600};
+  // --color-r500: #{$color-r500};
+  // --color-r400: #{$color-r400};
+  // --color-r300: #{$color-r300};
+  // --color-r200: #{$color-r200};
+  // --color-r100: #{$color-r100};
 
   --color-shadow-rgb: var(--color-n900-rgb);
 
-  --color-primary: var(--color-g800);
-  --color-primary-hover: var(--color-g700);
-  --color-primary-active: var(--color-g900);
+  // --color-link: var(--color-g800);
+  // --color-link-hover: var(--color-g700);
+  // --color-link-active: var(--color-g900);
 
-  --color-link: var(--color-g800);
-  --color-link-hover: var(--color-g700);
-  --color-link-active: var(--color-g900);
-
-  --color-text-white: #fff;
-  --color-text-disabled: #a5adba;
-  --color-text-danger: #c62828;
-  --color-text-success: #e3ebe3;
-  --color-text-info: #1565c0;
-
-  --color-border: var(--color-n400);
-  --color-border-strong: var(--color-n600);
-  --color-border-subtle: var(--color-n300);
-
-  --color-focus: #{$color-focus};
+  // --color-text-white: #fff;
+  // --color-text-disabled: #a5adba;
+  // --color-text-danger: #c62828;
+  // --color-text-success: #e3ebe3;
+  // --color-text-info: #1565c0;
 
   // --color-danger: #c62828;
   // --color-danger-hover: #d32f2f;
@@ -103,13 +138,10 @@
 [data-theme="dark"] {
   --color-n900: #{$color-n0};
   --color-n900-rgb: #{hexToRgb($color-n0)};
-  --color-n850: #{$color-n150};
   --color-n800: #{$color-n100};
   --color-n800-rgb: #{hexToRgb($color-n100)};
-  --color-n750: #{$color-n250};
   --color-n700: #{$color-n200};
   --color-n700-rgb: #{hexToRgb($color-n200)};
-  --color-n650: #{$color-n300};
   --color-n650-rgb: #{hexToRgb($color-n300)};
   --color-n600: #{$color-n300};
   --color-n600-rgb: #{hexToRgb($color-n300)};
@@ -122,7 +154,6 @@
   --color-n250: #{$color-n700};
   --color-n200: #{$color-n700};
   --color-n200-rgb: #{hexToRgb($color-n700)};
-  --color-n150: #{$color-n800};
   --color-n100: #{$color-n800};
   --color-n100-rgb: #{hexToRgb($color-n800)};
   --color-n0: #{$color-n900};

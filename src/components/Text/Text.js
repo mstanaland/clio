@@ -34,9 +34,10 @@ export default function Text({
         "text-md": size === "md",
         "text-lg": size === "lg",
         "text-xl": size === "xl",
-        "text-color-black": color === "black",
-        "text-color-dark-gray": color === "darkGray",
-        "text-color-gray": color === "gray",
+        "color-text-1": color === "black",
+        "color-text-2": color === "darkGray",
+        "color-text-3": color === "gray",
+        "color-text-white": color === "white",
         "text-200": fontWeight === "light",
         "text-300": fontWeight === "thin",
         "text-400": fontWeight === "regular",
@@ -59,7 +60,7 @@ export default function Text({
 Text.propTypes = {
   tag: htmlElementsType,
   size: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
-  color: PropTypes.oneOf(["black", "darkGray", "gray"]),
+  color: PropTypes.oneOf(["black", "darkGray", "gray", "white"]),
   fontWeight: PropTypes.oneOf([
     "light",
     "thin",

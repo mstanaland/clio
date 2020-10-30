@@ -14,13 +14,18 @@
   background-color: var(--color-background-5);
 }
 .bg-critical {
-  background-color: var(--color-r700);
+  background-color: var(--color-critical);
 }
 .bg-success {
   background-color: var(--color-g200);
 }
-.bg-neutral {
-  background-color: var(--color-n200);
+
+.bg-neutral-darken {
+  background-color: var(--color-neutral-darken);
+}
+
+.bg-neutral-lighten {
+  background-color: var(--color-neutral-lighten);
 }
 
 // .n900 {

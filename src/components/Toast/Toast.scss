@@ -20,8 +20,9 @@
 
 [data-toast] {
   position: relative;
-  background-color: var(--color-n800);
-  max-width: rem(400);
+  background-color: var(--color-toast);
+  max-width: rem(500);
+  min-width: rem(340);
   padding: $spacer-xs;
   padding-right: $spacer-lg;
   pointer-events: auto;
@@ -48,11 +49,11 @@
     }
 
     &.success {
-      background-color: $color-g-accent;
+      background-color: var(--color-success);
     }
 
     &.error {
-      background-color: $color-r-accent;
+      background-color: var(--color-critical);
     }
   }
 

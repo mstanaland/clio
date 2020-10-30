@@ -5,7 +5,7 @@
 
   @include button-reset;
   position: relative;
-  background-color: var(--color-n300);
+  background-color: var(--color-n100);
   transition: background-color $ui-transition-speed $easing;
 
   [data-switch-handle] {
@@ -19,7 +19,7 @@
   }
 
   &.checked {
-    background-color: var(--color-g600);
+    background-color: var(--color-success);
   }
 
   &.size-md {

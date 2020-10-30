@@ -3,9 +3,9 @@
 [data-placeholder] {
   background: linear-gradient(
     90deg,
-    var(--color-n100),
-    var(--color-n200),
-    var(--color-n100)
+    var(--color-placeholder-1),
+    var(--color-placeholder-2),
+    var(--color-placeholder-1)
   );
   background-size: 400% 200%;
   animation: gradient 4s ease-in-out infinite;

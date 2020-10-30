@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 [data-layout-placeholder] {
-  background-color: var(--color-n300);
+  background-color: var(--color-default);
 
   svg {
     width: 100%;
@@ -10,6 +10,6 @@
 
   line {
     stroke-width: rem(1);
-    stroke: rgba(var(--color-n900-rgb), 0.15);
+    stroke: var(--color-default-hover);
   }
 }

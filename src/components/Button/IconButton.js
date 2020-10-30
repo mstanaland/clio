@@ -50,6 +50,7 @@ export const IconButton = forwardRef(function IconButton(props, forwardedRef) {
 
   return (
     <ButtonElement
+      data-button
       data-icon-button
       {...buttonProps}
       {...focusProps}
@@ -65,6 +66,7 @@ export const IconButton = forwardRef(function IconButton(props, forwardedRef) {
         active: isPressed,
         default: appearance === "default",
         primary: appearance === "primary",
+        secondary: appearance === "secondary",
         subtle: appearance === "subtle",
         critical: appearance === "critical",
         link: appearance === "link",
@@ -84,6 +86,7 @@ IconButton.propTypes = {
   appearance: PropTypes.oneOf([
     "default",
     "primary",
+    "secondary",
     "critical",
     "subtle",
     "link",
@@ -95,7 +98,6 @@ IconButton.propTypes = {
   href: PropTypes.string,
   to: PropTypes.string,
   className: PropTypes.string,
-  iconBeforeElement: PropTypes.node,
-  iconAfterElement: PropTypes.node,
+  iconElement: PropTypes.node,
   onPress: PropTypes.func,
 };

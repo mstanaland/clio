@@ -2,6 +2,9 @@ import React from "react";
 
 import Badge from "./Badge";
 import Inline from "../Inline";
+import Box from "../Box";
+import Stack from "../Stack";
+import Text from "../Text";
 
 export default {
   component: Badge,
@@ -26,15 +29,32 @@ NumberWithMax.args = {
 // };
 
 export const Tones = (args) => (
-  <Inline>
-    <Badge {...args} tone="neutral">
-      Neutral
-    </Badge>
-
-    <Badge {...args} tone="critical">
-      Danger
-    </Badge>
-  </Inline>
+  <Stack>
+    <Box padding="md">
+      <Inline>
+        <Badge {...args} tone="darken">
+          Darken
+        </Badge>
+        <Text>Darkens a light background</Text>
+      </Inline>
+    </Box>
+    <Box padding="md" style={{ background: "var(--color-toast)" }}>
+      <Inline>
+        <Badge {...args} tone="lighten">
+          Lighten
+        </Badge>
+        <Text color="white">Lighten a dark background</Text>
+      </Inline>
+    </Box>
+    <Box padding="md">
+      <Inline>
+        <Badge {...args} tone="critical">
+          Critical
+        </Badge>
+        <Text>Critical</Text>
+      </Inline>
+    </Box>
+  </Stack>
 );
 
 export const Sizes = (args) => (

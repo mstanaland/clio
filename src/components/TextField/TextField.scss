@@ -4,30 +4,30 @@
   input {
     appearance: none;
     outline: none;
-    border: solid rem(1) rgba(var(--color-n300-rgb), 0.25);
+    border: solid rem(1) var(--color-border);
+    background-color: var(--color-input);
     height: $sizer-md;
-    background-color: var(--color-n200);
     width: 100%;
     transition-property: border, box-shadow, background;
     transition-duration: $ui-transition-speed;
     transition-timing-function: ease-in-out;
     padding-left: $spacer-xs;
+    font-family: $font-family-sans;
 
     &::placeholder {
       font-family: $font-family-sans;
-      color: var(--color-n600);
-      opacity: 0.8;
+      color: var(--color-text-placeholder);
     }
 
     @include hover-not-focus {
-      border: solid rem(1) rgba(var(--color-n400-rgb), 0.5);
-      background-color: var(--color-n150);
+      // border: solid rem(1) rgba(var(--color-n400-rgb), 0.5);
+      background-color: var(--color-input-hover);
     }
 
     &:focus {
       border: solid rem(1) var(--color-focus);
       box-shadow: 0 0 0 rem(1) var(--color-focus);
-      background: var(--color-n0) !important;
+      background: var(--color-input-active) !important;
     }
 
     &.with-icon {
@@ -48,18 +48,18 @@
 
     &[disabled] {
       opacity: 0.5;
-      background-color: var(--color-n200);
-      color: var(--color-n600);
+      background-color: var(--color-disabled);
+      color: var(--color-text-disabled);
       cursor: not-allowed;
     }
 
     &.invalid {
-      border-color: var(--color-r600);
+      border-color: var(--color-critical);
       // background-color: var(--color-r200);
-      box-shadow: 0 0 0 rem(1) var(--color-r600);
+      box-shadow: 0 0 0 rem(1) var(--color-critical);
 
       @include hover-not-focus {
-        border-color: var(--color-r600);
+        border-color: var(--color-critical);
         // background-color: var(--color-r100);
       }
 
@@ -88,9 +88,9 @@
     height: $sizer-sm;
     top: $spacer-xxs;
 
-    background: var(--color-n200);
+    background: var(--color-neutral-darken);
     border-radius: rem(3);
-    color: var(--color-n600);
+    color: var(--color-text-3);
   }
 
   .text-field-unit-before {

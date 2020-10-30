@@ -127,26 +127,78 @@ export const IsLoading = (args) => {
 
 export const IsDisabled = (args) => {
   return (
-    <Inline>
-      <Button isDisabled appearance="primary" {...args}>
-        Primary
-      </Button>
-      <Button isDisabled appearance="secondary" {...args}>
-        Secondary
-      </Button>
-      <Button isDisabled appearance="default" {...args}>
-        Default
-      </Button>
-      <Button isDisabled appearance="subtle" {...args}>
-        Subtle
-      </Button>
-      <Button isDisabled appearance="critical" {...args}>
-        Critical
-      </Button>
-      <Button isDisabled appearance="link" {...args}>
-        Link
-      </Button>
-    </Inline>
+    <div>
+      <Inline>
+        <Button isDisabled appearance="primary" {...args}>
+          Primary
+        </Button>
+        <Button isDisabled appearance="secondary" {...args}>
+          Secondary
+        </Button>
+        <Button isDisabled appearance="default" {...args}>
+          Default
+        </Button>
+        <Button isDisabled appearance="subtle" {...args}>
+          Subtle
+        </Button>
+        <Button isDisabled appearance="critical" {...args}>
+          Critical
+        </Button>
+        <Button isDisabled appearance="link" {...args}>
+          Link
+        </Button>
+      </Inline>
+      <Inline>
+        <Button
+          isDisabled
+          iconBeforeElement={<MdStar />}
+          appearance="primary"
+          {...args}
+        >
+          Primary
+        </Button>
+        <Button
+          isDisabled
+          iconBeforeElement={<MdStar />}
+          appearance="secondary"
+          {...args}
+        >
+          Secondary
+        </Button>
+        <Button
+          isDisabled
+          iconBeforeElement={<MdStar />}
+          appearance="default"
+          {...args}
+        >
+          Default
+        </Button>
+        <Button
+          isDisabled
+          iconBeforeElement={<MdStar />}
+          appearance="subtle"
+          {...args}
+        >
+          Subtle
+        </Button>
+        <Button
+          isDisabled
+          iconBeforeElement={<MdStar />}
+          appearance="critical"
+          {...args}
+        >
+          Critical
+        </Button>
+        <Button
+          isDisabled
+          iconBeforeElement={<MdStar />}
+          appearance="link"
+          {...args}
+        >
+          Link
+        </Button>
+      </Inline>
+    </div>
   );
 };
 

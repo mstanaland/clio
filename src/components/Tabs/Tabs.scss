@@ -7,7 +7,7 @@
   [data-tab-list-underline] {
     position: absolute;
     height: rem(2);
-    background: var(--color-g600);
+    background: var(--color-active-1);
     width: rem(50);
     bottom: rem(-1);
     transition-property: width, left;
@@ -22,12 +22,12 @@
 
 [data-tab-button] {
   @include button-reset;
-  color: var(--color-n650);
+  color: var(--color-text-4);
   height: $sizer-md;
   transition: color $ui-transition-speed ease;
 
   @include hover {
-    color: var(--color-n700);
+    color: var(--color-text-3);
   }
 
   &[disabled] {
@@ -36,8 +36,12 @@
   }
 
   &[aria-selected="true"] {
-    color: var(--color-n900);
+    color: var(--color-text-1);
     font-weight: $font-medium;
+
+    @include hover {
+      color: var(--color-text-1);
+    }
   }
 
   &.hidden {

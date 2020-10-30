@@ -62,10 +62,10 @@
 
   input:checked + [data-checkbox-box],
   input.indeterminate + [data-checkbox-box] {
-    border-color: var(--color-g700);
+    border-color: var(--color-active-1);
 
     &:before {
-      background-color: var(--color-g700);
+      background-color: var(--color-active-1);
       transform: scale(1);
     }
 
@@ -76,13 +76,11 @@
 
   input:disabled + [data-checkbox-box] {
     opacity: 0.5;
-
-    background-color: var(--color-n100);
   }
 
   input:disabled:not(:checked) + [data-checkbox-box] {
     opacity: 0.5;
-    background-color: var(--color-n300);
+    background-color: var(--color-disabled);
   }
 
   input.has-focus + [data-checkbox-box] {

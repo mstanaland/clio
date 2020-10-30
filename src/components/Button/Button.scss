@@ -58,18 +58,17 @@
 
   // ========= Appearances ==============
   &.default {
-    background-color: rgba(var(--color-n900-rgb), 0.05);
-    color: var(--color-n700);
+    background-color: var(--color-default);
+    color: var(--color-default-foreground);
 
     @include hover {
-      background-color: rgba(var(--color-n900-rgb), 0.08);
-      color: var(--color-n700);
+      background-color: var(--color-default-hover);
     }
   }
 
   &.primary {
     background-color: var(--color-primary);
-    color: var(--color-text-white);
+    color: var(--color-primary-foreground);
 
     @include hover {
       background-color: var(--color-primary-hover);
@@ -78,66 +77,40 @@
     &.active {
       background-color: var(--color-primary-active) !important;
     }
-
-    .button-icon {
-      color: var(--color-text-white);
-      opacity: 0.8;
-    }
   }
 
   &.secondary {
-    background-color: rgba(var(--color-g600-rgb), 0.15);
-    color: var(--color-g900);
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-foreground);
 
     @include hover {
-      background-color: rgba(var(--color-g600-rgb), 0.2);
+      background-color: var(--color-secondary-hover);
     }
 
     &.active {
-      background-color: rgba(var(--color-g600-rgb), 0.35) !important;
-    }
-
-    .button-icon {
-      color: var(--color-g800);
-      opacity: 0.8;
-    }
-
-    [data-theme="dark"] & {
-      background-color: rgba(var(--color-g100-rgb), 0.05);
-      color: var(--color-g300);
-
-      .button-icon {
-        color: var(--color-g300);
-        opacity: 0.8;
-      }
+      background-color: var(--color-secondary-active) !important;
     }
   }
 
   &.critical {
-    background-color: var(--color-r700);
-    color: $color-n0;
+    background-color: var(--color-critical);
+    color: var(--color-critical-foreground);
 
     @include hover {
-      background-color: var(--color-r600);
+      background-color: var(--color-critical-hover);
     }
 
     &.active {
-      background-color: var(--color-r800) !important;
-    }
-
-    .button-icon {
-      color: $color-n0;
-      opacity: 0.8;
+      background-color: var(--color-critical-active) !important;
     }
   }
 
   &.subtle {
     background-color: transparent;
-    color: var(--color-n700);
+    color: var(--color-default-foreground);
 
     @include hover {
-      background-color: rgba(var(--color-n900-rgb), 0.05);
-      color: var(--color-n700);
+      background-color: var(--color-default);
     }
 
     &[disabled] {
@@ -146,15 +119,10 @@
   }
 
   &.link {
-    color: var(--color-link);
+    color: var(--color-primary);
 
     @include hover {
       text-decoration: underline;
-    }
-
-    .button-icon {
-      color: var(--color-link);
-      opacity: 0.75;
     }
 
     &[disabled] {
@@ -165,14 +133,10 @@
   // Keep disabled rule at the bottom because it overrides any other colors
   // for buttons like primary and critical
   &[disabled] {
-    background-color: rgba(var(--color-n900-rgb), 0.025);
+    opacity: 0.75;
+    background-color: var(--color-default);
     color: var(--color-text-disabled) !important;
     cursor: not-allowed !important;
-
-    .button-icon {
-      color: var(--color-n500);
-      opacity: 0.5;
-    }
   }
 
   // ========= Button inner components ==============
@@ -199,7 +163,7 @@
   }
 
   .button-icon {
-    color: var(--color-button-icon);
+    opacity: 0.6;
 
     &.icon-left {
       margin-right: rem(3);

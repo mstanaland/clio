@@ -15,7 +15,7 @@
 
   circle {
     stroke-linecap: round;
-    stroke: var(--color-n400);
+    stroke: var(--color-border);
     fill: transparent;
     transform-origin: center;
     animation: rotateKeyframes 700ms linear infinite;
@@ -26,19 +26,19 @@
     }
 
     &.primary {
-      stroke: var(--color-g600);
+      stroke: var(--color-active-1);
     }
 
     &.dark-gray {
-      stroke: var(--color-n500);
+      stroke: var(--color-text-4);
     }
 
     &.success {
-      stroke: $color-g600 !important;
+      stroke: var(--color-success) !important;
     }
 
     &.error {
-      stroke: $color-r600 !important;
+      stroke: var(--color-critical) !important;
     }
   }
 
@@ -49,10 +49,10 @@
   }
 
   .success-icon {
-    fill: $color-g600;
+    fill: var(--color-success);
   }
 
   .error-icon {
-    fill: $color-r600;
+    fill: var(--color-critical);
   }
 }

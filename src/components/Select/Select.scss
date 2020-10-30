@@ -11,30 +11,35 @@
     appearance: none;
     border: solid rem(1) var(--color-border);
     height: $sizer-md;
-    background-color: var(--color-n0);
+    background-color: var(--color-input);
+    font-family: $font-family-sans;
     // transition-property: border, box-shadow;
     // transition-duration: $ui-transition-speed;
     // transition-timing-function: ease-in-out;
     cursor: pointer;
+
+    @include hover {
+      background-color: var(--color-input-hover);
+    }
 
     &::-ms-expand {
       display: none;
     }
 
     &.invalid {
-      border-color: var(--color-r600);
+      border-color: var(--color-critical);
     }
 
     &[disabled] {
       opacity: 0.5;
-      background-color: var(--color-n200);
-      color: var(--color-n600);
+      background-color: var(--color-disabled);
+      color: var(--color-text-disabled);
       cursor: not-allowed;
     }
 
     // make placeholder gray
     &:invalid {
-      color: var(--color-n600);
+      color: var(--color-text-placeholder);
     }
   }
 
@@ -45,11 +50,10 @@
     top: 0;
     width: rem(20);
     height: $sizer-md;
-    color: var(--color-n600);
+    color: var(--color-default-foreground);
 
     &.disabled {
       opacity: 0.5;
-      color: var(--color-n500);
     }
   }
 }

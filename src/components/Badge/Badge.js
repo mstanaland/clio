@@ -30,7 +30,7 @@ function renderFormattedNumber(children, max) {
 
 export default function Badge({
   children,
-  tone = "neutral",
+  tone = "darken",
   size = "md",
   tag: Tag = "span",
   max,
@@ -52,8 +52,9 @@ export default function Badge({
         "text-xs": size === "md",
         "text-sm": size === "lg",
         "text-md": size === "xl",
-        "text-color-white": tone === "critical",
-        "bg-neutral": tone === "neutral",
+        "text-color-white": tone === "critical" || tone === "lighten",
+        "bg-neutral-darken": tone === "darken",
+        "bg-neutral-lighten": tone === "lighten",
         "bg-critical": tone === "critical",
       })}
     >
