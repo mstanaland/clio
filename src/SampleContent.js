@@ -28,6 +28,7 @@ import Select from "./components/Select";
 import TextField from "./components/TextField";
 import { IconSearchSmall } from "./components/Icons";
 import { Tabs, TabPanel } from "./components/Tabs";
+import Link from "./components/Link";
 
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
@@ -127,21 +128,23 @@ export default function SampleContent() {
           <Text size="xs">
             Text xs: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
-            subset of artificial intelligence.
+            subset of artificial intelligence.{" "}
+            <Link href="/">Testing 1,2,3</Link>
           </Text>
         </Column>
         <Column>
           <Text size="sm">
             Text sm: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
-            subset of artificial intelligence.
+            subset of artificial intelligence. <Link to="/">Testing 1,2,3</Link>
           </Text>
         </Column>
         <Column>
           <Text>
             Text md: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
-            subset of artificial intelligence.
+            subset of artificial intelligence.{" "}
+            <Link href="/">Testing 1,2,3</Link>
           </Text>
         </Column>
         <Column>
@@ -151,14 +154,16 @@ export default function SampleContent() {
           <Text size="lg">
             Text lg: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
-            subset of artificial intelligence.
+            subset of artificial intelligence.{" "}
+            <Link href="/">Testing 1,2,3 and stuff and junk </Link>
           </Text>
         </Column>
         <Column>
           <Text size="xl">
             Text xl: Machine learning (ML) is the study of computer algorithms
             that improve automatically through experience. It is seen as a
-            subset of artificial intelligence.
+            subset of artificial intelligence.{" "}
+            <Link href="/">Testing 1,2,3</Link>
           </Text>
         </Column>
       </Row>
@@ -195,293 +200,262 @@ export default function SampleContent() {
               improve automatically through experience. It is seen as a subset
               of artificial intelligence.
             </Text>
-            <Stack space="sm">
-              <Inline>
-                <IconButton
-                  size="xs"
-                  iconElement={<MdStar />}
-                  onPress={onSuccessToastClick}
-                />
-                <IconButton
-                  size="sm"
-                  iconElement={<MdStar />}
-                  onPress={onErrorToastClick}
-                />
-                <IconButton
-                  size="md"
-                  iconElement={<MdStar />}
-                  onPress={onSuccessToastClick}
-                />
-                <IconButton
-                  size="lg"
-                  iconElement={<MdStar />}
-                  onPress={onErrorToastClick}
-                />
-              </Inline>
-              <Inline>
-                <IconButton
-                  appearance="subtle"
-                  size="xs"
-                  iconElement={<MdStar />}
-                />
-                <IconButton
-                  appearance="subtle"
-                  size="sm"
-                  iconElement={<MdStar />}
-                />
-                <IconButton
-                  appearance="subtle"
-                  size="md"
-                  iconElement={<MdStar />}
-                />
-                <IconButton
-                  appearance="subtle"
-                  size="lg"
-                  iconElement={<MdStar />}
-                />
-              </Inline>
-              <Inline>
-                <IconButton
-                  appearance="link"
-                  size="xs"
-                  iconElement={<MdStar />}
-                />
-                <IconButton
-                  appearance="link"
-                  size="sm"
-                  iconElement={<MdStar />}
-                />
-                <IconButton
-                  appearance="link"
-                  size="md"
-                  iconElement={<MdStar />}
-                />
-                <IconButton
-                  appearance="link"
-                  size="lg"
-                  iconElement={<MdStar />}
-                />
-              </Inline>
-              <Inline>
-                <Button
-                  appearance="primary"
-                  size="sm"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Primary Button
-                </Button>
-                <Button
-                  appearance="primary"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Primary Button
-                </Button>
-                <Button
-                  appearance="primary"
-                  size="lg"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Primary Button
-                </Button>
-              </Inline>
-              <Inline>
-                <Button
-                  appearance="secondary"
-                  size="sm"
-                  iconBeforeElement={<MdStar />}
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Secondary Button
-                </Button>
-                <Button
-                  appearance="secondary"
-                  iconBeforeElement={<MdStar />}
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Secondary Button
-                </Button>
-                <Button
-                  appearance="secondary"
-                  size="lg"
-                  iconBeforeElement={<MdStar />}
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Secondary Button
-                </Button>
-              </Inline>
-              <Inline>
-                <Button
-                  iconBeforeElement={<MdStar />}
-                  appearance="primary"
-                  size="sm"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  With Icon
-                </Button>
-                <Button
-                  iconBeforeElement={<MdStar />}
-                  appearance="primary"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  With Icon
-                </Button>
-                <Button
-                  iconBeforeElement={<MdStar />}
-                  appearance="primary"
-                  size="lg"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  With Icon
-                </Button>
-              </Inline>
-              <Inline>
-                <Button
-                  size="sm"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Default Button
-                </Button>
-                <Button
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Default Button
-                </Button>
-                <Button
-                  size="lg"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Default Button
-                </Button>
-              </Inline>
-
-              <Inline>
-                <Button
-                  appearance="subtle"
-                  size="sm"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Subtle Button
-                </Button>
-                <Button
-                  appearance="subtle"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Subtle Button
-                </Button>
-                <Button
-                  appearance="subtle"
-                  size="lg"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Subtle Button
-                </Button>
-              </Inline>
-              <Inline>
-                <Button
-                  appearance="critical"
-                  size="sm"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Critical Button
-                </Button>
-                <Button
-                  appearance="critical"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Critical Button
-                </Button>
-                <Button
-                  appearance="critical"
-                  size="lg"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Critical Button
-                </Button>
-              </Inline>
-              <Inline>
-                <Button
-                  appearance="link"
-                  size="sm"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Link Button
-                </Button>
-                <Button
-                  appearance="link"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Link Button
-                </Button>
-                <Button
-                  appearance="link"
-                  size="lg"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Link Button
-                </Button>
-              </Inline>
-              <Inline>
-                <Button
-                  appearance="link"
-                  iconBeforeElement={<MdStar />}
-                  size="sm"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Link Button
-                </Button>
-                <Button
-                  appearance="link"
-                  iconBeforeElement={<MdStar />}
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Link Button
-                </Button>
-                <Button
-                  appearance="link"
-                  iconBeforeElement={<MdStar />}
-                  size="lg"
-                  isLoading={isSpinning}
-                  onPress={() => setSpinning((prev) => !prev)}
-                >
-                  Link Button
-                </Button>
-              </Inline>
-              <Inline>
-                <Button isDisabled size="sm">
-                  Disabled Button
-                </Button>
-                <Button isDisabled>Disabled Button</Button>
-                <Button isDisabled size="lg">
-                  Disabled Button
-                </Button>
-              </Inline>
-            </Stack>
           </Stack>
         </Card>
       </TextBlock>
+
+      <Stack space="sm">
+        <Inline>
+          <IconButton
+            size="xs"
+            iconElement={<MdStar />}
+            onPress={onSuccessToastClick}
+          />
+          <IconButton
+            size="sm"
+            iconElement={<MdStar />}
+            onPress={onErrorToastClick}
+          />
+          <IconButton
+            size="md"
+            iconElement={<MdStar />}
+            onPress={onSuccessToastClick}
+          />
+          <IconButton
+            size="lg"
+            iconElement={<MdStar />}
+            onPress={onErrorToastClick}
+          />
+        </Inline>
+        <Inline>
+          <IconButton appearance="subtle" size="xs" iconElement={<MdStar />} />
+          <IconButton appearance="subtle" size="sm" iconElement={<MdStar />} />
+          <IconButton appearance="subtle" size="md" iconElement={<MdStar />} />
+          <IconButton appearance="subtle" size="lg" iconElement={<MdStar />} />
+        </Inline>
+        <Inline>
+          <IconButton appearance="link" size="xs" iconElement={<MdStar />} />
+          <IconButton appearance="link" size="sm" iconElement={<MdStar />} />
+          <IconButton appearance="link" size="md" iconElement={<MdStar />} />
+          <IconButton appearance="link" size="lg" iconElement={<MdStar />} />
+        </Inline>
+        <Inline>
+          <Button
+            appearance="primary"
+            size="sm"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Primary Button
+          </Button>
+          <Button
+            appearance="primary"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Primary Button
+          </Button>
+          <Button
+            appearance="primary"
+            size="lg"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Primary Button
+          </Button>
+        </Inline>
+        <Inline>
+          <Button
+            appearance="secondary"
+            size="sm"
+            iconBeforeElement={<MdStar />}
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Secondary Button
+          </Button>
+          <Button
+            appearance="secondary"
+            iconBeforeElement={<MdStar />}
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Secondary Button
+          </Button>
+          <Button
+            appearance="secondary"
+            size="lg"
+            iconBeforeElement={<MdStar />}
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Secondary Button
+          </Button>
+        </Inline>
+        <Inline>
+          <Button
+            iconBeforeElement={<MdStar />}
+            appearance="primary"
+            size="sm"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            With Icon
+          </Button>
+          <Button
+            iconBeforeElement={<MdStar />}
+            appearance="primary"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            With Icon
+          </Button>
+          <Button
+            iconBeforeElement={<MdStar />}
+            appearance="primary"
+            size="lg"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            With Icon
+          </Button>
+        </Inline>
+        <Inline>
+          <Button
+            size="sm"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Default Button
+          </Button>
+          <Button
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Default Button
+          </Button>
+          <Button
+            size="lg"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Default Button
+          </Button>
+        </Inline>
+
+        <Inline>
+          <Button
+            appearance="subtle"
+            size="sm"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Subtle Button
+          </Button>
+          <Button
+            appearance="subtle"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Subtle Button
+          </Button>
+          <Button
+            appearance="subtle"
+            size="lg"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Subtle Button
+          </Button>
+        </Inline>
+        <Inline>
+          <Button
+            appearance="critical"
+            size="sm"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Critical Button
+          </Button>
+          <Button
+            appearance="critical"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Critical Button
+          </Button>
+          <Button
+            appearance="critical"
+            size="lg"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Critical Button
+          </Button>
+        </Inline>
+        <Inline>
+          <Button
+            appearance="link"
+            size="sm"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Link Button
+          </Button>
+          <Button
+            appearance="link"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Link Button
+          </Button>
+          <Button
+            appearance="link"
+            size="lg"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Link Button
+          </Button>
+        </Inline>
+        <Inline>
+          <Button
+            appearance="link"
+            iconBeforeElement={<MdStar />}
+            size="sm"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Link Button
+          </Button>
+          <Button
+            appearance="link"
+            iconBeforeElement={<MdStar />}
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Link Button
+          </Button>
+          <Button
+            appearance="link"
+            iconBeforeElement={<MdStar />}
+            size="lg"
+            isLoading={isSpinning}
+            onPress={() => setSpinning((prev) => !prev)}
+          >
+            Link Button
+          </Button>
+        </Inline>
+        <Inline>
+          <Button isDisabled size="sm">
+            Disabled Button
+          </Button>
+          <Button isDisabled>Disabled Button</Button>
+          <Button isDisabled size="lg">
+            Disabled Button
+          </Button>
+        </Inline>
+      </Stack>
 
       <Divider />
       <div>
@@ -612,11 +586,11 @@ export default function SampleContent() {
       </Inline>
 
       <div style={{ maxWidth: "100%" }}>
-        <Badge tone="neutral">28</Badge>
+        <Badge tone="darken">28</Badge>
         <Badge tone="critical">28</Badge>
         <Spacer />
         <div>
-          <Badge size="lg" tone="neutral" max={99}>
+          <Badge size="lg" tone="darken" max={99}>
             {2238}
           </Badge>
           <Badge size="lg" tone="critical">
@@ -626,7 +600,7 @@ export default function SampleContent() {
         <Spacer />
 
         <div>
-          <Badge size="xl" tone="neutral" max={99}>
+          <Badge size="xl" tone="darken" max={99}>
             {2238}
           </Badge>
           <Badge size="xl" tone="critical">

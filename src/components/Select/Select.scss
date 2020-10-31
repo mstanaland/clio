@@ -9,7 +9,7 @@
     outline: none;
     width: 100%;
     appearance: none;
-    border: solid rem(1) var(--color-border);
+    border: solid rem(1) var(--color-input-border);
     height: $sizer-md;
     background-color: var(--color-input);
     font-family: $font-family-sans;
@@ -50,7 +50,7 @@
     top: 0;
     width: rem(20);
     height: $sizer-md;
-    color: var(--color-default-foreground);
+    color: var(--color-text-3);
 
     &.disabled {
       opacity: 0.5;

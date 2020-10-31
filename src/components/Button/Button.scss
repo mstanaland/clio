@@ -64,6 +64,10 @@
     @include hover {
       background-color: var(--color-default-hover);
     }
+
+    &.active {
+      background-color: var(--color-default-active) !important;
+    }
   }
 
   &.primary {
@@ -119,10 +123,21 @@
   }
 
   &.link {
-    color: var(--color-primary);
+    color: var(--color-text-1);
+    font-weight: $font-medium;
+    text-decoration: none;
+    background-position: 0 0;
+    background-image: linear-gradient(
+      to top,
+      var(--color-link-underline),
+      var(--color-link-underline) 0.15em,
+      transparent 0.15em,
+      transparent
+    );
+    transition: background-color $ui-transition-speed ease;
 
     @include hover {
-      text-decoration: underline;
+      background-color: var(--color-link-underline);
     }
 
     &[disabled] {
@@ -163,7 +178,7 @@
   }
 
   .button-icon {
-    opacity: 0.6;
+    opacity: 0.75;
 
     &.icon-left {
       margin-right: rem(3);

@@ -10,7 +10,9 @@
 // ======== COLORS ============
 
 $color-n1000: #14293d;
+$color-n950: #1f3346; // dark mode only
 $color-n900: #2b3e50;
+$color-n850: #374859; // dark mode only
 $color-n800: #435464;
 $color-n700: #5a6977;
 $color-n600: #727e8b;
@@ -24,6 +26,7 @@ $color-n0: #fff;
 
 // Primary
 $color-p1000: #183939;
+$color-p950: #1d4545;
 $color-p900: #235252;
 $color-p800: #2e6b6a;
 $color-p700: #378180;
@@ -167,22 +170,22 @@ $border-radius-xl: rem(8);
 
 // ======== BOX-SHADOWS ============
 
-$shadow-xs: 0 rem(1) rem(2) 0 rgba(var(--color-shadow-rgb), 0.2);
+$shadow-xs: 0 rem(1) rem(2) 0 rgba(var(--color-shadow-rgb), 0.25);
 
-$shadow-sm: 0 rem(2) rem(4) 0 rgba(var(--color-shadow-rgb), 0.15),
-  0 rem(1) rem(3) 0 rgba(var(--color-shadow-rgb), 0.12);
+$shadow-sm: 0 rem(2) rem(4) 0 rgba(var(--color-shadow-rgb), 0.2),
+  0 rem(1) rem(3) 0 rgba(var(--color-shadow-rgb), 0.17);
 
-$shadow-md: 0 rem(4) rem(8) rem(-1) rgba(var(--color-shadow-rgb), 0.22),
-  0 rem(2) rem(5) rem(-1) rgba(var(--color-shadow-rgb), 0.12);
+$shadow-md: 0 rem(4) rem(8) rem(-1) rgba(var(--color-shadow-rgb), 0.27),
+  0 rem(2) rem(5) rem(-1) rgba(var(--color-shadow-rgb), 0.17);
 
-$shadow-lg: 0 rem(10) rem(15) rem(-3) rgba(var(--color-shadow-rgb), 0.22),
-  0 rem(4) rem(6) rem(-2) rgba(var(--color-shadow-rgb), 0.1);
+$shadow-lg: 0 rem(10) rem(15) rem(-3) rgba(var(--color-shadow-rgb), 0.27),
+  0 rem(4) rem(6) rem(-2) rgba(var(--color-shadow-rgb), 0.12);
 
-$shadow-xl: 0 rem(20) rem(25) rem(-5) rgba(var(--color-shadow-rgb), 0.22),
-  0 rem(10) rem(10) rem(-5) rgba(var(--color-shadow-rgb), 0.08);
+$shadow-xl: 0 rem(20) rem(25) rem(-5) rgba(var(--color-shadow-rgb), 0.27),
+  0 rem(10) rem(10) rem(-5) rgba(var(--color-shadow-rgb), 0.12);
 
-$shadow-xxl: 0 rem(25) rem(50) rem(-12) rgba(var(--color-shadow-rgb), 0.5),
-  0 rem(14) rem(20) rem(-5) rgba(var(--color-shadow-rgb), 0.08);
+$shadow-xxl: 0 rem(25) rem(50) rem(-12) rgba(var(--color-shadow-rgb), 0.8),
+  0 rem(14) rem(20) rem(-5) rgba(var(--color-shadow-rgb), 0.12);
 
 // ======== BREAKPOINTS ============
 

@@ -5,7 +5,7 @@
 
   @include button-reset;
   position: relative;
-  background-color: var(--color-n100);
+  background-color: var(--color-switch);
   transition: background-color $ui-transition-speed $easing;
 
   [data-switch-handle] {

@@ -35,7 +35,7 @@ Sizes.args = {
 };
 
 export const Colors = (args) => (
-  <div className="p-lg" style={{ background: "var(--color-n200)" }}>
+  <div className="p-lg" style={{ background: "var(--color-background-2)" }}>
     <Spinner {...args} color="primary" />
     <Spinner {...args} color="darkGray" />
     <Spinner {...args} color="gray" />

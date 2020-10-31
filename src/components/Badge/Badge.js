@@ -73,7 +73,7 @@ Badge.propTypes = {
   /** Sets text and overall pill size */
   size: PropTypes.oneOf(["md", "lg", "xl"]),
 
-  tone: PropTypes.oneOf(["neutral", "critical"]),
+  tone: PropTypes.oneOf(["darken", "lighten", "critical"]),
 
   /** Additional class */
   className: PropTypes.string,

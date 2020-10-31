@@ -4,7 +4,7 @@
   input {
     appearance: none;
     outline: none;
-    border: solid rem(1) var(--color-border);
+    border: solid rem(1) var(--color-input-border);
     background-color: var(--color-input);
     height: $sizer-md;
     width: 100%;
@@ -20,7 +20,6 @@
     }
 
     @include hover-not-focus {
-      // border: solid rem(1) rgba(var(--color-n400-rgb), 0.5);
       background-color: var(--color-input-hover);
     }
 
@@ -89,7 +88,7 @@
     top: $spacer-xxs;
 
     background: var(--color-neutral-darken);
-    border-radius: rem(3);
+    border-radius: $border-radius-sm;
     color: var(--color-text-3);
   }
 

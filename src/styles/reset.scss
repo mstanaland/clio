@@ -113,9 +113,9 @@ section {
 html,
 body {
   line-height: 1;
-  color: $color-text-dark;
+  color: var(--color-text-2);
   font-family: $font-family-sans;
-  background-color: var(--color-n0);
+  background-color: var(--color-background-1);
   transition: background-color $ui-transition-speed ease-in-out;
 }
 

@@ -63,22 +63,21 @@
     right: rem(4);
 
     [data-icon-button] {
-      @include hover {
-        color: rgba(var(--color-n0-rgb), 0.8);
-        background-color: rgba(var(--color-n500-rgb), 0.1);
-      }
+      color: rgba($color-n0, 0.8);
 
-      [data-theme="dark"] & {
-        color: var(--color-n400);
+      @include hover {
+        color: $color-n0;
+        background-color: $color-n800;
       }
     }
   }
 
   [data-toast-message] {
-    color: var(--color-n0);
+    color: var(--color-text-reverse);
   }
   [data-toast-description] {
-    color: var(--color-n200);
+    color: var(--color-text-reverse);
+    opacity: 0.75;
     line-height: 1.3;
   }
 }
