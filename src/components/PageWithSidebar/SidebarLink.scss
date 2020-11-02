@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+[data-sidebar-link] {
+  cursor: pointer;
+  outline: none;
+  display: block;
+  border: 0;
+  color: var(--color-sidebar-foreground);
+  text-decoration: none;
+  transition: background $ui-transition-speed ease;
+
+  @include hover {
+    background-color: var(--color-sidebar-hover);
+  }
+
+  &.active {
+    color: var(--color-text-white);
+    background-color: var(--color-sidebar-active);
+    font-weight: $font-medium;
+
+    @include hover {
+      background-color: var(--color-sidebar-active);
+    }
+  }
+
+  &.focus {
+    box-shadow: 0 0 0 rem(2) var(--color-focus) !important;
+    border-bottom: 0;
+    border-radius: rem(1);
+  }
+}

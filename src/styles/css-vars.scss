@@ -62,6 +62,10 @@
   --color-switch: #{rgba($color-n600, 0.25)};
 
   --color-sidebar: #{$color-p950};
+  --color-sidebar-hover: #{$color-p900};
+  --color-sidebar-foreground: #{$color-p300};
+  --color-sidebar-title-foreground: #{$color-p200};
+  --color-sidebar-active: #{$color-p800};
 
   --color-focus: #{$color-focus};
 
