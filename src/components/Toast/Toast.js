@@ -1,10 +1,10 @@
 import React, { forwardRef, useCallback, useEffect } from "react";
 // import PropTypes from "prop-types";
 import cx from "classnames";
-import { MdClose } from "react-icons/md";
 
 import { Row, Column } from "../Grid";
 import { IconButton } from "../Button";
+import { IconXSmall } from "../Icons";
 
 import "./Toast.scss";
 import { useTimeout } from "./useTimeout";
@@ -72,7 +72,12 @@ export const Toast = forwardRef(function Toast(props, forwardedRef) {
       onMouseLeave={startTimeout}
     >
       <div data-toast-clear>
-        <IconButton size="xs" iconElement={<MdClose />} onPress={remove} />
+        <IconButton
+          aria-label="Close notification"
+          size="xs"
+          iconElement={<IconXSmall />}
+          onPress={remove}
+        />
       </div>
       <Row alignY="center">
         {type && (

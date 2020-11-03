@@ -119,6 +119,8 @@ export default function TableExperiment() {
           const { onClick, ...rest } = row.getToggleRowExpandedProps();
           return (
             <IconButton
+              aria-expanded={row.isExpanded}
+              aria-label={row.isExpanded ? "Collapse row" : "Expand row"}
               size="sm"
               appearance="subtle"
               onPress={onClick}

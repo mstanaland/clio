@@ -1,0 +1,71 @@
+@import "../../styles/variables.scss";
+
+[data-modal-overlay] {
+  background: var(--color-overlay);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  z-index: $z-index-modal;
+}
+
+[data-modal-content] {
+  pointer-events: none;
+  outline: none;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+[data-modal-content-cell] {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+[data-modal-content-cell-sizer] {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-modal-content-sizer] {
+  margin-left: auto;
+  margin-right: auto;
+  width: rem(600);
+
+  &.size-sm {
+    width: rem(500);
+  }
+
+  &.size-md {
+    width: rem(600);
+  }
+
+  &.size-lg {
+    width: rem(800);
+  }
+
+  &.size-xl {
+    width: 90%;
+  }
+}
+
+[data-modal-content-inner] {
+  background: var(--color-background-1);
+  outline: none;
+  position: relative;
+  pointer-events: auto;
+
+  .modal-close-btn {
+    position: absolute;
+    right: $spacer-xs;
+    top: $spacer-xs;
+  }
+
+  .title-wrap {
+    padding-right: $spacer-xl;
+  }
+}

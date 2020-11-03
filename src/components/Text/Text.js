@@ -19,6 +19,7 @@ export default function Text({
   size = "md",
   children,
   color,
+  font,
   fontWeight,
   fontStyle,
   isTruncated,
@@ -29,6 +30,7 @@ export default function Text({
     <Tag
       data-text
       className={cx(className, {
+        "font-mono": font === "mono",
         "text-xs": size === "xs",
         "text-sm": size === "sm",
         "text-md": size === "md",

@@ -9,7 +9,6 @@ import "./IconButton.scss";
 
 export const IconButton = forwardRef(function IconButton(props, forwardedRef) {
   const {
-    ariaLabel,
     iconElement,
     appearance = "default",
     type,

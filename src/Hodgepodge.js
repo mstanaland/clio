@@ -27,8 +27,10 @@ import TextField from "./components/TextField";
 import { IconSearchSmall } from "./components/Icons";
 import { Tabs, TabPanel } from "./components/Tabs";
 import Link from "./components/Link";
+import Modal from "./components/Modal";
 
 export default function Hodgepodge() {
+  const [showModal, setShowModal] = useState(false);
   const [isSpinning, setSpinning] = useState(false);
   const [spinningStatus, setSpinningStatus] = useState("idle");
   const [textFieldValue, setTextFieldValue] = useState("");
@@ -79,6 +81,17 @@ export default function Hodgepodge() {
 
   return (
     <Stack>
+      <div>
+        <Button onPress={() => setShowModal(true)}>Open Dialog</Button>
+        <Modal
+          title="This is a modal"
+          isOpen={showModal}
+          onDismiss={() => setShowModal(false)}
+        >
+          <Text>Hello there. I am a modal dialog.</Text>
+        </Modal>
+      </div>
+
       <Stack space="xs">
         <Heading size="xxl">Heading xxl</Heading>
         <Heading size="xl">Heading xl</Heading>
