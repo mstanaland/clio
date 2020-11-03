@@ -42,36 +42,40 @@ export default function SampleContent() {
   );
 
   return (
-    <Stack>
+    <Stack space="xl">
       <Heading headingLevel={1}>API Keys</Heading>
-      <Tabs>
-        <TabPanel label="User Keys">
-          <TableExperiment />
-        </TabPanel>
-        <TabPanel label="System Account Keys">System Account Keys tab</TabPanel>
-        <TabPanel label={PendingTabLabel}>
-          Pending System Account Keys tab panel contents
-        </TabPanel>
-      </Tabs>
-      <Box display="flex" justifyContent="spaceBetween">
-        <Inline>
-          <Text color="gray">48 rows</Text>
-          <Select
-            label="Rows per page"
-            isLabelVisible={false}
-            options={[
-              { label: "10 per page", value: "10" },
-              { label: "25 per page", value: "25" },
-              { label: "50 per page", value: "50" },
-            ]}
+      <Stack>
+        <Tabs>
+          <TabPanel label="User Keys">
+            <TableExperiment />
+          </TabPanel>
+          <TabPanel label="System Account Keys">
+            System Account Keys tab
+          </TabPanel>
+          <TabPanel label={PendingTabLabel}>
+            Pending System Account Keys tab panel contents
+          </TabPanel>
+        </Tabs>
+        <Box display="flex" justifyContent="spaceBetween">
+          <Inline>
+            <Text color="gray">48 rows</Text>
+            <Select
+              label="Rows per page"
+              isLabelVisible={false}
+              options={[
+                { label: "10 per page", value: "10" },
+                { label: "25 per page", value: "25" },
+                { label: "50 per page", value: "50" },
+              ]}
+            />
+          </Inline>
+          <Pagination
+            pages={102}
+            activePage={pageNumber}
+            onChange={(index) => setPageNumber(index)}
           />
-        </Inline>
-        <Pagination
-          pages={102}
-          activePage={pageNumber}
-          onChange={(index) => setPageNumber(index)}
-        />
-      </Box>
+        </Box>
+      </Stack>
 
       <Spacer size="lg" />
     </Stack>

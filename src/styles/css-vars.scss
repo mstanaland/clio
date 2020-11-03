@@ -32,7 +32,8 @@
   --color-default-active: #{rgba($color-n900, 0.25)};
   --color-default-foreground: #{$color-n800};
 
-  --color-neutral-darken: #{rgba($color-n900, 0.07)};
+  --color-neutral-darken-1: #{rgba($color-n900, 0.04)};
+  --color-neutral-darken-2: #{rgba($color-n900, 0.07)};
   --color-neutral-lighten: #{rgba($color-n0, 0.25)};
 
   --color-critical-light: #{$color-c400};
@@ -106,7 +107,8 @@
   --color-default-active: #{rgba($color-n0, 0.05)};
   --color-default-foreground: #{$color-n100};
 
-  --color-neutral-darken: #{rgba($color-n0, 0.15)};
+  --color-neutral-darken-1: #{rgba($color-n0, 0.8)};
+  --color-neutral-darken-2: #{rgba($color-n0, 0.15)};
   --color-neutral-lighten: #{rgba($color-n1000, 0.25)};
 
   --color-critical-light: #{$color-c400};

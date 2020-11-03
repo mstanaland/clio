@@ -9,10 +9,18 @@
     border-bottom: solid rem(1) var(--color-border-subtle);
     transition: all $ui-transition-speed ease;
 
+    @include hover {
+      background-color: var(--color-neutral-darken-1);
+    }
+
     &.expanded {
       background-color: var(--color-background-2);
       margin-bottom: $spacer-md;
       border-radius: $border-radius-md;
+
+      @include hover {
+        background-color: var(--color-background-2);
+      }
     }
   }
 
