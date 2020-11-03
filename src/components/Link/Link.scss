@@ -5,15 +5,15 @@
   color: var(--color-text-1);
   font-weight: $font-medium;
   text-decoration: none;
-  border-bottom: solid rem(2) var(--color-link-underline);
-  // background-position: 0 0;
-  // background-image: linear-gradient(
-  //   to top,
-  //   var(--color-link-underline),
-  //   var(--color-link-underline) 0.15em,
-  //   transparent 0.15em,
-  //   transparent
-  // );
+  // border-bottom: solid rem(2) var(--color-link-underline);
+  background-position: 0 0;
+  background-image: linear-gradient(
+    to top,
+    var(--color-link-underline),
+    var(--color-link-underline) 0.15em,
+    transparent 0.15em,
+    transparent
+  );
   transition: background-color $ui-transition-speed ease;
 
   @include hover {

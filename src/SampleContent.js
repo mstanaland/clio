@@ -29,6 +29,7 @@ import TextField from "./components/TextField";
 import { IconSearchSmall } from "./components/Icons";
 import { Tabs, TabPanel } from "./components/Tabs";
 import Link from "./components/Link";
+import TableExperiment from "./components/Table/TableExperiment";
 
 export default function SampleContent() {
   const [isSpinning, setSpinning] = useState(false);
@@ -88,13 +89,15 @@ export default function SampleContent() {
 
   return (
     <Stack>
+      <Heading headingLevel={1}>API Keys</Heading>
       <Tabs>
-        <TabPanel label="User Keys">User Keys tab</TabPanel>
+        <TabPanel label="User Keys">
+          <TableExperiment />
+        </TabPanel>
         <TabPanel label="System Account Keys">System Account Keys tab</TabPanel>
         <TabPanel label={PendingTabLabel}>
           Pending System Account Keys tab panel contents
         </TabPanel>
-        <TabPanel label="User Keys">User Keys tab</TabPanel>
       </Tabs>
 
       <Inline>

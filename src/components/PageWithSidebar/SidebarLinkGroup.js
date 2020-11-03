@@ -9,8 +9,8 @@ export default function SidebarLinkGroup({ children, title }) {
     <div data-sidebar-link-group>
       {Boolean(title) && <h2 className="text-xs pl-sm mb-xs">{title}</h2>}
       <ul>
-        {menuItems.map((item) => (
-          <li>{item}</li>
+        {menuItems.map((item, index) => (
+          <li key={index}>{item}</li>
         ))}
       </ul>
     </div>
