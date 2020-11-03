@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Switch, Route } from "react-router-dom";
 import Stack from "./components/Stack";
 
 import PageWithSidebar, {
@@ -9,12 +9,15 @@ import PageWithSidebar, {
 } from "./components/PageWithSidebar";
 
 import SampleContent from "./SampleContent";
+import Hodgepodge from "./Hodgepodge";
 
 const sidebarElement = (
   <Sidebar>
     <Stack space="lg">
+      <SidebarLink to="/">Hodgepodge</SidebarLink>
+
       <SidebarLinkGroup title="AI Operations">
-        <SidebarLink to="/">API Keys</SidebarLink>
+        <SidebarLink to="/api-keys">API Keys</SidebarLink>
         <SidebarLink to="/models">Models</SidebarLink>
         <SidebarLink to="/history">Job History</SidebarLink>
         <SidebarLink to="/operations">Model Operations</SidebarLink>
@@ -32,7 +35,14 @@ const sidebarElement = (
 export default function SampleLayout() {
   return (
     <PageWithSidebar sidebarElement={sidebarElement}>
-      <SampleContent />
+      <Switch>
+        <Route path="/api-keys">
+          <SampleContent />
+        </Route>
+        <Route exact path="/">
+          <Hodgepodge />
+        </Route>
+      </Switch>
     </PageWithSidebar>
   );
 }

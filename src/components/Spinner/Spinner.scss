@@ -19,7 +19,7 @@
     fill: transparent;
     transform-origin: center;
     animation: rotateKeyframes 700ms linear infinite;
-    transition: stroke-dasharray 350ms ease-in, stroke 350ms ease-in;
+    // transition: stroke-dasharray 350ms ease-in, stroke 350ms ease-in;
 
     &.white {
       stroke: $color-n0;

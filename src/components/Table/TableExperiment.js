@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
-import React, { useState, useMemo } from "react";
+import React, { useMemo } from "react";
 import cx from "classnames";
 import {
   useTable,
@@ -9,6 +9,7 @@ import {
   useGlobalFilter,
   useAsyncDebounce,
 } from "react-table";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Stack from "../Stack";
 import Switch from "../Switch";
@@ -52,41 +53,58 @@ function GlobalFilter({
   );
 }
 
-function ExtraDetails({ description, roles, isHighPriority, createdAt }) {
+function ExtraDetails({
+  description,
+  roles,
+  isHighPriority,
+  createdAt,
+  isExpanded,
+}) {
   return (
-    <Box padding="sm" borderRadius="sm">
-      <Row>
-        <Column>
-          <Text size="xs" fontWeight="semibold">
-            Description
-          </Text>
-          <Text>{description}</Text>
-        </Column>
-        <Column>
-          <Text size="xs" fontWeight="semibold">
-            Roles
-          </Text>
-          <Text>{roles?.[0]?.name}</Text>
-        </Column>
-        <Column>
-          <Text size="xs" fontWeight="semibold">
-            Priority
-          </Text>
-          <Text>{isHighPriority ? "High" : "Standard"}</Text>
-        </Column>
-        <Column>
-          <Text size="xs" fontWeight="semibold">
-            Date Created
-          </Text>
-          <Text>{createdAt}</Text>
-        </Column>
-      </Row>
-    </Box>
+    <AnimatePresence initial={false}>
+      {isExpanded && (
+        <motion.div
+          key="content"
+          initial="collapsed"
+          animate="open"
+          exit="collapsed"
+          variants={{
+            open: { opacity: 1, height: "auto" },
+            collapsed: { opacity: 0, height: 0 },
+          }}
+        >
+          <Box padding="sm" borderRadius="sm">
+            <Row>
+              <Column>
+                <Text size="xs" fontWeight="semibold">
+                  Description
+                </Text>
+                <Text>{description}</Text>
+              </Column>
+              <Column>
+                <Text size="xs" fontWeight="semibold">
+                  Roles
+                </Text>
+                <Text>{roles?.[0]?.name}</Text>
+              </Column>
+              <Column>
+                <Text size="xs" fontWeight="semibold">
+                  Priority
+                </Text>
+                <Text>{isHighPriority ? "High" : "Standard"}</Text>
+              </Column>
+              <Column>
+                <Text size="xs" fontWeight="semibold">
+                  Date Created
+                </Text>
+                <Text>{createdAt}</Text>
+              </Column>
+            </Row>
+          </Box>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
-}
-
-function Test() {
-  return <div>Fooooooo</div>;
 }
 
 export default function TableExperiment() {
@@ -161,7 +179,7 @@ export default function TableExperiment() {
         width: "100%",
         className: "details-extra",
         Cell: ({ row }) => {
-          return <ExtraDetails {...row.original} />;
+          return <ExtraDetails {...row.original} isExpanded={row.isExpanded} />;
         },
       },
     ];

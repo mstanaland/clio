@@ -12,14 +12,12 @@
     &.expanded {
       background-color: var(--color-background-2);
       margin-bottom: $spacer-md;
+      border-radius: $border-radius-md;
     }
   }
 
   th,
   td {
-    // flex-grow: 1;
-    // flex-shrink: 0;
-    // flex-basis: 10%;
     text-align: left;
     padding-left: $spacer-xxs;
     padding-right: $spacer-xxs;
@@ -28,7 +26,6 @@
     font-weight: normal;
     display: flex;
     align-items: center;
-    transition: all $ui-transition-speed ease;
 
     &.expander-td {
       max-width: rem(32) !important;
@@ -55,12 +52,11 @@
     padding: 0;
     pointer-events: none;
     visibility: hidden;
-    transition: none;
 
     > * {
       width: 100%;
       border-top: solid rem(1) var(--color-border);
-      // background-color: var(--color-background-3);
+
       [data-text] {
         color: var(--color-text-3) !important;
       }

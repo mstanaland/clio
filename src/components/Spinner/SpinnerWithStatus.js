@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import PropTypes from "prop-types";
-import { animated, useTransition } from "react-spring";
+import { motion, AnimatePresence } from "framer-motion";
 import cx from "classnames";
 
 import { tShirtType } from "../../types";
@@ -10,13 +10,43 @@ import { toRem } from "../../utils";
 import "./Spinner.scss";
 
 const IDLE = "idle";
-const SPINNING = "spinning";
+// const SPINNING = "spinning";
 const SUCCESS = "success";
 const ERROR = "error";
 
+const toastIconVariants = {
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.6,
+      duration: 1,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    scale: 0,
+    transition: {
+      type: "spring",
+    },
+  },
+};
+
+const spinnerVariants = {
+  visible: {
+    opacity: 1,
+    scale: 1,
+  },
+  hidden: {
+    opacity: 1,
+    scale: 1,
+  },
+};
+
 function ToastIcon({ status, ...props }) {
   return (
-    <animated.svg
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
@@ -32,7 +62,7 @@ function ToastIcon({ status, ...props }) {
       {status === "error" && (
         <path d="M10 14.5c.647 0 1.18.492 1.244 1.122l.006.128v.5a1.25 1.25 0 01-2.494.128l-.006-.128v-.5c0-.69.56-1.25 1.25-1.25zm0-12c.647 0 1.18.492 1.244 1.122l.006.128v8a1.25 1.25 0 01-2.494.128l-.006-.128v-8c0-.69.56-1.25 1.25-1.25z" />
       )}
-    </animated.svg>
+    </svg>
   );
 }
 
@@ -41,29 +71,40 @@ export default function SpinnerWithStatus({
   isCentered = false,
   size = "md",
   color = "gray",
-  endingTimeout = 1500,
+  endingTimeout = 2000,
   onExit,
 }) {
   const timer = useRef();
   const [animateOut, setAnimateOut] = useState(false);
-  const [isDone, setDone] = useState(false);
-  const isInDom =
-    (status === SPINNING || status === SUCCESS || status === ERROR) && !isDone;
+
+  const sizeInPixels = sizeInPxMap[size];
+  const strokeWidth = Math.min(Math.max(sizeInPixels * 0.0625, 1.5), 3);
+
+  const r = sizeInPixels / 2 - strokeWidth;
+  const circumference = Math.PI * 2 * (r - strokeWidth);
+
+  const circleVariants = useMemo(() => {
+    return {
+      visible: {
+        strokeDasharray: circumference * 2,
+      },
+      hidden: {
+        strokeDasharray: circumference,
+      },
+    };
+  }, [circumference]);
 
   useEffect(() => {
     let isMounted = true;
     clearTimeout(timer.current);
 
     if (status === SUCCESS || status === ERROR) {
-      setAnimateOut(true);
       timer.current = setTimeout(() => {
         if (isMounted) {
-          setDone(true);
-          setAnimateOut(false);
+          setAnimateOut(true);
         }
       }, endingTimeout);
     } else {
-      setDone(false);
       setAnimateOut(false);
     }
 
@@ -73,119 +114,70 @@ export default function SpinnerWithStatus({
     };
   }, [status, endingTimeout]);
 
-  useEffect(() => {
-    if (status === SPINNING && isDone) {
-      setDone(false);
-    }
-  }, [isDone, status]);
-
-  function onDestroyed() {
-    if (onExit && isDone) {
-      onExit();
-    }
-  }
-  const ringTransition = useTransition(isInDom, null, {
-    from: {
-      opacity: 0,
-      transform: "scale(0.7) rotate(-270deg)",
-    },
-    enter: { opacity: 1, transform: "scale(1) rotate(0)" },
-    leave: {
-      opacity: 0,
-      transform: "scale(0.7) rotate(270deg)",
-    },
-    onDestroyed: onDestroyed,
-  });
-
-  const iconTransition = useTransition(animateOut, null, {
-    from: {
-      opacity: 0,
-      transform: "scale(0)",
-    },
-    enter: { opacity: 1, transform: "scale(1)" },
-    leave: {
-      opacity: 0,
-      transform: "scale(0)",
-    },
-    config: { mass: 1, tension: 170, friction: 13 },
-  });
-
-  const sizeInPixels = sizeInPxMap[size];
-  const strokeWidth = Math.min(Math.max(sizeInPixels * 0.0625, 1.5), 3);
-
-  const r = sizeInPixels / 2 - strokeWidth;
-  const circumference = Math.PI * 2 * (r - strokeWidth);
-  const dashLength = animateOut ? circumference : circumference * 0.85;
-  const gapLength = animateOut ? 0 : circumference * 0.15;
-
   return (
-    <div
-      data-spinner
-      className={cx({
-        "display-flex": isCentered,
-        "display-inline": !isCentered,
-        "justify-content-center": isCentered,
-      })}
-    >
-      {ringTransition.map(
-        ({ item, key, props }) =>
-          item && (
-            <animated.svg
-              width={toRem(sizeInPixels)}
-              height={toRem(sizeInPixels)}
-              style={props}
-              key={key}
-            >
-              <circle
-                className={cx({
-                  white: color === "white",
-                  brand: color === "brand",
-                  "dark-gray": color === "darkGray",
-                  success: status === SUCCESS,
-                  error: status === ERROR,
-                })}
-                strokeWidth={toRem(strokeWidth)}
-                r={r}
-                cx={toRem(sizeInPixels / 2)}
-                cy={toRem(sizeInPixels / 2)}
-                style={{
-                  strokeDasharray: `${dashLength} ${gapLength}`,
-                }}
-              />
-            </animated.svg>
-          )
-      )}
+    <AnimatePresence initial={false} onExitComplete={onExit}>
+      {status !== IDLE && !animateOut && (
+        <motion.div
+          animate={
+            status === SUCCESS || status === ERROR ? "visible" : "hidden"
+          }
+          variants={spinnerVariants}
+          key="spinner"
+          initial={{ opacity: 0, scale: 0 }}
+          exit={{ opacity: 0, scale: 0 }}
+          data-spinner
+          className={cx({
+            "display-flex": isCentered,
+            "display-inline": !isCentered,
+            "justify-content-center": isCentered,
+          })}
+        >
+          <svg width={toRem(sizeInPixels)} height={toRem(sizeInPixels)}>
+            <motion.circle
+              variants={circleVariants}
+              initial={{
+                strokeDasharray: circumference,
+              }}
+              className={cx({
+                white: color === "white",
+                brand: color === "brand",
+                "dark-gray": color === "darkGray",
+                success: status === SUCCESS,
+                error: status === ERROR,
+              })}
+              strokeWidth={toRem(strokeWidth)}
+              r={r}
+              cx={toRem(sizeInPixels / 2)}
+              cy={toRem(sizeInPixels / 2)}
+            />
+          </svg>
 
-      <div
-        className={cx(
-          "icon-wrap",
-          "display-flex",
-          "justify-content-center",
-          "align-items-center"
-        )}
-        style={{
-          width: toRem(sizeInPixels),
-          height: toRem(sizeInPixels),
-        }}
-      >
-        {iconTransition.map(
-          ({ item, key, props }) =>
-            item && (
-              <ToastIcon
-                status={status}
-                key={key}
-                width={toRem(sizeInPixels * 0.75)}
-                height={toRem(sizeInPixels * 0.75)}
-                className={cx({
-                  "success-icon": status === SUCCESS,
-                  "error-icon": status === ERROR,
-                })}
-                style={props}
-              />
-            )
-        )}
-      </div>
-    </div>
+          <motion.div
+            variants={toastIconVariants}
+            className={cx(
+              "icon-wrap",
+              "display-flex",
+              "justify-content-center",
+              "align-items-center"
+            )}
+            style={{
+              width: toRem(sizeInPixels),
+              height: toRem(sizeInPixels),
+            }}
+          >
+            <ToastIcon
+              status={status}
+              width={toRem(sizeInPixels * 0.75)}
+              height={toRem(sizeInPixels * 0.75)}
+              className={cx({
+                "success-icon": status !== ERROR,
+                "error-icon": status === ERROR,
+              })}
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
