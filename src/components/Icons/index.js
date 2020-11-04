@@ -5,8 +5,10 @@ import IconChevronUp from "./IconChevronUp";
 import IconX from "./IconX";
 
 // Small Icons
-import IconXSmall from "./IconXSmall";
-import IconSearchSmall from "./IconSearchSmall";
+import SmallIconX from "./SmallIconX";
+import SmallIconSearch from "./SmallIconSearch";
+import SmallIconChevronDown from "./SmallIconChevronDown";
+import SmallIconChevronUp from "./SmallIconChevronUp";
 
 export {
   IconChevronLeft,
@@ -14,6 +16,8 @@ export {
   IconChevronDown,
   IconChevronUp,
   IconX,
-  IconXSmall,
-  IconSearchSmall,
+  SmallIconX,
+  SmallIconSearch,
+  SmallIconChevronDown,
+  SmallIconChevronUp,
 };

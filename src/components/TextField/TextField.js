@@ -10,7 +10,7 @@ import Inline from "../Inline";
 import Label from "../Label";
 import InputError from "../InputError";
 import { IconButton } from "../Button";
-import { IconXSmall } from "../Icons";
+import { SmallIconX } from "../Icons";
 
 import "./TextField.scss";
 
@@ -243,7 +243,7 @@ export const TextField = forwardRef(function TextField(props, forwardedRef) {
               <IconButton
                 appearance="subtle"
                 size="xs"
-                iconElement={<IconXSmall />}
+                iconElement={<SmallIconX />}
                 aria-label="Clear field contents"
                 className="text-field-clear-button"
                 onPress={handleClearClick}

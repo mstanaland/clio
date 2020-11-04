@@ -26,7 +26,6 @@ import Pagination from "./components/Pagination";
 // import InputError from "./components/InputError";
 import Select from "./components/Select";
 // import TextField from "./components/TextField";
-// import { IconSearchSmall } from "./components/Icons";
 import { Tabs, TabPanel } from "./components/Tabs";
 // import Link from "./components/Link";
 import TableExperiment from "./components/Table/TableExperiment";

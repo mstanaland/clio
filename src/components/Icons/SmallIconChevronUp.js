@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function IconXCircleSmall(props) {
+export default function SmallIconChevronUp(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +12,7 @@ export default function IconXCircleSmall(props) {
     >
       <path
         fillRule="evenodd"
-        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+        d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
         clipRule="evenodd"
       />
     </svg>

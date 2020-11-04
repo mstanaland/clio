@@ -13,13 +13,14 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import Stack from "../Stack";
 import Switch from "../Switch";
-import { IconButton } from "../Button";
+import { IconButton, GenericButton } from "../Button";
 import { IconChevronDown, IconChevronRight } from "../Icons";
 import { Row, Column } from "../Grid";
 import Text from "../Text";
 import Box from "../Box";
 import Link from "../Link";
 import TextField from "../TextField";
+import { SmallIconChevronDown, SmallIconChevronUp } from "../Icons";
 
 import "./TableExperiment.scss";
 import { data } from "./data";
@@ -111,7 +112,7 @@ export default function TableExperiment() {
   const columns = useMemo(() => {
     return [
       {
-        Header: () => null,
+        Header: "",
         id: "expander",
         className: "expander-td",
         width: 32,
@@ -224,24 +225,41 @@ export default function TableExperiment() {
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th
-                  {...column.getHeaderProps({
-                    className: column.className,
-                  })}
-                >
-                  <div {...column.getSortByToggleProps()}>
-                    {column.render("Header")}
-                    <span>
-                      {column.isSorted
-                        ? column.isSortedDesc
-                          ? " 🔽"
-                          : " 🔼"
-                        : ""}
-                    </span>
-                  </div>
-                </th>
-              ))}
+              {headerGroup.headers.map((column) => {
+                const contents = column.render("Header");
+
+                return (
+                  <th
+                    {...column.getHeaderProps({
+                      className: column.className,
+                    })}
+                  >
+                    {contents ? (
+                      <GenericButton
+                        className="table-th-toggle-button"
+                        {...column.getSortByToggleProps()}
+                        title={null}
+                        aria-label={`Sort table by ${contents}`}
+                      >
+                        <div>
+                          {contents}
+                          {column.isSorted ? (
+                            column.isSortedDesc ? (
+                              <SmallIconChevronDown width="16" height="16" />
+                            ) : (
+                              <SmallIconChevronUp width="16" height="16" />
+                            )
+                          ) : (
+                            ""
+                          )}
+                        </div>
+                      </GenericButton>
+                    ) : (
+                      <span aria-hidden="true" />
+                    )}
+                  </th>
+                );
+              })}
             </tr>
           ))}
         </thead>

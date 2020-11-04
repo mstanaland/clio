@@ -4,7 +4,7 @@ import cx from "classnames";
 
 import { Row, Column } from "../Grid";
 import { IconButton } from "../Button";
-import { IconXSmall } from "../Icons";
+import { SmallIconX } from "../Icons";
 
 import "./Toast.scss";
 import { useTimeout } from "./useTimeout";
@@ -75,7 +75,7 @@ export const Toast = forwardRef(function Toast(props, forwardedRef) {
         <IconButton
           aria-label="Close notification"
           size="xs"
-          iconElement={<IconXSmall />}
+          iconElement={<SmallIconX />}
           onPress={remove}
         />
       </div>

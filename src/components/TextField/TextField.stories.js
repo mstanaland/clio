@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import TextField from "./index";
-import { IconSearchSmall } from "../Icons";
+import { SmallIconSearch } from "../Icons";
 
 export default {
   component: TextField,
@@ -14,7 +14,7 @@ export const Default = Template.bind({});
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  iconElement: <IconSearchSmall />,
+  iconElement: <SmallIconSearch />,
 };
 
 export const UnitBefore = Template.bind({});

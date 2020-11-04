@@ -50,11 +50,19 @@
   thead th {
     padding-top: $spacer-xxs;
     padding-bottom: $spacer-xxs;
-    font-size: rem(11);
-    text-transform: uppercase;
-    color: var(--color-text-4);
-    letter-spacing: 0.02em;
-    font-weight: $font-medium;
+
+    .table-th-toggle-button {
+      > div {
+        display: flex;
+        align-items: center;
+        font-size: rem(11);
+        text-transform: uppercase;
+        color: var(--color-text-4);
+        letter-spacing: 0.02em;
+        font-weight: $font-medium;
+        line-height: rem(24); // Must be larger than icon size to prevent jiggle
+      }
+    }
   }
 
   .details-extra {

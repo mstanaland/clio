@@ -65,17 +65,17 @@ export function Gallery() {
       <Row>
         <Column>
           <Box borderWidth={1} padding="md">
-            <Icons.IconXSmall />
+            <Icons.SmallIconX />
             <Text size="sm" font="mono">
-              IconXSmall
+              SmallIconX
             </Text>
           </Box>
         </Column>
         <Column>
           <Box borderWidth={1} padding="md">
-            <Icons.IconSearchSmall />
+            <Icons.SmallIconSearch />
             <Text size="sm" font="mono">
-              IconSearchSmall
+              SmallIconSearch
             </Text>
           </Box>
         </Column>

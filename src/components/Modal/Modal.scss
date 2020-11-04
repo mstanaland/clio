@@ -54,6 +54,7 @@
 }
 
 [data-modal-content-inner] {
+  will-change: opacity, transform;
   background: var(--color-background-1);
   outline: none;
   position: relative;

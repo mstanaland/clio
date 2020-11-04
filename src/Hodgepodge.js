@@ -24,7 +24,7 @@ import { PlaceholderText } from "./components/Placeholder";
 import InputError from "./components/InputError";
 import Select from "./components/Select";
 import TextField from "./components/TextField";
-import { IconSearchSmall } from "./components/Icons";
+import { SmallIconSearch } from "./components/Icons";
 import { Tabs, TabPanel } from "./components/Tabs";
 import Link from "./components/Link";
 import Modal from "./components/Modal";
@@ -532,7 +532,7 @@ export default function Hodgepodge() {
             hasClearButton
             onClearButtonClick={() => setTextFieldValue("")}
             label="This is a text field"
-            iconElement={<IconSearchSmall />}
+            iconElement={<SmallIconSearch />}
           />
         </Column>
         <Column width="4">

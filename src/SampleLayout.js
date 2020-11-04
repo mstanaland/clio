@@ -22,11 +22,9 @@ const sidebarElement = (
         <SidebarLink to="/history">Job History</SidebarLink>
         <SidebarLink to="/operations">Model Operations</SidebarLink>
       </SidebarLinkGroup>
-      <SidebarLinkGroup title="Account">
-        <SidebarLink to="/foo">API Keys</SidebarLink>
-        <SidebarLink to="/bar">Models</SidebarLink>
-        <SidebarLink to="/baz">Job History</SidebarLink>
-        <SidebarLink to="/biz">Model Operations</SidebarLink>
+      <SidebarLinkGroup title="Account Management">
+        <SidebarLink to="/foo">License Information</SidebarLink>
+        <SidebarLink to="/bar">Users & Roles</SidebarLink>
       </SidebarLinkGroup>
     </Stack>
   </Sidebar>
