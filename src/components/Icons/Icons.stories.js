@@ -79,6 +79,22 @@ export function Gallery() {
             </Text>
           </Box>
         </Column>
+        <Column>
+          <Box borderWidth={1} padding="md">
+            <Icons.SmallIconChevronDown />
+            <Text size="sm" font="mono">
+              SmallIconChevronDown
+            </Text>
+          </Box>
+        </Column>
+        <Column>
+          <Box borderWidth={1} padding="md">
+            <Icons.SmallIconChevronUp />
+            <Text size="sm" font="mono">
+              SmallIconChevronUp
+            </Text>
+          </Box>
+        </Column>
       </Row>
     </Stack>
   );
